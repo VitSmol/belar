@@ -25,11 +25,15 @@ export class TopComponent implements OnInit {
   //! Переменные для отображения в title
   @Input() titleObj: titleObj | any
 
+  public stucerValue: string = "";
+  public stucerCount: number = 0;
+
   ngOnInit(): void {
     this.titleObj.currentHod = 'X'
     this.titleObj.leftCode = 'X'
     this.titleObj.rightCode = 'X'
     this.titleObj.MO = 'X'
+    // this.stucer = !this.isNotStuc ? '.3' : ''
   }
 
   clear(name: string) {
@@ -39,6 +43,19 @@ export class TopComponent implements OnInit {
   }
 
   setElement(el: Item | null, side: string) {
+    if (el?.subgroup == '4' || el?.subgroup == '5') {
+      this.stucerCount++
+      if (this.stucerCount > 2) {
+        this.stucerCount = 2
+      }
+    } else {
+      this.stucerCount--
+      if (this.stucerCount < 0) {
+        this.stucerCount = 0
+      }
+    }
+    this.stucerValue = this.stucerCount > 0 ? '.3' : ''
+
     if (side === 'topleft') {
       this.topLeftElement.emit(el);
     }
