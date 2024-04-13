@@ -1,0 +1,161 @@
+@import 'variables'
+.main
+  padding: 0
+.start-content
+  height: 100%
+  position: relative
+.caption
+  padding-top: 120px
+  display: flex
+  height: 100%
+.caption-wrapper
+  width: $contentWidth
+  height: 100%
+  margin: 0 auto
+  display: grid
+  gap: 30px
+  grid-template-areas:"caption caption" "start gallery" "vid gallery"
+  grid-template-columns: 2fr 3fr
+
+.main-caption-wrapper
+  grid-area: start
+.main-caption
+  font-size: 42px
+  font-weight: 500
+.sub-caption
+  margin-top: 13px
+  font-size: 23px
+  strong
+    font-weight: normal
+.next
+  grid-area: cyl
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  position: relative
+  column-gap: 50px
+  img
+    position: relative
+    // width: 300px
+    transform: scale(1)
+    transition: transform 0.5s
+    z-index: 300
+    height: 100px
+    justify-self: center
+    &:hover
+      cursor: pointer
+      transition: 0.5s transform
+      transform: scale(2.1)
+      z-index: 5
+#swipe-container
+  max-width: 800px
+  width: 100%
+.gallery
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  grid-area: gallery
+  align-items: flex-start
+  .gallery-img
+    max-width: 800px
+    width: 100%
+@media screen and (max-width: 1510px)
+  #swipe-container, .gallery-img
+    max-width: 700px
+@media screen and (max-width: 1450px)
+  #swipe-container, .gallery-img
+    max-width: 650px
+@media screen and ( max-width: 1350px )
+  #swipe-container, .gallery-img
+      max-width: 560px
+@media screen and ( max-width: 750px )
+  #swipe-container, .gallery-img
+      max-width: 500px
+@media screen and ( max-width: 550px )
+  #swipe-container, .gallery-img
+      max-width: 350px
+.vid
+  grid-area: vid
+  justify-self: center
+  width: 600px
+  z-index: -1
+
+  //! Секция "О компании"
+
+
+@media screen and (max-width: 1460px)
+  h1.main-caption
+    font-size: 35px
+  .sub-caption
+    font-size: 20px
+  .caption .gallery .card:hover
+    flex-grow: 3
+  .caption-wrapper
+    column-gap: 0
+    grid-template-columns: 1fr 1.5fr
+
+@media screen and (max-width: 1360px)
+  h1.main-caption
+    font-size: 30px
+  .sub-caption
+    font-size: 18px
+    margin-top: 10px
+  .caption .gallery .card:hover
+    flex-grow: 6
+  .caption-wrapper
+    row-gap: 15px
+@media screen and (max-width: 1260px)
+  .caption
+    padding-top: 90px
+  .caption .gallery .card:hover
+    flex-grow: 1.5
+  .caption-wrapper
+    row-gap: 30px
+    grid-template-columns: 1.5fr 1fr
+    grid-template-areas: "caption caption" "start start" "gallery gallery" "cyl cyl" "vid vid"
+
+@media screen and (max-width: 1160px)
+  h1.main-caption
+    font-size: 20px
+  .sub-caption
+    font-size: 15px
+    // margin-top: 10px
+  .caption .gallery .card:hover
+    flex-grow: 1.6
+  .vid
+    width: auto
+    max-width: 600px
+
+@media screen and (max-width: 1000px)
+  .caption .gallery .card:hover
+    flex-grow: 2.9
+  .caption-wrapper
+      grid-template-columns: 1fr
+      grid-template-areas: "caption" "start" "gallery" "cyl" "vid"
+
+@media screen and (max-width: 768px)
+  .caption .gallery .card:hover
+    flex-grow: 2.9
+  .caption .gallery .card img
+    width: 453px
+
+@media screen and (max-width: 680px)
+  .next
+    justify-content: center
+    grid-template-rows: repeat(3, 1fr)
+    grid-template-columns: calc($contentWidth / 2)
+    img
+      width: $contentWidth
+      height: auto
+      &:hover
+        transform: scale(1.7)
+  .caption .gallery .card img
+    width: 410px
+  .caption .gallery .card:hover
+    flex-grow: 3.2
+  .vid
+    max-width: 400px
+@media screen and (max-width: 530px)
+  .caption .gallery .card img
+    width: 320px
+  .caption .gallery .card:hover
+    flex-grow: 3.9

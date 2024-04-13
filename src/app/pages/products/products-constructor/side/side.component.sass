@@ -1,0 +1,132 @@
+@import 'variables'
+$brd-lite: 1px solid black
+$brd-bold: 3px solid black
+
+.wrapper
+  border-top: none
+  height: 76vh
+  @media screen and ( max-width: 590px )
+    height: 72vh
+
+  @media screen and ( max-height: 725px )
+    height: 72vh
+  @media screen and ( max-height: 670px )
+    height: 70vh
+  @media screen and ( max-height: 590px )
+    height: 69vh
+  @media screen and ( max-height: 545px )
+    height: 74vh
+  @media screen and ( max-height: 500px )
+    height: 71vh
+  @media screen and ( max-height: 450px )
+    height: 67vh
+  @media screen and ( max-height: 400px )
+    height: 63vh
+  form
+    border: $brd-bold
+    border-bottom: none
+    border-top: none
+h6
+  font-family: Montserrat
+  font-size: 14px
+
+h3
+  font-size: 15px
+  text-align: center
+  border-bottom: $brd-lite
+  margin-bottom: 0
+  border-top: $brd-bold
+strong
+  font-size: 13px
+.title
+  display: flex
+  flex-direction: column
+  position: sticky
+  top: 0
+  z-index: 1
+  background: white
+.subtitle-wrapper
+  display: flex
+  justify-content: start
+  border-bottom: $brd-lite
+  gap: 15px
+.nomination
+  display: block
+  text-align: center
+  flex-grow: 3
+  width: 100%
+.code
+  padding-left: 15px
+  padding-right: 15px
+  flex-grow: 1
+  border-right: 1px solid black
+.btn-container
+  padding: 5px
+  display: flex
+  justify-content: center
+  border-bottom: $brd-lite
+  button
+    margin: 0 auto
+.group-container
+  display: flex
+  border-bottom: $brd-bold
+  &:nth-last-child(-n + 3) .item-container
+    // background: red
+    border-bottom: none !important
+  &:last-child ::ng-deep .mdc-form-field .mdc-label
+    border-left: none
+    // background-color: red
+  .items-container
+    width: 100%
+    .item-container
+      &:first-child
+        border-bottom: $brd-lite
+  .number
+    max-width: 10px
+    min-width: 20px
+    flex-grow: 1
+    padding-left: 4px
+    padding-right: 4px
+    align-self: center
+  .sub-groupe
+    display: flex
+    border-left: $brd-lite
+    span
+      align-self: center
+      width: 30px
+    label
+      display: flex
+      width: 100%
+    h6
+      text-align: center
+      padding-top: 5px
+
+img.sub-group-img
+  max-width: 120px
+  max-height: 120px
+  padding-bottom: 5px
+::ng-deep
+  .mdc-form-field
+    flex-direction: row-reverse
+    width: 100%
+    .mdc-label
+      margin: 0
+      padding: 0
+      width: 100%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      border-left: $brd-lite
+      border-right: $brd-lite
+      &:hover
+        cursor: pointer
+
+
+  .mat-mdc-radio-button
+    display: flex
+    width: 100%
+    *
+      animation-duration: 0s
+.content
+  // overflow-y: scroll

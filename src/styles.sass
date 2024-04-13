@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap'
+@import 'variables'
+@keyframes opacity-links
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+*
+  animation-duration: 0.5s
+  animation-name: opacity-links
+  backface-visibility: hidden
+  scrollbar-width: thin
+  // will-change: initial
+body
+  font-family: 'Hydro', sans-serif
+  font-family: 'Noto Sans', sans-serif
+  font-family: 'Exo 2', sans-serif
+  font-family: 'Montserrat', sans-serif
+  color: $bgColor
+  background-color: $background
+  overflow-x: hidden
+
+
+.logo
+  // background-image: url(assets/img/logoBelar.png)
+  // width: 200px
+  height: inherit
+  background-repeat: no-repeat
+  background-size: contain
+.simple-input, .simple-input input
+  // width: 35px
+  position: absolute
+  font-size: 12px
+  height: 18px
+  font-style: italic
+  text-align: center
+  font-weight: bold
+  vertical-align: middle
+  border: 1px solid #00000029
+  width: 70px
+  // max-width: 240px
+  z-index: 300
+  will-change: scale, transform
+
+  &:focus
+    outline: none
+.simple-label
+  position: absolute
+  font-size: 13px
+  font-weight: bold
+  display: flex
+  gap: 2px
+  z-index: 300
+  will-change: scale, transform
+  input
+    will-change: scale, transform
+    font-size: 12px
+    height: 18px
+    font-style: italic
+    text-align: center
+    font-weight: bold
+    vertical-align: middle
+
+    border: 1px solid #00000029
+.lg-outer .lg-img-rotate
+  // display: flex
+  // display: contents
+.lg-outer .lg-object
+  // top: 23%
+
+button:not([type="reset"])
+  background: #ffba6b !important
+  color: black !important

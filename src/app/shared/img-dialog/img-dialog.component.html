@@ -1,0 +1,21 @@
+<div class="img-container">
+  <div class="controls">
+    <a [href]="currentImgSrc" download>
+      <span class="material-symbols-outlined">
+        download
+        </span>
+      </a>
+  </div>
+  <swiper-container id="gallerySwiper"
+  loop="true"
+  navigation="true"
+  (swiperslidechange)="onCh($event)"
+  wheel-mode="false"
+  >
+  @for (img of tempArray; track img) {
+    <swiper-slide class="slide">
+      <img class="slideImg" appScale [src]="img.pathFull" alt="Производство ТМ Белар" (wheel)="onwheel($event)" >
+    </swiper-slide>
+  }
+</swiper-container>
+</div>

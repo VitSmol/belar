@@ -1,0 +1,15 @@
+<div class="products-wrapper">
+  <app-products-list-filter
+    [query] = query
+    (outQuery)="outQuery($event)"
+    (view)="setView($event)"
+  >
+
+  </app-products-list-filter>
+  <app-products-list-all
+  [productsArr] = "commonArr"
+  [view] = "view"
+  >
+
+  </app-products-list-all>
+</div>

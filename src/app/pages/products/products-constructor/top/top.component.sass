@@ -1,0 +1,101 @@
+$brd-lite: 1px solid black
+$brd-bold: 3px solid black
+.top-wrapper
+  display: flex
+  flex-direction: column
+  position: relative
+  // border: $brd-lite
+  background-color: white
+  h3, h4
+    background-color: white
+  .title
+    z-index: 300
+table
+  width: 100%
+  textarea
+    height: auto
+.items-container
+  display: flex
+.item-container
+  display: flex
+  flex-direction: column
+  align-items: center
+  border-right: $brd-lite
+
+.table-wrapper
+  max-width: 100%
+  border: $brd-lite
+  border-top: none
+.subtitle
+  background: white
+  border-left: $brd-lite
+  border-right: $brd-lite
+  z-index: 200
+#other
+  height: auto !important
+@media screen and (max-width: 700px)
+  .table-wrapper, .subtitle
+    position: absolute
+    overflow-x: auto
+    overflow-y: hidden
+    transform: translateY(calc(-100% - 25px))
+    &.active
+      transform: translateY(0%)
+      position: relative
+      transition: transform 900ms
+
+table tr:not(:last-child)
+  border-bottom: $brd-lite
+th:not(:last-child)
+  border-right: $brd-lite
+tr td
+  border-right: $brd-lite
+  text-align: center
+  // vertical-align: top
+h3
+  font-size: 16px
+  border: $brd-lite
+  font-weight: bold
+
+h4
+  font-size: 14px
+  border: none
+  border-bottom: $brd-lite
+h5
+  font-size: 13px
+h6
+  font-size: 12px
+img
+  height: 60px
+.cell
+  display: flex
+  justify-content: center
+  align-items: stretch
+  height: inherit
+  padding-top: 2px
+  // padding: 3% 0
+h3, h4, h5, h6
+  margin: 0
+  padding: 2px 0
+  text-align: center
+
+
+::ng-deep
+  .mdc-radio
+    padding: 5px
+  // .mat-mdc-mini-fab
+  //   width: 25px !important
+  //   height: 25px !important
+  //   font-size: 0 !important
+  //   padding: 8% !important
+  //   margin-top: 5px
+  // .mat-mdc-mini-fab .mat-mdc-button-touch-target
+  //   height: inherit !important
+
+.mat-mdc-radio-button
+  margin-left: 20px !important
+  height: 20px !important
+  width: 20px !important
+  text-align: center !important
+  vertical-align: middle !important
+  font-size: 10px !important

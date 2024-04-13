@@ -1,0 +1,218 @@
+<section class="parameters">
+
+
+  <div class="params-wrapper">
+    <div class="params">
+      <ul class="first-group">
+        <li>
+          <button mat-raised-button id="submit" type="submit">Отправить заявку</button>
+        </li>
+
+        <li>
+          <span>Рабочее давление, bar:</span>
+          <mat-form-field>
+            <mat-select [(value)]="selectedBar" #pressureSelect (valueChange)="setChange($event)">
+              @for (size of barArray; track size) {
+                <mat-option [value]="size">{{size}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </li>
+        <li>
+          <span>Максимальное рабочее давление, bar: </span>
+          <mat-form-field><input matInput (keyup)="checkNums($event)" placeholder="200"></mat-form-field>
+        </li>
+        <li>
+          <span>Темп. окружающей среды, °C:</span>
+          <mat-form-field><input matInput (keyup)="checkNums($event)" placeholder="20"></mat-form-field>
+        </li>
+        <li>
+          <span>Воздействие агрессивных сред:</span>
+          <mat-form-field><input matInput placeholder="нет"></mat-form-field>
+        </li>
+        <li>
+          <span>Торможение:</span>
+          <mat-form-field>
+            <mat-select>
+              @for (brak of braking; track brak) {
+                <mat-option [value]="brak">{{brak}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </li>
+        <li>
+          <span>Гидрозамок:</span>
+          <mat-form-field>
+            <mat-select>
+
+              @for (lock of hydLock; track lock) {
+                <mat-option [value]="lock">{{lock}}</mat-option>
+              }
+              <input matInput>
+            </mat-select>
+          </mat-form-field>
+        </li>
+      </ul>
+
+      <ul class="second-group">
+        <li>
+          <!-- <div class="interaxle"> -->
+            <span>Межосевое расстояние:</span>
+            <mat-form-field>
+              <input matInput (keyup)="checkNumsAndEmmit($event)" [(ngModel)]="currentMO">
+            </mat-form-field>
+          <!-- </div> -->
+        </li>
+        <li>
+          <span>Тип гидроцилиндра:</span>
+          <mat-form-field>
+          <mat-select [(value)]="selectedHydroType">
+            @for (type of hydroType; track type) {
+              <mat-option [value]="type">{{type}}</mat-option>
+            }
+          </mat-select>
+
+          </mat-form-field>
+        </li>
+        <li>
+          <span>Контактное лицо:* </span>
+          <mat-form-field>
+            <input matInput required type="text" id="name">
+          </mat-form-field>
+        </li>
+        <li>
+          <span>Телефон:*</span>
+          <mat-form-field>
+            <input matInput type="phone" required id="phone">
+            <mat-error>Email is <strong>required</strong></mat-error>
+          </mat-form-field>
+        </li>
+        <li>
+          <span>Эл. адрес:*</span>
+          <mat-form-field>
+            <input matInput required type="email" id="email">
+          </mat-form-field>
+        </li>
+        <li>
+          <span>Компания:</span>
+          <mat-form-field><input matInput></mat-form-field>
+        </li>
+        <li>
+          <span>Другие требования:</span>
+          <mat-form-field><input matInput></mat-form-field>
+        </li>
+      </ul>
+    </div>
+
+    <section class="colors">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3">
+              Покрытие
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+
+              Грунт
+            </td>
+            <td>
+              <mat-radio-button name="grunt" (change)="setColor('gray')">
+                <img src="assets/img/icons/gray.jpg" alt="cross">
+                <span>
+                  Серый
+                </span>
+              </mat-radio-button>
+            </td>
+            <td>
+              <mat-radio-button name="grunt">
+                <img src="assets/img/icons/cross.png" alt="cross">
+                <span>
+                  Без грунта
+                </span>
+              </mat-radio-button>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="4">
+              Цвет
+            </td>
+            <td>
+              <mat-radio-button name="color" (change)="setColor('')">
+                <img src="assets/img/icons/cross.png" alt="cross">
+<span>
+  Без покрытия
+
+</span>
+              </mat-radio-button>
+            </td>
+            <td>
+              <mat-radio-button name="color" (change)="setColor('red')">
+                <img src="assets/img/icons/red.jpg" alt="cross">
+                <span>
+                  Красный RAL 3020
+                </span>
+              </mat-radio-button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-radio-button name="color" (change)="setColor('black')">
+
+                <img src="assets/img/icons/black.jpg" alt="cross">
+                <span>
+                 Черный RAL 9005
+
+               </span>
+              </mat-radio-button>
+            </td>
+            <td>
+              <mat-radio-button name="color" (change)="setColor('yellow')">
+                <img src="assets/img/icons/yellow1018.jpg" alt="cross">
+                <span>
+                  Желтый RAL 1018
+                </span>
+              </mat-radio-button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-radio-button name="color" (change)="setColor('blue')">
+                <img src="assets/img/icons/blue.jpg" alt="cross">
+                <span>
+                  Синий RAL 5005
+                </span>
+              </mat-radio-button>
+            </td>
+            <td>
+              <mat-radio-button name="color" (change)="setColor('yellow2')">
+                <img src="assets/img/icons/yellow1033.jpg" alt="cross">
+                <span>
+                  Желтый RAL 1033
+                </span>
+              </mat-radio-button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-radio-button name="color" (change)="setColor('red2')">
+                <img src="assets/img/icons/red3002.jpg" alt="cross">
+                <span>
+                  Красный RAL 3002
+                </span>
+              </mat-radio-button>
+            </td>
+            <td>
+              <mat-radio-button name="color">Другой
+                <textarea></textarea>
+              </mat-radio-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</section>

@@ -1,0 +1,90 @@
+<section class="about" id="about">
+  <div class="about-wrapper">
+    <h1 class="main-caption">О компании</h1>
+    <div class="description">
+      <img class="description-image" src="assets/img/belar.jpg" alt="Производство гидроцилиндров"
+        title="Производство гидроцилиндров">
+      <!-- <h2 class="main-caption">ООО «ТМ Белар»</h2> -->
+      <!-- ! изначально -->
+      <p>
+        с 2015 года <strong>производит гидроцилиндры</strong> для различной мобильной техники — поршневые,
+        плунжерные, двухштоковые.
+        Первым <strong>гидроцилиндром</strong> был освоен <strong>гидроцилиндр</strong> с внутренним диаметром
+        гильзы 80мм.
+      </p>
+      <p>
+        В настоящее время <strong>компания производит гидроцилиндры с диаметром гильзы от </strong>25 до 140 мм.,
+        более 1000 различных конструкций и модификаций.
+      </p>
+      <p>
+        Станочный парк скомплектован <strong>токарными и фрезерными станками с ЧПУ</strong> таких производителей,
+        как <strong>EMAG</strong>, <strong>HAAS</strong>, <strong>DMG</strong> и др. Все
+        <strong>гидроцилиндры</strong> проходят 100% испытания на функционирование и герметичность. На предприятии
+        введена система менеджмента качества ISO 9001-2015.
+      </p>
+<!-- ! /изначально -->
+<!-- *GPT -->
+      <!-- <p>
+        ООО "ТМ Белар" – ведущий производитель гидравлических цилиндров, обладающий богатым опытом и высоким качеством
+        продукции.
+      </p>
+      <p>
+        Наша компания специализируется на проектировании, изготовлении и поставке гидравлических цилиндров различных
+        типов и размеров для разнообразных отраслей промышленности.
+      </p>
+      <p>
+        Основными принципами работы ООО "ТМ Белар" являются инновации, качество и надежность. Мы постоянно внедряем
+        новые технологии и методы производства, чтобы обеспечить нашим клиентам современные и эффективные решения в
+        области гидравлики.
+      </p>
+      <p>
+        Наша продукция соответствует самым высоким стандартам качества и безопасности.
+        Мы используем только высококачественные материалы и комплектующие, а также строго контролируем каждый этап
+        производства, чтобы гарантировать долгий срок службы и надежную работу наших гидравлических цилиндров.
+      </p>
+      <p>
+        Команда профессионалов ООО "ТМ Белар" всегда готова предложить индивидуальные решения для каждого клиента. Мы
+        стремимся к долгосрочным партнерским отношениям и готовы к сотрудничеству с предприятиями любого масштаба.
+
+      </p>
+      <p>
+        Если вы ищете надежного производителя гидравлических цилиндров, обратитесь в ООО "ТМ Белар" – мы гарантируем
+        высокое качество продукции, индивидуальный подход к каждому клиенту и конкурентные цены. Создавайте с нами
+        надежные и эффективные гидравлические системы для вашего бизнеса!
+      </p>
+      <p>
+        Станочный парк скомплектован <strong>токарными и фрезерными станками с ЧПУ</strong> таких производителей,
+        как <strong>EMAG</strong>, <strong>HAAS</strong>, <strong>DMG</strong> и др. Все
+        <strong>гидроцилиндры</strong> проходят 100% испытания на функционирование и герметичность. На предприятии
+        введена система менеджмента качества ISO 9001-2015.
+      </p> -->
+    </div>
+    <div class="video-wrapper">
+      <video controls muted class="video">
+        <source src="assets/video/1.mp4" type="video/mp4">
+      </video>
+      <video controls muted class="video">
+        <source src="assets/video/2.mp4" type="video/mp4">
+      </video>
+      <video controls muted class="video">
+        <source src="assets/video/3.mp4" type="video/mp4">
+      </video>
+    </div>
+      <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide" class="image-container">
+        @for (img of imgArray; track img) {
+        <a class="gallery-item img-item" data-lg-size="300-200"
+          [href]="img.pathFull">
+          <img class="img-item img-responsive"
+            [src]="img.pathMini" /> </a>
+          }
+        <!-- <a data-lg-size="480-475-480, 800-791-800, 1406-1390" class="gallery-item"
+        data-src="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1406&q=80"
+        data-responsive="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800"
+        data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@entrycube' >Diego Guzmán </a></h4> <p> Location - <a href='https://unsplash.com/s/photos/fushimi-inari-taisha-shrine-senbontorii%2C-68%E7%95%AA%E5%9C%B0-fukakusa-yabunouchicho%2C-fushimi-ward%2C-kyoto%2C-japan'>Fushimi Ward, Kyoto, Japan</a></p>">
+        <img class="img-responsive"
+          src="https://images.unsplash.com/photo-1581894158358-5ecd2c518883?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80" />
+      </a> -->
+        <!-- a.gallery-item.img -->
+      </lightgallery>
+  </div>
+</section>

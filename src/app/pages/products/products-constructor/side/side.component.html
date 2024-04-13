@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <form>
+  <div class="title">
+    <h3>{{constructItem?.title}}</h3>
+    <div class="subtitle-wrapper">
+      <strong class="code">Код</strong>
+      <strong class="nomination">Наименование</strong>
+    </div>
+    <div class="btn-container">
+      <button mat-raised-button color="warn" type="reset" (click)="setElement(null)">Очистить</button>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div *ngIf="constructItem" class="content">
+      <!-- <mat-radio-group id="side-group"> -->
+        @for (item of constructItem.data; track item) {
+
+        <div class="group-container">
+          <div class="number">
+            {{item?.group}}
+          </div>
+          <div class="items-container">
+            @for (element of item?.items; track element) {
+            <div class="item-container">
+              <div class="sub-groupe">
+                <span>{{element.subgroup}}</span>
+                <label for="#side-group">
+                  <mat-radio-button [name]="constructItem.title" (change)="setElement(element)">
+                    <h6 class="subgroup-title">{{element.title}}</h6>
+                    <img [src]="element.listImgSrc" alt="Крепление" class="sub-group-img">
+                  </mat-radio-button>
+                </label>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+        }
+        <div class="group-container">
+          <div class="number">7</div>
+          <div class="items-container">
+            <div class="item-container">
+              <div class="sub-groupe">
+                <label>
+                  <mat-radio-button [name]="constructItem.title" (change)="setElement('other')">
+                    Другое по согласованию
+                  </mat-radio-button>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </mat-radio-group> -->
+    </div>
+  </div>
+</form>
+</div>

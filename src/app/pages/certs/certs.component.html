@@ -1,0 +1,18 @@
+<section class="certification">
+
+  <!-- <div class="cert-wrapper"> -->
+    <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide" class="cert-wrapper">
+      @for (cert of certsArray; track cert) {
+        <a
+        [href]="cert.pathFull" class="cert"
+>
+
+        <img alt="img1" [src]="cert.pathMini" />
+    </a>
+      }
+    </lightgallery>
+
+  <!-- </div> -->
+
+</section>
+<!-- <img src="assets/img/certs/cert-1.png" alt=""> -->

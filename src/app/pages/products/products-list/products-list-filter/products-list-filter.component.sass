@@ -1,0 +1,70 @@
+::ng-deep
+  mat-chip-grid *
+    animation-duration: 0s
+  mat-form-field
+    flex-grow: 1
+  .mat-mdc-form-field-flex
+    .mat-mdc-form-field-infix
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input::placeholder, mat-label, #placeholder
+    font-size: 12px
+  mat-chip-row.mat-mdc-chip.mat-mdc-chip-row.mdc-evolution-chip.mat-primary.mdc-evolution-chip--with-trailing-action.mat-mdc-standard-chip
+    background-color: #f3de00
+    background: linear-gradient(41deg, rgb(213, 139, 38) 0%, rgb(236, 178, 29) 56%, rgb(226, 135, 10) 100%)
+  .mdc-text-field--filled:not(.mdc-text-field--disabled)
+    background-color: transparent !important
+  .mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-text-field__input::placeholder
+    font-size: 14px
+// .diamP
+//   grid-area: diamP
+// .diamSh
+//   grid-area: diamSh
+// .hod
+//   grid-area: hod
+// .find
+//   grid-area: find
+// .clear
+//   grid-area: clear
+.filter-btn
+  width: 45px
+  height: 45px
+  align-self: center
+.view-btn-group
+  grid-area: view
+  display: flex
+  gap: 30px
+  justify-content: center
+.search-group
+  grid-area: search
+  display: flex
+  gap: 30px
+.search-btn-group
+  grid-area: searchBtn
+  display: flex
+  gap: 30px
+  justify-content: center
+form
+  display: grid
+  width: 100%
+  gap: 30px
+  grid-template-areas: "view search search search searchBtn"
+  @media screen and (max-width:1410px)
+    grid-template-areas: "search search search search" "view view searchBtn searchBtn"
+    .view-btn-group
+      justify-content: start
+    .search-btn-group
+      justify-content: end
+    //   flex-direction: column
+    //   gap: 5px
+
+@media screen and (max-width: 1000px)
+  form
+    grid-template-areas: "searchBtn search search search search" "view search search search search"
+    .search-btn-group, .view-btn-group, .search-group
+      flex-direction: column
+      gap: 5px
+      justify-content: start
+// @media screen and (max-width: 620px)
+//   form
+//     grid-template-areas: "diamP diamP" "diamSh diamSh" "hod hod" "find clear"
+
+

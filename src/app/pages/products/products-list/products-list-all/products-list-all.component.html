@@ -1,0 +1,86 @@
+<mat-paginator [length]="this.productsArr.length" [pageSize]="10" showFirstLastButtons
+  [pageSizeOptions]="[5, 10, 25, 100, 380]" aria-label="Выбор страницы" (page)="pageHandler($event)">
+</mat-paginator>
+<div class="wrapper">
+  @if (this.view === 'grid') {
+    <div class="cards">
+      @for (item of productsSlice; track item) {
+      <div class="card-container">
+        <div class="card-wrapper">
+          <img src="assets/img/cy.png" alt="" class="card-img">
+          <h4 class="card-title">
+            {{item.title}}
+          </h4>
+          <div class="piston-diameter" *ngIf="item.pa_diamp">
+            <strong>Диаметр поршня: </strong> <span>{{ item.pa_diamp}}</span>
+          </div>
+          <div class="rod-diameter" *ngIf="item.pa_diamsh">
+            <strong>Диаметр штока: </strong> <span>{{ item.pa_diamsh }}</span>
+          </div>
+          <div class="piston-stroke" *ngIf="item.pa_hod">
+            <strong>Ход поршня: </strong><span>{{ item.pa_hod}}</span>
+          </div>
+          <div class="center-distance" *ngIf="item.pa_mezhos">
+            <strong>Межосевое расстояние: </strong> <span>{{ item.pa_mezhos }}</span>
+          </div>
+          <button class="add-to-cart" mat-raised-button color="accent" (click)="openDialog(item)">В корзину</button>
+        </div>
+      </div>
+      }
+    </div>
+  }
+  @if (this.view === 'list') {
+    <!-- {{data.data[0].title}} -->
+    <table mat-table [dataSource]="data">
+
+      <ng-container matColumnDef="num">
+        <th mat-header-cell *matHeaderCellDef>№</th>
+        <td mat-cell *matCellDef="let item; let ind = index"> {{ ind + 1}} </td>
+      </ng-container>
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Наименование</th>
+        <td mat-cell *matCellDef="let item;"> {{item.title}} </td>
+      </ng-container>
+      <ng-container matColumnDef="diamP">
+        <th mat-header-cell *matHeaderCellDef>Ø Поршня</th>
+        <td mat-cell *matCellDef="let item;"> {{item.pa_diamp}} </td>
+      </ng-container>
+      <ng-container matColumnDef="diamSh">
+        <th mat-header-cell *matHeaderCellDef>Ø Штока</th>
+        <td mat-cell *matCellDef="let item;"> {{item.pa_diamsh}} </td>
+      </ng-container>
+      <ng-container matColumnDef="hod">
+        <th mat-header-cell *matHeaderCellDef>Ход</th>
+        <td mat-cell *matCellDef="let item;"> {{item.pa_hod}} </td>
+      </ng-container>
+      <ng-container matColumnDef="mezh">
+        <th mat-header-cell *matHeaderCellDef>Ход</th>
+        <td mat-cell *matCellDef="let item;"> {{item.pa_mezhos}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action" sticky stickyEnd>
+        <th mat-header-cell *matHeaderCellDef>
+          Добавить в корзину
+        </th>
+        <td mat-cell *matCellDef="let item">
+          <button *ngIf="this.width > 1400" type="button" mat-raised-button color="accent" (click)="addToCart(item)">В
+            корзину</button>
+          <button *ngIf="this.width <= 1400" mat-mini-fab color="accent">
+            <mat-icon aria-hidden="false" mat-icon-button aria-label="Example home icon"
+              fontIcon="add_shopping_cart"></mat-icon>
+
+          </button>
+        </td>
+      </ng-container>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">Ничего не найдено</td>
+      </tr>
+      <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+    </table>
+  }
+
+
+
+
+</div>

@@ -1,0 +1,111 @@
+@import 'variables'
+$brd-lite: 1px solid black
+$brd-bold: 3px solid black
+.interaxle
+  display: flex
+  gap: 10px
+  padding-top: 10px
+  justify-content: left
+  align-items: center
+  // @media screen and ( max-width: 100px )
+ul
+  list-style-type: none
+  padding: 0
+  margin: 0
+.parameters
+  display: flex
+  flex-direction: column
+  font-weight: bold
+  font-size: 12px
+  gap: 10px
+  span
+    max-width: 160px
+.params-wrapper
+  display: flex
+  justify-content: space-evenly
+  gap: 10px
+  @media screen and ( max-width: 1390px )
+    flex-direction: column
+    align-items: center
+    .params
+      justify-content: center
+
+.params
+  display: flex
+  gap: 10px
+  .second-group
+    align-self: baseline
+  .first-group, .second-group
+    display: flex
+    flex-direction: column
+    gap: 5px
+    li
+      display: flex
+      justify-content: space-between
+      gap: 10px
+      &:has(#submit)
+        justify-content: flex-start
+      span
+        display: flex
+        align-items: center
+      #submit
+        background: $gradientBg
+        color: white
+        font-weight: bold
+        font-style: italic
+  @media screen and ( max-width: 1100px )
+    justify-content: space-evenly
+  @media screen and ( max-width: 740px )
+    flex-direction: column
+    .first-group, .second-group
+      li
+        display: flex
+        mat-form-field
+          flex-grow: 3
+        span
+          width: 270px
+
+          @media screen and ( max-width: 500px )
+            max-width: 200px
+.colors
+  display: flex
+  table
+    th, td
+      border: $brd-lite
+      padding-left: 10px
+  @media screen and ( max-width: 1100px )
+    justify-content: center
+  @media screen and ( max-width: 555px )
+    table
+      th, td
+        padding-left: 5px
+        span
+          font-size: 12px
+    textarea
+      width: 50px
+
+
+::ng-deep
+  mat-form-field, .mat-mdc-form-field
+    background: white
+    // width: 100px
+    width: 45%
+    font-size: 12px !important
+    font-weight: bold !important
+    font-family: Montserrat !important
+
+  .parameters .mdc-label
+    flex-direction: row !important
+    justify-content: flex-start !important
+    gap: 5px
+    border-left: none !important
+    border-right: none !important
+  .mat-mdc-select,  .mat-mdc-option
+    font-weight: bold !important
+    font-family: Montserrat !important
+    font-size: 12px !important
+    font-style: italic
+  // .mat-mdc-option
+
+input#email:invalid, input#phone:invalid, input#name:invalid
+  background: #ff00001a

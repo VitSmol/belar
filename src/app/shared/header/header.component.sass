@@ -1,0 +1,127 @@
+@import "variables"
+header
+  width: 100%
+  height: fit-content
+  padding: 5px 0
+  box-shadow: $mainShadow
+  position: fixed
+  z-index: 9999
+  background: $gradientBg
+.header-wrapper
+  font-size: 18px
+  height: 100%
+  display: flex
+  justify-content: space-between
+  padding: 5px 0
+  width: $contentWidth
+  margin: 0 auto
+  align-items: center
+  .orgname
+    display: flex
+    justify-content: end
+    text-transform: uppercase
+    margin-top: 5px
+    .name
+      font-size: 19px
+      font-weight: 700
+      color: black
+      font-style: oblique
+      margin-bottom: 0
+      text-shadow: 0px 0px 15px #f5c396
+      @media screen and ( max-width: 1390px )
+        font-size: 12px
+
+  .menu, .close
+    color: black
+    position: absolute
+    right: 5vw
+    display: none
+    font-size: 40px
+    top: calc(50% - 20px)
+    font-weight: 900
+    &.show, &.hide
+      display: none
+    &:hover
+      cursor: pointer
+.header__navigation
+  display: flex
+  align-items: center
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    display: flex
+    gap: 1.5vw
+    width: 100%
+    li
+      position: relative
+    a.caption-layer
+      // color: white
+      font-size: 1vw
+      position: relative
+      color: black
+      display: block
+      font-weight: 600
+      text-decoration: none
+      letter-spacing: 0.8px
+      scale: 1
+      &:hover, &.active
+        transition: .5s all
+        // color: $mainColor
+        color: white
+        scale: 1.1
+        @media screen and (max-width: 1000px)
+          color: #dc9623
+          scale: 1
+
+@media screen and (max-width: 1360px)
+  .logo
+    max-width: 350px
+  a.caption-layer
+    // font-size: 15px
+@media screen and (max-width: 1150px)
+  .logo-header
+    width: 300px
+
+  .logo
+    max-width: 300px
+  .header__navigation ul
+    gap: 10px
+    a.caption-layer
+      font-size: 12px
+
+@media screen and (max-width: 1000px)
+  .logo-header
+    width: 300px
+  .logo
+    z-index: 300
+    max-width: 300px
+  .header-wrapper
+    // justify-content: end
+    .menu.show, .close.show
+      display: inline-block
+    .menu.hide, .close.hide
+      display: none
+  .header__navigation ul
+    position: absolute
+    flex-direction: column
+    left: 0
+    top: 0
+    background: white
+    width: 100%
+    overflow-y: hidden
+    transform: scale(0)
+    align-items: center
+    transition: 0.3s transform ease-in-out
+    // transition: 0.5s transform ease-in-out
+    &.active
+      height: min-content
+      padding: 0
+      padding-left: 5vw
+      padding-bottom: 20px
+      padding-top: 20px
+      top: 110px
+      box-shadow: $mainShadow
+      transform: scale(1)
+      transition: 0.3s transform ease-in-out
+
