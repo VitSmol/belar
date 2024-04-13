@@ -185,9 +185,9 @@ export class ConstructorService {
         label1.style[side] = `-60%`;
         this.createSelect(label1, this.ShSDiameters, side, child.el.subgroup)
         label2.style.bottom = `10%`;
-        label2.style[side] = `-58%`;
+        label2.style[side] = `-60%`;
         label3.style.top = `38%`;
-        label3.style[side] = `-60%`;
+        label3.style[side] = `-54%`;
       }
       if (child.el.subgroup === '2.1') {
         const label1 = document.createElement('label') as HTMLLabelElement
@@ -203,14 +203,14 @@ export class ConstructorService {
         label4.append(inp4)
 
         label1.style.top = `-12%`;
-        label1.style[side] = `-15%`
+        label1.style[side] = `-40%`
         label2.style.top = `7%`;
         label2.style[side] = `-63%`
         this.createSelect(label2, this.ShSDiameters, side, child.el.subgroup)
         label3.style.bottom = `26%`;
-        label3.style[side] = `-25%`
+        label3.style[side] = `-54%`
         label4.style.bottom = `3%`;
-        label4.style[side] = `60%`
+        label4.style[side] = `48%`
         this.labelClassAdd(parentNode, label1, label2, label3, label4)
       }
       if (child.el.subgroup === '2.2') {
@@ -224,16 +224,19 @@ export class ConstructorService {
         this.inputClassAdd(inp1, inp3, inp4)
         this.labelClassAdd(parentNode, label1, label2, label3, label4)
         label1.style.top = `-11%`;
-        label1.style[side] = `52%`
+        label1.style[side] = `37%`
+
         label1.append(inp1)
         label2.style.top = `15%`;
-        label2.style[side] = side === `left` ? `15%` : `39%`
+        label2.style[side] = side === `left` ? `16%` : `39%`
+
         this.createSelect(label2, this.ShSDiameters, side, child.el.subgroup)
         label3.style.bottom = `36%`;
-        label3.style[side] = `-18%`
+        label3.style[side] = `-38%`
+
         label3.append(inp3)
         label4.style.bottom = `6%`;
-        label4.style[side] = `67%`
+        label4.style[side] = `55%`
         label4.append(inp4)
       }
       if (child.el.subgroup === '3.1') {
@@ -246,13 +249,15 @@ export class ConstructorService {
         this.inputClassAdd(inp1, inp2, inp3)
         this.labelClassAdd(parentNode, label1, label2, label3)
         label1.style.top = `-10%`;
-        label1.style[side] = `54%`
+        label1.style[side] = `44%`
         label1.append(inp1)
+
         label2.style.top = `14%`;
-        label2.style[side] = `52%`
+        label2.style[side] = `43%`
         label2.append(inp2)
+
         label3.style.bottom = `22%`;
-        label3.style[side] = `-13%`
+        label3.style[side] = `-31%`
         label3.append(inp3)
       }
       if (child.el.subgroup === '3.2') {
@@ -268,11 +273,11 @@ export class ConstructorService {
         label2.append(inp2)
         label3.append(inp3)
         label1.style.top = `-15%`;
-        label1.style[side] = `-20%`
+        label1.style[side] = `-46%`
         label2.style.top = `30%`;
-        label2.style[side] = `-25%`
+        label2.style[side] = `-50%`
         label3.style.bottom = `0%`;
-        label3.style[side] = `-20%`
+        label3.style[side] = `-48%`
       }
       if (child.el.subgroup === '4.1') {
         const label1 = document.createElement('label') as HTMLLabelElement
@@ -296,17 +301,17 @@ export class ConstructorService {
         label5.append(inp5)
         label6.append(`S`, inp6)
         label1.style.top = `-7%`;
-        label1.style[side] = `66%`
+        label1.style[side] = `55%`
         label2.style.top = `8%`;
-        label2.style[side] = `60%`
+        label2.style[side] = `48%`
         label3.style.top = `22%`;
-        label3.style[side] = `37%`
+        label3.style[side] = `27%`
         label4.style.bottom = `35%`;
-        label4.style[side] = `-16%`
+        label4.style[side] = `-36%`
         label5.style.bottom = `34%`;
         label5.style[side] = `13%`
         label6.style.bottom = `0%`;
-        label6.style[side] = `34%`
+        label6.style[side] = `11%`
       }
       if (child.el.subgroup === '4.2') {
         const label1 = document.createElement('label') as HTMLLabelElement
@@ -332,16 +337,16 @@ export class ConstructorService {
         label1.style.top = `-6%`;
         label1.style[side] = `62%`
         label2.style.top = `-8%`;
-        label2.style[side] = `-3%`
+        label2.style[side] = `-27%`
         label3.style.top = `30%`;
-        label3.style[side] = `-16%`
+        label3.style[side] = `-35%`
         label4.style.bottom = `24%`;
-        label4.style[side] = `52%`
+        label4.style[side] = `44%`
         label5.style.bottom = `4%`;
-        label5.style[side] = `59%`
+        label5.style[side] = `53%`
         label6.style.top = `-20%`;
         label6.style[side] = `10%`
-        label6.style.width = `140px`
+        label6.style.width = `180px`
       }
       if (child.el.subgroup === '5' && child.el.code === '5') {
         const label1 = document.createElement('label') as HTMLLabelElement
@@ -359,13 +364,13 @@ export class ConstructorService {
         label3.append(inp3)
         label4.append(`S`, inp4)
         label1.style.top = `-16%`;
-        label1.style[side] = `46%`;
+        label1.style[side] = `31%`;
         label2.style.top = `40%`;
-        label2.style[side] = `-25%`;
+        label2.style[side] = `-55%`;
         label3.style.bottom = `5%`;
-        label3.style[side] = `22%`;
-        label4.style.bottom = `-8%`;
-        label4.style[side] = `65%`;
+        label3.style[side] = `6%`;
+        label4.style.bottom = `-28%`;
+        label4.style[side] = `35%`;
       }
       if (child.el.subgroup === '5' && child.el.code === '6' && side === 'left') {
         const label1 = document.createElement('label') as HTMLLabelElement
@@ -378,14 +383,16 @@ export class ConstructorService {
         const inp4 = document.createElement('input') as HTMLInputElement
         this.inputClassAdd(inp1, inp2, inp3, inp4)
         this.labelClassAdd(parentNode, label1, label2, label3, label4)
+        inp2.setAttribute('oninput', 'this.size=Math.max(this.value.length, 1)')
+        inp2.style.width = `50px`
         label1.append(inp1)
         label2.append(inp2)
         label3.append(inp3)
         label4.append(inp4)
         label1.style.top = `14%`;
-        label1.style[side] = `-23%`
+        label1.style[side] = `-48%`
         label2.style.top = `14%`;
-        label2.style[side] = `13%`
+        label2.style[side] = `3%`
         label3.style.bottom = `24%`;
         label3.style[side] = `45%`
         label4.style.bottom = `-20%`;
@@ -400,7 +407,7 @@ export class ConstructorService {
         label1.append(inp1)
         label2.append(inp2)
         label1.style.top = `22%`;
-        label1.style[side] = `-27%`
+        label1.style[side] = `-60%`
         label2.style.top = `71%`;
         label2.style[side] = `19%`
       }

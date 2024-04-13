@@ -13,7 +13,7 @@
           <mat-form-field>
             <mat-select [(value)]="selectedBar" #pressureSelect (valueChange)="setChange($event)">
               @for (size of barArray; track size) {
-                <mat-option [value]="size">{{size}}</mat-option>
+              <mat-option [value]="size">{{size}}</mat-option>
               }
             </mat-select>
           </mat-form-field>
@@ -35,7 +35,7 @@
           <mat-form-field>
             <mat-select>
               @for (brak of braking; track brak) {
-                <mat-option [value]="brak">{{brak}}</mat-option>
+              <mat-option [value]="brak">{{brak}}</mat-option>
               }
             </mat-select>
           </mat-form-field>
@@ -46,7 +46,7 @@
             <mat-select>
 
               @for (lock of hydLock; track lock) {
-                <mat-option [value]="lock">{{lock}}</mat-option>
+              <mat-option [value]="lock">{{lock}}</mat-option>
               }
               <input matInput>
             </mat-select>
@@ -57,21 +57,20 @@
       <ul class="second-group">
         <li>
           <!-- <div class="interaxle"> -->
-            <span>Межосевое расстояние:</span>
-            <mat-form-field>
-              <input matInput (keyup)="checkNumsAndEmmit($event)" [(ngModel)]="currentMO">
-            </mat-form-field>
+          <span>Межосевое расстояние:</span>
+          <mat-form-field>
+            <input matInput (keyup)="checkNumsAndEmmit($event)" [(ngModel)]="currentMO">
+          </mat-form-field>
           <!-- </div> -->
         </li>
         <li>
           <span>Тип гидроцилиндра:</span>
           <mat-form-field>
-          <mat-select [(value)]="selectedHydroType">
-            @for (type of hydroType; track type) {
+            <mat-select [(value)]="selectedHydroType">
+              @for (type of hydroType; track type) {
               <mat-option [value]="type">{{type}}</mat-option>
-            }
-          </mat-select>
-
+              }
+            </mat-select>
           </mat-form-field>
         </li>
         <li>
@@ -116,7 +115,6 @@
         <tbody>
           <tr>
             <td>
-
               Грунт
             </td>
             <td>
@@ -128,7 +126,7 @@
               </mat-radio-button>
             </td>
             <td>
-              <mat-radio-button name="grunt">
+              <mat-radio-button name="grunt" (change)="setColor('')">
                 <img src="assets/img/icons/cross.png" alt="cross">
                 <span>
                   Без грунта
@@ -143,10 +141,9 @@
             <td>
               <mat-radio-button name="color" (change)="setColor('')">
                 <img src="assets/img/icons/cross.png" alt="cross">
-<span>
-  Без покрытия
-
-</span>
+                <span>
+                  Без покрытия
+                </span>
               </mat-radio-button>
             </td>
             <td>
@@ -164,9 +161,9 @@
 
                 <img src="assets/img/icons/black.jpg" alt="cross">
                 <span>
-                 Черный RAL 9005
+                  Черный RAL 9005
 
-               </span>
+                </span>
               </mat-radio-button>
             </td>
             <td>
