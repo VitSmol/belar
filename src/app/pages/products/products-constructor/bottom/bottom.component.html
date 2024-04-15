@@ -5,7 +5,12 @@
     <div class="params">
       <ul class="first-group">
         <li>
-          <button mat-raised-button id="submit" type="submit">Отправить заявку</button>
+          <button
+            mat-raised-button
+            id="submit"
+            type="submit"
+            (click)="send()"
+            >Отправить заявку</button>
         </li>
 
         <li>
