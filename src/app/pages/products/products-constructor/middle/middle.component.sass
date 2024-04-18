@@ -1,6 +1,13 @@
 ::host
   display: flex
   height: 100%
+#snapshot
+  animation: none !important
+  .left-side, .right-side
+    animation: none !important
+    // label, img
+    //   animation: none !important
+
 .main-wrapper
   max-width: 100%
   overflow: auto
@@ -11,10 +18,10 @@
 .side-img
   will-change: scale, transform
 .img-wrapper
-  height: calc(100% + 110px)
+  height: calc(100% + 20px)
   display: flex
   align-items: center
-  width: 115%
+  width: 125%
   justify-content: center
   will-change: scale
   transform-origin: left top

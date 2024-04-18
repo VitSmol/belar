@@ -28,7 +28,7 @@ export class MiddleComponent implements OnChanges, OnInit, AfterViewInit {
   public topLeftImgContainer!: HTMLDivElement
   public mainImg!: HTMLImageElement
 
-  public scale = 1.3;
+  public scale = 1.2;
   public wrapper!: HTMLElement
 
 
