@@ -2,6 +2,11 @@
 $brd-lite: 1px solid black
 $brd-bold: 3px solid black
 
+#submit:disabled
+  color: white !important
+  background: gray !important
+  cursor: not-allowed !important
+
 .interaxle
   display: flex
   gap: 10px
@@ -94,7 +99,8 @@ ul
     font-size: 12px !important
     font-weight: bold !important
     font-family: Montserrat !important
-
+  .mdc-button:disabled
+    cursor: not-allowed !important
   .parameters .mdc-label
     flex-direction: row !important
     justify-content: flex-start !important

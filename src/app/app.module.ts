@@ -71,6 +71,7 @@ import { CompanyComponent } from './pages/company/company.component';
     CartDialogComponent,
     ImgDialogComponent,
     // CompanyComponent
+
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
