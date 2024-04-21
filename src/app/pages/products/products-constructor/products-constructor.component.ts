@@ -44,7 +44,7 @@ export class ProductsConstructorComponent implements OnInit, AfterViewInit {
   @HostListener('window:load', ['$event'])
   onLoad(event: any) {
     this.width = window.innerWidth
-    console.log(this.width);
+    // console.log(this.width);
   }
 
   currentHod: string = ''

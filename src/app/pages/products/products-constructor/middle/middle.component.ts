@@ -70,7 +70,6 @@ export class MiddleComponent implements OnChanges, OnInit, AfterViewInit {
     this.wrapper = document.getElementById('img-wrapper') as HTMLDivElement
     this.wrapper!.scrollLeft = window.innerWidth / 8
     this.wrapper!.scrollTop = this.wrapper.clientHeight / 2 - 20
-    console.dir(this.wrapper)
   }
 
   onwheel(event: Event) {

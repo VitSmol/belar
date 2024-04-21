@@ -5,7 +5,8 @@ import html2canvas from 'html2canvas';
 import * as pdfMake from 'pdfmake/build/pdfmake'
 import * as pdfFonts from 'pdfmake/build/vfs_fonts'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { EmailService } from 'src/app/services/email.service';
 
 
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
@@ -16,8 +17,9 @@ import {ErrorStateMatcher} from '@angular/material/core';
 })
 export class BottomComponent implements OnInit {
   constructor(
-    private formBuilder: FormBuilder
-  ){
+    private formBuilder: FormBuilder,
+    private serv: EmailService
+  ) {
     this.orderForm = this.formBuilder.group({
       operPreassure: [this.selectedBar],
       maxPreassure: [''],
@@ -89,131 +91,98 @@ export class BottomComponent implements OnInit {
 
   }
   send() {
-      let date = new Date();
-      let currentDate = `${date.getDate().toString().padStart(2, '0')}.${date.getMonth().toString().padStart(2, '0')}.${date.getFullYear()} - ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`
-      let title = document.querySelector('#title') as HTMLDivElement
-      let snapshot = document.querySelector('#snapshot') as HTMLDivElement
-      snapshot.style.animation = 'none'
-      // let snapshot = snaps.cloneNode() as HTMLDivElement;
-      // snapshot.style.paddingLeft = `300px`
-      // snapshot.style.paddingRight = `300px`
-      snapshot.style.paddingTop = `100px`
-      snapshot.style.scale = '1.45'
-      let table = document.getElementById('table') as HTMLDivElement
-      let div = document.createElement('div');
-      div.style.padding = '70px';
-      div.setAttribute('id', 'pdfContent')
-      div.style.animation = 'none';
-      let bottom = document.querySelector('.bottom') as HTMLDivElement
-      let startTextY = 270
-      html2canvas(snapshot, {foreignObjectRendering: false, removeContainer: true}).then(canvas => {
-        let img = document.createElement('img')
-        let imgSrc = canvas.toDataURL("image/png", 1.0)
-        img.src = imgSrc
-        img.style.width = `90%`
-        // bottom.append(img)
+    // this.serv.getFromServer().subscribe((response: any) => {
+    //   console.log(response);
+    // })
 
-        let docDefinition = {
-          // pageOrientation: 'landscape',
-          content: [
-            {
-              text: title.innerHTML,
-              fontSize: 14,
-              fontWeight: 'bold'
-            },
-            {
-              image: imgSrc,
-              width: 630,
-              absolutePosition: {x: -20, y: 75}
-            },
+    let date = new Date();
+    let currentDate = `${date.getDate().toString().padStart(2, '0')}.${date.getMonth().toString().padStart(2, '0')}.${date.getFullYear()} - ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`
+    let title = document.querySelector('#title') as HTMLDivElement
+    let snapshot = document.querySelector('#snapshot') as HTMLDivElement
+    snapshot.style.animation = 'none'
+    snapshot.style.paddingTop = `100px`
+    snapshot.style.scale = '1.45'
+    let table = document.getElementById('table') as HTMLDivElement
+    let div = document.createElement('div');
+    div.style.padding = '70px';
+    div.setAttribute('id', 'pdfContent')
+    div.style.animation = 'none';
+    let bottom = document.querySelector('.bottom') as HTMLDivElement
+    let startTextY = 270
+    html2canvas(snapshot, { foreignObjectRendering: false, removeContainer: true }).then(canvas => {
+      let img = document.createElement('img')
+      let imgSrc = canvas.toDataURL("image/png", 1.0)
+      img.src = imgSrc
+      img.style.width = `90%`
+      let docDefinition = {
+        content: [
+          {
+            text: title.innerHTML,
+            fontSize: 14,
+            fontWeight: 'bold'
+          },
+          {
+            image: imgSrc,
+            width: 630,
+            absolutePosition: { x: -20, y: 75 }
+          },
+          { text: `Дата формирования заказа: ${currentDate}`, fontWeight: 900, fontSize: 14 },
+          { text: `Информация о клиенте:`, fontWeight: `bold`, fontSize: 14, absolutePosition: { x: 30, y: startTextY } },
+          { text: `ФИО: ${this.orderForm.value.contactName}`, absolutePosition: { x: 30, y: startTextY + 20 } },
+          { text: `Контактный номер: ${this.orderForm.value.phone}`, absolutePosition: { x: 30, y: startTextY + 40 } },
+          { text: `E-mail: ${this.orderForm.value.email}`, absolutePosition: { x: 30, y: startTextY + 60 } },
+          { text: `Компания: ${this.orderForm.value.company}`, absolutePosition: { x: 30, y: startTextY + 80 } },
+          { text: `Информация о заказе:`, fontWeight: 900, fontSize: 14, absolutePosition: { x: 30, y: startTextY + 100 } },
+          { text: `Межосевое расстояние: ${this.orderForm.value.betweenOs}`, absolutePosition: { x: 30, y: startTextY + 120 } },
+          { text: `Рабочее давление, bar: ${this.orderForm.value.operPreassure}`, absolutePosition: { x: 30, y: startTextY + 140 } },
+          { text: `Максимальное рабочее давление, bar: ${this.orderForm.value.maxPreassure}`, absolutePosition: { x: 30, y: startTextY + 160 } },
+          { text: `Темп. окружающей среды, °C: ${this.orderForm.value.temperature}`, absolutePosition: { x: 30, y: startTextY + 180 } },
+          { text: `Воздействие агрессивных сред: ${this.orderForm.value.aggressiveEnvironments}`, absolutePosition: { x: 30, y: startTextY + 200 } },
+          { text: `Торможение: ${this.orderForm.value.braking}`, absolutePosition: { x: 30, y: startTextY + 220 } },
+          { text: `Гидрозамок: ${this.orderForm.value.lock}`, absolutePosition: { x: 30, y: startTextY + 240 } },
+          { text: `Тип гидроцилиндра: ${this.orderForm.value.hydroType}`, absolutePosition: { x: 30, y: startTextY + 260 } },
+          { text: `Другие требования: ${this.orderForm.value.other}`, absolutePosition: { x: 30, y: startTextY + 280 } },
+          { text: `Покрытие: ${this.orderForm.value.color}`, absolutePosition: { x: 30, y: startTextY + 300 } },
+        ]
+      }
 
-            {text: `Дата формирования заказа: ${currentDate}`, fontWeight: 900, fontSize: 14},
-            {text: `Информация о клиенте:`, fontWeight: `bold`, fontSize: 14,absolutePosition: {x: 30, y: startTextY}},
-            {text: `ФИО: ${this.orderForm.value.contactName}`,absolutePosition: {x: 30, y: startTextY + 20}},
-            {text: `Контактный номер: ${this.orderForm.value.phone}`,absolutePosition: {x: 30, y: startTextY + 40}},
-            {text: `E-mail: ${this.orderForm.value.email}`,absolutePosition: {x: 30, y: startTextY + 60}},
-            {text: `Компания: ${this.orderForm.value.company}`,absolutePosition: {x: 30, y: startTextY + 80}},
-            {text: `Информация о заказе:`, fontWeight: 900, fontSize: 14,absolutePosition: {x: 30, y: startTextY + 100}},
-            {text: `Межосевое расстояние: ${this.orderForm.value.betweenOs}`,absolutePosition: {x: 30, y: startTextY + 120}},
-            {text: `Рабочее давление, bar: ${this.orderForm.value.operPreassure}`,absolutePosition: {x: 30, y: startTextY + 140}},
-            {text: `Максимальное рабочее давление, bar: ${this.orderForm.value.maxPreassure}`,absolutePosition: {x: 30, y: startTextY + 160}},
-            {text: `Темп. окружающей среды, °C: ${this.orderForm.value.temperature}`,absolutePosition: {x: 30, y: startTextY + 180}},
-            {text: `Воздействие агрессивных сред: ${this.orderForm.value.aggressiveEnvironments}`,absolutePosition: {x: 30, y: startTextY + 200}},
-            {text: `Торможение: ${this.orderForm.value.braking}`,absolutePosition: {x: 30, y: startTextY + 220}},
-            {text: `Гидрозамок: ${this.orderForm.value.lock}`,absolutePosition: {x: 30, y: startTextY + 240}},
-            {text: `Тип гидроцилиндра: ${this.orderForm.value.hydroType}`,absolutePosition: {x: 30, y: startTextY + 260}},
-            {text: `Другие требования: ${this.orderForm.value.other}`,absolutePosition: {x: 30, y: startTextY + 280}},
-            {text: `Покрытие: ${this.orderForm.value.color}`,absolutePosition: {x: 30, y: startTextY + 300}},
-          ]
+      const message = {
+        date: currentDate,
+        contact: this.orderForm.value.contactName,
+        mail: this.orderForm.value.email,
+        phone: this.orderForm.value.phone,
+        company: this.orderForm.value.company,
+        cylName: title.innerHTML,
+        betweenOS: this.orderForm.value.betweenOs,
+        operPreassure: this.orderForm.value.operPreassure,
+        maxPreassure: this.orderForm.value.maxPreassure,
+        temperature: this.orderForm.value.temperature,
+        aggressiveEnvironments: this.orderForm.value.aggressiveEnvironments,
+        braking: this.orderForm.value.braking,
+        lock: this.orderForm.value.lock,
+        hydroType: this.orderForm.value.hydroType,
+        other: this.orderForm.value.other,
+        color: this.orderForm.value.color,
+        img: imgSrc
+      }
 
+      let pdf = pdfMake.createPdf(docDefinition)
+
+      pdf.getBase64(data => {
+        const message = {
+          pdf: data,
+          contact: this.orderForm.value.contactName,
+          mail: this.orderForm.value.email,
+          phone: this.orderForm.value.phone,
         }
-
-        pdfMake.createPdf(docDefinition).open()
+        console.log(message);
+        let fileInput = (document.getElementById('file') as HTMLInputElement);
+        this.serv.sendEmail(
+          message, pdf
+        ).subscribe((response: any) => {
+          // console.log(response);
+        })
       })
-
-      console.log(this.orderForm);
-
-
-
-      // })
-        //!
-        //   (canvas) =>
-        //     {
-        //   let img = document.createElement('img')
-        //   let imgSrc = canvas.toDataURL("image/png", 1.0)
-        //   img.src = imgSrc
-        //   // console.log(canvas);
-        //   div.appendChild(canvas)
-        //   // document.body.appendChild(canvas)
-        // }
-
-      // html2canvas(table).then(
-      //   function(canvas) {
-      //     div.append(canvas)
-
-      //    }
-      //   (canvas) => {
-      //   let img = document.createElement('img')
-      //   let imgSrc = canvas.toDataURL("image/png", 1.0)
-      //   img.src = imgSrc
-      //   div.appendChild(canvas)
-      //   document.body.appendChild(div)
-      //   div.classList.add('pdfContent')
-      // }
-
-      // )
-    // }, 1000);
-    // const pdf = new jsPDF({
-    //   orientation: 'landscape',
-    //   unit: 'px',
-    //   compress: false,
-    //   format: [700, 1320]
-    // });
-    // document.body.appendChild(div)
-    //   pdf.html(snapshot, {
-    //       callback: (pdf: jsPDF) => {
-    //         // pdf.deletePage(pdf.getNumberOfPages());
-    //         pdf.save('pdf-export')
-    //       }
-    //     })
-
-    // const pdf = new jsPDF({
-    //   unit: 'px',
-    //   format: [595, 842]
-    // })
-    // pdf.html(img, {
-    //   callback: (pdf: jsPDF) => {
-    //     // pdf.deletePage(pdf.getNumberOfPages());
-    //     pdf.save('pdf-export')
-    //   }
-    // })
-    // // console.log(img);
-
-    // let def = {
-    //   content: [
-    //     `${img}`
-    //   ]
-    // }
-    // pdfMake.createPdf(def).open()
+    })
   }
 }

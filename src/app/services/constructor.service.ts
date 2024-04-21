@@ -47,7 +47,6 @@ export class ConstructorService {
 
   createImg(parentNode: HTMLDivElement, child: any) {
     // TODO РАБОТАЕТ
-    console.log(child);
     if (!child) {
       return
     }
