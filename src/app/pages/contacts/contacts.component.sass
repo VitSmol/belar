@@ -10,75 +10,182 @@
   position: relative
   h3, h5
     font-weight: bold
-  .contacts-overlay
+.contacts-overlay
+  position: absolute
+  width: 100%
+  inset: 0
+  background: rgb(0 0 0 / 39%)
+  z-index: 1
+  height: 100%
+.contacts-bg
+  margin: 0 auto
+  color: $background
+  position: relative
+  z-index: 4
+  padding-left: 30px
+  padding-right: 30px
+.contacts-wrapper
+  padding-top: 70px
+  padding-bottom: 70px
+  .countries
+    display: flex
+    flex-direction: column
+.company-card
+  column-gap: 10px
+  position: relative
+.company-name, .company-department-name, summary, .rf-caption, .region-caption
+  color: $mainColor
+.company-name, .rf-caption
+  font-size: 20px
+.company-department-name, .region-caption
+  font-size: 18px
+.rf-caption
+  text-align: center
+  height: 50px
+a
+  color: $background
+  text-decoration: none
+.app-icons
+  display: inline-flex
+  gap: 3px
+.rb
+  display: flex
+  gap: 10px
+  .belar, .company-card
+    flex-grow: 3
+    display: grid
+    & .company-caption
+      grid-area: caption
+    & .company-address
+      grid-area: address
+    & .priem
+      grid-area: priem
+    & .constr
+      grid-area: constr
+    & .sales
+      grid-area: sales
+    grid-template-areas: "caption caption caption" "address address address" "priem constr sales"
+  .belar-employee
+    font-weight: 600
+    transition: 0.5s color
+    &:hover a
+      transition: 0.5s color
+      color: $mainColor
+  .techno .company-card
+    display: grid
+    & .techno-caption
+      grid-area: caption
+    & .techno-address
+      grid-area: address
+    & .department-techno
+      grid-area: depart
+    & .region
+      grid-area: region
+    grid-template-areas: "caption caption" "address address" "depart region"
+ul
+  list-style-type: none
+.company-caption
+  height: 72px
+.company-name
+  font-size: 20px
+  text-align: center
+.company-department-name
+  font-size: 18px
+.company-department-item
+  margin-top: 20px
+.rf-companes
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  gap: 20px
+  .company-name
+    height: 72px
+  .company-address
+    height: 72px
+  .company-department-item
+    height: 210px
+  .rf-regions .company-department-item
+    height: 30px
+@media screen and ( max-width: 1355px )
+  .company-card::before
+    content: ""
     position: absolute
     width: 100%
-    inset: 0
-    background: rgb(0 0 0 / 39%)
-    z-index: 1
-    height: 100%
-  .contacts-bg
-    margin: 0 auto
-    color: $background
-    position: relative
-    z-index: 4
-    padding-left: 30px
-    padding-right: 30px
-    .contacts-wrapper
-      padding-top: 70px
-      padding-bottom: 70px
-    .contacts-contacts
-      display: flex
-      flex-direction: column
-      gap: 10px
-      .rb
-        display: flex
-        gap: 10px
-        .company-card
-          column-gap: 10px
-      .company-name, .company-department-name, summary
-        color: $mainColor
-      .company-name
-        font-size: 20px
-      .company-department-name
-        font-size: 18px
-    .company-card, .company-department, .regions
-      list-style-type: none
-      margin: 0
-      padding: 0
-      font-size: 15px
-      .company-address
-        font-style: italic
-      a
-        color: $background
-        text-decoration: none
-      .contact-icon
-        padding-left: 10px
-        padding-right: 2px
-        height: max-content
-        vertical-align: middle
-    .company-department-item
-      margin-top: 20px
-    .region
-      padding-left: 20px
-  .company-department-employee a
-    margin-top: 10px
-    display: flex
-    flex-direction: row
-    align-items: center
-    span
-      display: block
-.rf
-  display: flex
-  flex-direction: column
+    height: 5px
+    background: #ca7b0f78
+    top: -18px
+  .rf-companes .company-department-item
+    height: 270px
+  .rf-regions li:first-child
+    // height: 72px
+@media screen and ( max-width: 1285px )
+  .rb
+    flex-direction: column
+    .company-address
+      address
+        text-align: center
   .rf-companes
-    display: flex
-    gap: 10px
-    flex-shrink: 1
-    .company-card
-      max-width: 300px
-  & > .company-name
-    text-align: center
+    grid-template-columns: repeat(2, 1fr)
+    .company-name
+      height: 50px
+    .company-department-item
+      height: 220px
+    .rf-regions li:first-child
+      // height: 50px
+    .company-address
+      height: 50px
+    .company-card:nth-child(3), .company-card:nth-child(4)
+      .company-department-item
+        height: 150px
+        // background: red
+@media screen and ( max-width: 830px )
+  .rb .belar .company-card
+    grid-template-areas: "caption caption" "address address" "priem constr" "sales sales"
+  .rf-companes
+    grid-template-columns: 1fr
+@media screen and ( max-width: 720px )
+   .rb .techno .company-card
+     grid-template-areas: "caption" "address" "depart" "region"
+@media screen and ( max-width: 660px )
+  .rb .belar .company-card
+    grid-template-areas: "caption"  "address" "priem" "constr" "sales"
+
+//       .company-name, .company-department-name, summary
+//         color: $mainColor
+
+//     .company-card, .company-department, .regions
+//
+//       margin: 0
+//       padding: 0
+//       font-size: 15px
+//       .company-address
+//         font-style: italic
+
+//       .contact-icon
+//         padding-left: 10px
+//         padding-right: 2px
+//         height: max-content
+//         vertical-align: middle
+
+//     .region
+//       padding-left: 20px
+//   .company-department-employee a
+//     margin-top: 10px
+//     display: flex
+//     flex-direction: row
+//     align-items: center
+//     span
+//       display: block
+// .rf
+//   display: flex
+//   flex-direction: column
+//   .rf-companes
+//     display: flex
+//     gap: 10px
+//     flex-shrink: 1
+//     .company-card
+//       max-width: 300px
+//   & > .company-name
+//     text-align: center
 .map
   width: 100%
   iframe
@@ -93,83 +200,57 @@
   background-color: $bgColor
   padding: 10px 0
 
-@media screen and (max-width: 1600px)
-  .footer-contacts
-    flex-direction: column
-  .belar .company-card
-    display: grid
-    & .company-caption
-      grid-area: caption
-    & .company-address
-      grid-area: address
-    & .priem
-      grid-area: priem
-    & .constr
-      grid-area: constr
-    & .sales
-      grid-area: sales
-    grid-template-areas: "caption caption" "address address" "priem sales" "constr sales"
-  .techno .company-card
-    display: grid
-    & .techno-caption
-      grid-area: caption
-    & .techno-address
-      grid-area: address
-    & .department-techno
-      grid-area: depart
-    & .region
-      grid-area: region
-    grid-template-areas: "caption caption caption" "address address address" "depart depart region"
-  .rf .rf-companes
-    justify-content: space-between
-@media screen and (max-width: 1000px)
+// @media screen and (max-width: 1600px)
+//   .footer-contacts
+//     flex-direction: column
 
-  .rf .rf-companes
-    display: grid
-    grid-template-columns: repeat(2, 1fr)
-    justify-items: center
-    column-gap: 30px
-    .company-card
-      max-width: 100%
-  footer .footer-bg .footer-contacts .rb .company-card
-    column-gap: 0px
-    .region
-      padding-left: 10px
-  footer .footer-bg .footer-contacts .rb
-    flex-direction: column
-    gap: 30px
-  .techno .company-card
-    position: relative
-    margin-top: 30px
-    padding-top: 30px
-    &::before
-      content: ""
-      position: absolute
-      width: 100%
-      height: 5px
-      background: #ca7b0f78
-      top: -18px
-  .rf
-    margin-top: 30px
-    .rf-companes .company-card
-      margin-top: 20px
-      position: relative
-      &::before
-        content: ""
-        position: absolute
-        width: 100%
-        height: 5px
-        background: #ca7b0f78
-        top: -18px
+//     grid-template-areas: "caption caption" "address address" "priem sales" "constr sales"
+//
+//     grid-template-areas: "caption caption caption" "address address address" "depart depart region"
+//   .rf .rf-companes
+//     justify-content: space-between
+// @media screen and (max-width: 1000px)
 
-@media screen and (max-width: 813px)
-  footer .footer-bg .footer-contacts .rb
-    flex-direction: column
+//   .rf .rf-companes
+//     display: grid
+//     grid-template-columns: repeat(2, 1fr)
+//     justify-items: center
+//     column-gap: 30px
+//     .company-card
+//       max-width: 100%
+//   footer .footer-bg .footer-contacts .rb .company-card
+//     column-gap: 0px
+//     .region
+//       padding-left: 10px
+//   footer .footer-bg .footer-contacts .rb
+//     flex-direction: column
+//     gap: 30px
+//   .techno .company-card
+//     position: relative
+//     margin-top: 30px
+//     padding-top: 30px
 
-@media screen and (max-width: 530px)
-  .belar .company-card
-    grid-template-areas: "caption" "address" "priem" "constr" "sales"
-  footer .footer-bg .footer-contacts .rb .techno .company-card
-    grid-template-areas: "caption" "address" "depart" "region"
-  .rf .rf-companes
-    grid-template-columns: repeat(1, 1fr)
+//   .rf
+//     margin-top: 30px
+//     .rf-companes .company-card
+//       margin-top: 20px
+//       position: relative
+//       &::before
+//         content: ""
+//         position: absolute
+//         width: 100%
+//         height: 5px
+//         background: #ca7b0f78
+//         top: -18px
+
+// @media screen and (max-width: 813px)
+//   footer .footer-bg .footer-contacts .rb
+//     flex-direction: column
+
+// @media screen and (max-width: 530px)
+//   .belar .company-card
+//     grid-template-areas: "caption" "address" "priem" "constr" "sales"
+//   footer .footer-bg .footer-contacts .rb .techno .company-card
+//     grid-template-areas: "caption" "address" "depart" "region"
+//   .rf .rf-companes
+//     grid-template-columns: repeat(1, 1fr)

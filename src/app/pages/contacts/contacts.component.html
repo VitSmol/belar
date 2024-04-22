@@ -54,7 +54,7 @@
                       Согласование конструкторской документации:
                     </h5>
                   </li>
-                  <li class="company-department-employee">
+                  <li class="company-department-employee belar-employee" (click)="showDialog($event, 'mardanyan.png')">
                     <a href="#">
                       <img src="./assets/img/man.png" alt="#" class="contact-icon">
                       <span>Марданян Максим Геннадьевич</span>
@@ -67,13 +67,27 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="tel:+375445055783">
                       <img src="./assets/img/phone.png" alt="#" class="contact-icon">
-                      +375 (44) 505-57-83
+                      +375(44)505-57-83
                     </a>
+                    <span class="app-icons">
+                      <a href="" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/viber.png" alt="app">
+                      </a>
+                      <a href="#" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/skype.png" alt="app">
+                      </a>
+                      <a href="" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/whatsapp.png" alt="app">
+                      </a>
+                      <a href="" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/wechat.png" alt="app">
+                      </a>
+                  </span>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="mailto:konstr@belar.pro">
                       <img src="./assets/img/mail.png" alt="" class="contact-icon">
                       konstr&#64;belar.pro
                     </a>
@@ -86,19 +100,34 @@
                       Отдел продаж:
                     </h5>
                   </li>
-                  <li class="company-department-employee">
+                  <li class="company-department-employee belar-employee" (click)="showDialog($event, 'karikov.jpg')">
                     <a href="#">
                       <img src="./assets/img/man.png" alt="#" class="contact-icon">
                       <span>Кариков Дмитрий Михайлович</span>
                     </a>
+
                   </li>
                   <li>
                     <a href="#">
                       <img src="./assets/img/phone.png" alt="#" class="contact-icon">
                       +375 (44) 580-03-60
                     </a>
+                    <span class="app-icons">
+                      <a href="" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/viber.png" alt="app">
+                      </a>
+                      <a href="#" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/skype.png" alt="app">
+                      </a>
+                      <a href="" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/whatsapp.png" alt="app">
+                      </a>
+                      <a href="" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/wechat.png" alt="app">
+                      </a>
+                  </span>
                   </li>
-                  <li class="company-department-employee">
+                  <li class="company-department-employee belar-employee" (click)="showDialog($event, 'pahunova.jpeg')">
                     <a href="#">
                       <img src="./assets/img/man.png" alt="#" class="contact-icon">
                       <span>Пахунова Евгения Константиновна</span>
@@ -109,8 +138,22 @@
                       <img src="./assets/img/phone.png" alt="#" class="contact-icon">
                       +375 (44) 583-58-50
                     </a>
+                    <span class="app-icons">
+                      <a href="" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/viber.png" alt="app">
+                      </a>
+                      <a href="#" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/skype.png" alt="app">
+                      </a>
+                      <a href="" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/whatsapp.png" alt="app">
+                      </a>
+                      <a href="" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/wechat.png" alt="app">
+                      </a>
+                  </span>
                   </li>
-                  <li class="company-department-employee">
+                  <li class="company-department-employee belar-employee" (click)="showDialog($event, 'kudryavskaya.jpeg')">
                     <a href="#">
                       <img src="./assets/img/man.png" alt="#" class="contact-icon">
                       <span>Кудрявская София Сергеевна</span>
@@ -121,9 +164,23 @@
                       <img src="./assets/img/phone.png" alt="#" class="contact-icon">
                       +375 (44) 583-63-54
                     </a>
+                    <span class="app-icons">
+                      <a href="" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/viber.png" alt="app">
+                      </a>
+                      <a href="#" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/skype.png" alt="app">
+                      </a>
+                      <a href="" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/whatsapp.png" alt="app">
+                      </a>
+                      <a href="" (click)="toApplication($event)">
+                        <img src="./assets/img/icons/wechat.png" alt="app">
+                      </a>
+                  </span>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="mailto:sales@belar.pro">
                       <img src="./assets/img/mail.png" alt="" class="contact-icon">
                       sales&#64;belar.pro
                     </a>
@@ -137,7 +194,7 @@
             <ul class="company-card">
               <li class="company-caption techno-caption">
                 <h3 class="company-name">
-                  Распределительная <br>компания в РБ<br>ООО "ТехнокомплектТрейд"
+                  Распределительная компания в РБ<br>ООО "ТехнокомплектТрейд"
                 </h3>
               </li>
               <li class="company-address techno-address">
@@ -199,24 +256,23 @@
         </div>
         <!-- Техно end  -->
         <div class="rf">
-          <h3 class="company-name">
+          <h3 class="rf-caption">
             Распределительные компании в РФ
           </h3>
           <section class="rf-companes">
-            <!--  -->
-            <ul class="company-card">
-              <li>
+            <div class="company-card">
+              <div>
                 <h3 class="company-name">
                   ТД «Союзгидравлика»
                 </h3>
-              </li>
-              <li>
+              </div>
+              <div>
                 <address class="company-address">
                   Российская Федерация, 308013,
                   Белгородская обл., г. Белгород, ул. Рабочая, 14, Литер Б8, каб. 17
                 </address>
-              </li>
-              <li class="company-department-item">
+              </div>
+              <div class="company-department-item">
                 <ul class="company-department">
                   <li>
                     <h5 class="company-department-name">
@@ -265,123 +321,121 @@
                       unionhyd&#64;mail.ru
                     </a>
                   </li>
-                  <li>
-                    <ul class="regions">
-                      <li>
-                        <h5 class="company-department-item company-name">
-                          Регион ответственности:
-                        </h5>
-                      </li>
-                      <li class="region">
-                        <details>
-                          <summary>
-                            Волго-Вятский регион
-                          </summary>
-                          <ul class="regions">
-                            <li class="region">Кировская область</li>
-                            <li class="region">Республика Марий Эл</li>
-                            <li class="region">Республика Мордовия</li>
-                            <li class="region">Чувашская Республика</li>
-                            <li class="region">Пензенская область</li>
-                            <li class="region">Самарская область</li>
-                            <li class="region">Саратовская область</li>
-                            <li class="region">Нижегородская область</li>
-                          </ul>
-                        </details>
-                      </li>
-                      <li class="region">
-                        <details>
-                          <summary>
-                            Центрально-Черноземный регион
-                          </summary>
-                          <ul class="regions">
-                            <li class="region">Белгородская область</li>
-                            <li class="region">Карачаево-Черкесская Республика</li>
-                            <li class="region">
-                              Курская область
-                            </li>
-                            <li class="region">
-                              Липецкая область
-                            </li>
-                            <li class="region">
-                              Тамбовская область
-                            </li>
-                          </ul>
-                        </details>
-                      </li>
-                      <li class="region">
-                        <details>
-                          <summary>
-                            Центральный регион
-                          </summary>
-                          <ul class="regions">
-                            <li class="region">Брянская область</li>
-                            <li class="region">Владимирская область</li>
-                            <li class="region">
-                              Ивановская область
-                            </li>
-                            <li class="region">
-                              Калужская область
-                            </li>
-                            <li class="region">
-                              Рязанская область
-                            </li>
-                          </ul>
-                        </details>
-                      </li>
-                      <li class="region">
-                        <details>
-                          <summary>
-                            Уральский регион
-                          </summary>
-                          <ul class="regions">
-                            <li class="region">Курганская область</li>
-                            <li class="region">Оренбургская область</li>
-                            <li class="region">
-                              Свердловская область
-                            </li>
-                            <li class="region">
-                              Удмуртская Республика
-                            </li>
-                            <li class="region">
-                              Ульяновская область
-                            </li>
-                            <li class="region">
-                              Челябинская область
-                            </li>
-                            <li class="region">
-                              Орловская область
-                            </li>
-                            <li class="region">
-                              Смоленская область
-                            </li>
-                            <li class="region">
-                              Тверская область
-                            </li>
-                            <li class="region">
-                              Тульская область
-                            </li>
-                          </ul>
-                        </details>
-                      </li>
-                    </ul>
-                  </li>
 
                 </ul>
-              </li>
-            </ul>
-            <ul class="company-card">
-              <li>
+              </div>
+              <ul class="rf-regions">
+                <li>
+                  <h5 class="region-caption">
+                    Регион ответственности:
+                  </h5>
+                </li>
+                <li class="region">
+                  <details>
+                    <summary>
+                      Волго-Вятский регион
+                    </summary>
+                    <ul class="regions">
+                      <li class="region">Кировская область</li>
+                      <li class="region">Республика Марий Эл</li>
+                      <li class="region">Республика Мордовия</li>
+                      <li class="region">Чувашская Республика</li>
+                      <li class="region">Пензенская область</li>
+                      <li class="region">Самарская область</li>
+                      <li class="region">Саратовская область</li>
+                      <li class="region">Нижегородская область</li>
+                    </ul>
+                  </details>
+                </li>
+                <li class="region">
+                  <details>
+                    <summary>
+                      Центрально-Черноземный регион
+                    </summary>
+                    <ul class="regions">
+                      <li class="region">Белгородская область</li>
+                      <li class="region">Карачаево-Черкесская Республика</li>
+                      <li class="region">
+                        Курская область
+                      </li>
+                      <li class="region">
+                        Липецкая область
+                      </li>
+                      <li class="region">
+                        Тамбовская область
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li class="region">
+                  <details>
+                    <summary>
+                      Центральный регион
+                    </summary>
+                    <ul class="regions">
+                      <li class="region">Брянская область</li>
+                      <li class="region">Владимирская область</li>
+                      <li class="region">
+                        Ивановская область
+                      </li>
+                      <li class="region">
+                        Калужская область
+                      </li>
+                      <li class="region">
+                        Рязанская область
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li class="region">
+                  <details>
+                    <summary>
+                      Уральский регион
+                    </summary>
+                    <ul class="regions">
+                      <li class="region">Курганская область</li>
+                      <li class="region">Оренбургская область</li>
+                      <li class="region">
+                        Свердловская область
+                      </li>
+                      <li class="region">
+                        Удмуртская Республика
+                      </li>
+                      <li class="region">
+                        Ульяновская область
+                      </li>
+                      <li class="region">
+                        Челябинская область
+                      </li>
+                      <li class="region">
+                        Орловская область
+                      </li>
+                      <li class="region">
+                        Смоленская область
+                      </li>
+                      <li class="region">
+                        Тверская область
+                      </li>
+                      <li class="region">
+                        Тульская область
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </div>
+            <div class="company-card">
+              <div>
                 <h3 class="company-name">
                   АО «Технический центр «Белинсксельмаш»
                 </h3>
-              </li>
-              <li>
+              </div>
+              <div>
                 <address class="company-address">
                   Российская Федерация, 346886, Ростовская область, г. Батайск, ул.Производственная, д. 4Б.
                 </address>
-              </li>
-              <li class="company-department-item">
+              </div>
+              <div class="company-department-item">
                 <ul class="company-department">
                   <li>
                     <h5 class="company-department-name">
@@ -424,78 +478,76 @@
                       6261918&#64;gmail.ru
                     </a>
                   </li>
-                  <li>
+                </ul>
+              </div>
+              <ul class="rf-regions">
+                <li>
+                  <h5 class="region-caption">
+                    Регион ответственности:
+                  </h5>
+                </li>
+                <li class="region">
+                  <details>
+                    <summary>
+                      Поволжский регион
+                    </summary>
                     <ul class="regions">
-                      <li>
-                        <h5 class="company-department-item company-name">
-                          Регион ответственности:
-                        </h5>
+                      <li class="region">Астраханская область</li>
+                      <li class="region">Волгоградская область</li>
+                      <li class="region">Республика Калмыкия</li>
+                    </ul>
+                  </details>
+                </li>
+                <li class="region">
+                  <details>
+                    <summary>
+                      Северо-Кавказский регион
+                    </summary>
+                    <ul class="regions">
+                      <li class="region">Кабардино-Балкарская Республика</li>
+                      <li class="region">Карачаево-Черкесская Республика</li>
+                      <li class="region">
+                        Краснодарский край
                       </li>
                       <li class="region">
-                        <details>
-                          <summary>
-                            Поволжский регион
-                          </summary>
-                          <ul class="regions">
-                            <li class="region">Астраханская область</li>
-                            <li class="region">Волгоградская область</li>
-                            <li class="region">Республика Калмыкия</li>
-                          </ul>
-                        </details>
+                        Республика Адыгея
                       </li>
                       <li class="region">
-                        <details>
-                          <summary>
-                            Северо-Кавказский регион
-                          </summary>
-                          <ul class="regions">
-                            <li class="region">Кабардино-Балкарская Республика</li>
-                            <li class="region">Карачаево-Черкесская Республика</li>
-                            <li class="region">
-                              Краснодарский край
-                            </li>
-                            <li class="region">
-                              Республика Адыгея
-                            </li>
-                            <li class="region">
-                              Республика Дагестан
-                            </li>
-                            <li class="region">
-                              Республика Ингушетия
-                            </li>
-                            <li class="region">
-                              Республика Северная Осетия
-                            </li>
-                            <li class="region">
-                              Ростовская область
-                            </li>
-                            <li class="region">
-                              Ставропольский край
-                            </li>
-                            <li class="region">
-                              Чеченская Республика
-                            </li>
-                          </ul>
-                        </details>
+                        Республика Дагестан
+                      </li>
+                      <li class="region">
+                        Республика Ингушетия
+                      </li>
+                      <li class="region">
+                        Республика Северная Осетия
+                      </li>
+                      <li class="region">
+                        Ростовская область
+                      </li>
+                      <li class="region">
+                        Ставропольский край
+                      </li>
+                      <li class="region">
+                        Чеченская Республика
                       </li>
                     </ul>
-                  </li>
+                  </details>
+                </li>
+              </ul>
+            </div>
 
-                </ul>
-              </li>
-            </ul>
-            <ul class="company-card">
-              <li>
+            <div class="company-card">
+              <div>
                 <h3 class="company-name">
                   АО «ГИДРОТАКТ»
                 </h3>
-              </li>
-              <li>
+              </div>
+              <div>
                 <address class="company-address">
                   Российская Федерация, 140053, Московская область, г.Котельники,мкр-н. Силикат, д. 43.
                 </address>
-              </li>
-              <li class="company-department-item">
+              </div>
+              <div class="company-department-item">
                 <ul class="company-department">
                   <li>
                     <h5 class="company-department-name">
@@ -526,76 +578,75 @@
                       hydrotakt&#64;mail.ru
                     </a>
                   </li>
-                  <li>
-                    <ul class="regions">
-                      <li>
-                        <h5 class="company-department-item company-name">
-                          Регион ответственности:
-                        </h5>
-                      </li>
-                      <li class="region">
-                        <details>
-                          <summary>
-                            Московский регион
-                          </summary>
-                          <ul class="regions">
-                            <li class="region">г.Москва</li>
-                            <li class="region">Московская область</li>
-                            <li class="region">Республика Татарстан</li>
-                          </ul>
-                        </details>
-                      </li>
-                      <li class="region">
-                        <details>
-                          <summary>
-                            Северный регион
-                          </summary>
-                          <ul class="regions">
-                            <li class="region">Архангельская область</li>
-                            <li class="region">Вологодская область
-                            <li class="region">Мурманская область</li>
-                            <li class="region">Ненецкий автономный округ</li>
-                            <li class="region">Республика Коми</li>
-                          </ul>
-                        </details>
-                      </li>
-                      <li class="region">
-                        <details>
-                          <summary>
-                            Северо-Западный регион
-                          </summary>
-                          <ul class="regions">
-                            <li class="region">г.Санкт-Петербург</li>
-                            <li class="region">Калининградская область
-                            <li class="region">Ленинградская область</li>
-                            <li class="region">Новгородская область</li>
-                            <li class="region">Псковская область</li>
-                            <li class="region">Республика Карелия</li>
-                            <li class="region">Пермский край</li>
-                            <li class="region">Республика Башкортостан</li>
-                            <li class="region">Костромская область</li>
-                            <li class="region">Ярославская область</li>
-                          </ul>
-                        </details>
-                      </li>
-                    </ul>
-                  </li>
 
                 </ul>
-              </li>
-            </ul>
-            <ul class="company-card">
-              <li>
+              </div>
+              <ul class="rf-regions">
+                <li>
+                  <h5 class="region-caption">
+                    Регион ответственности:
+                  </h5>
+                </li>
+                <li class="region">
+                  <details>
+                    <summary>
+                      Московский регион
+                    </summary>
+                    <ul class="regions">
+                      <li class="region">г.Москва</li>
+                      <li class="region">Московская область</li>
+                      <li class="region">Республика Татарстан</li>
+                    </ul>
+                  </details>
+                </li>
+                <li class="region">
+                  <details>
+                    <summary>
+                      Северный регион
+                    </summary>
+                    <ul class="regions">
+                      <li class="region">Архангельская область</li>
+                      <li class="region">Вологодская область
+                      <li class="region">Мурманская область</li>
+                      <li class="region">Ненецкий автономный округ</li>
+                      <li class="region">Республика Коми</li>
+                    </ul>
+                  </details>
+                </li>
+                <li class="region">
+                  <details>
+                    <summary>
+                      Северо-Западный регион
+                    </summary>
+                    <ul class="rf-regions">
+                      <li class="region">г.Санкт-Петербург</li>
+                      <li class="region">Калининградская область
+                      <li class="region">Ленинградская область</li>
+                      <li class="region">Новгородская область</li>
+                      <li class="region">Псковская область</li>
+                      <li class="region">Республика Карелия</li>
+                      <li class="region">Пермский край</li>
+                      <li class="region">Республика Башкортостан</li>
+                      <li class="region">Костромская область</li>
+                      <li class="region">Ярославская область</li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </div>
+
+            <div class="company-card">
+              <div>
                 <h3 class="company-name">
                   Филиал АО «ГИДРОТАКТ»
                 </h3>
-              </li>
-              <li>
+              </div>
+              <div>
                 <address class="company-address">
                   Российская Федерация, 656000, г.Барнаул, пр. Космонавтов д.14/19.
                 </address>
-              </li>
-              <li class="company-department-item">
+              </div>
+              <div class="company-department-item">
                 <ul class="company-department">
                   <li>
                     <h5 class="company-department-name">
@@ -626,71 +677,68 @@
                       cpk_b&#64;mail.ru
                     </a>
                   </li>
-                  <li>
-                    <ul class="regions">
-                      <li>
-                        <h5 class="company-department-item company-name">
-                          Регион ответственности:
-                        </h5>
-                      </li>
-
-                      <li class="region">
-                        <details>
-                          <summary>
-                            Восточно-Сибирский регион
-                          </summary>
-                          <ul class="regions">
-                            <li class="region">Забайкальский край</li>
-                            <li class="region">Иркутская область
-                            <li class="region">Красноярский край</li>
-                            <li class="region">Республика Бурятия</li>
-                            <li class="region">Республика Тыва</li>
-                            <li class="region">Республика Хакасия</li>
-                          </ul>
-                        </details>
-                      </li>
-                      <li class="region">
-                        <details>
-                          <summary>
-                            Дальневосточный регион
-                          </summary>
-                          <ul class="regions">
-                            <li class="region">Амурская область</li>
-                            <li class="region">Еврейская автономная область</li>
-                            <li class="region">Камчатский край</li>
-                            <li class="region">Магаданская область</li>
-                            <li class="region">Приморский край</li>
-                            <li class="region">Республика Саха (Якутия)</li>
-                            <li class="region">Сахалинская область</li>
-                            <li class="region">Хабаровский край</li>
-                            <li class="region">Чукотский автономный округ</li>
-                          </ul>
-                        </details>
-                      </li>
-                      <li class="region">
-                        <details>
-                          <summary>
-                            Западно-Сибирский регион
-                          </summary>
-                          <ul class="regions">
-                            <li class="region">Алтайский край</li>
-                            <li class="region">Кемеровская область</li>
-                            <li class="region">Новосибирская область</li>
-                            <li class="region">Омская область</li>
-                            <li class="region">Республика Алтай</li>
-                            <li class="region">Томская область</li>
-                            <li class="region">Тюменская область</li>
-                            <li class="region">Ханты-Мансийский автономный</li>
-                            <li class="region">Ямало-Ненецкий автономный округ</li>
-                          </ul>
-                        </details>
-                      </li>
-                    </ul>
-                  </li>
-
                 </ul>
-              </li>
-            </ul>
+              </div>
+              <ul class="rf-regions">
+                <li>
+                  <h5 class="region-caption">
+                    Регион ответственности:
+                  </h5>
+                </li>
+
+                <li class="region">
+                  <details>
+                    <summary>
+                      Восточно-Сибирский регион
+                    </summary>
+                    <ul class="regions">
+                      <li class="region">Забайкальский край</li>
+                      <li class="region">Иркутская область
+                      <li class="region">Красноярский край</li>
+                      <li class="region">Республика Бурятия</li>
+                      <li class="region">Республика Тыва</li>
+                      <li class="region">Республика Хакасия</li>
+                    </ul>
+                  </details>
+                </li>
+                <li class="region">
+                  <details>
+                    <summary>
+                      Дальневосточный регион
+                    </summary>
+                    <ul class="regions">
+                      <li class="region">Амурская область</li>
+                      <li class="region">Еврейская автономная область</li>
+                      <li class="region">Камчатский край</li>
+                      <li class="region">Магаданская область</li>
+                      <li class="region">Приморский край</li>
+                      <li class="region">Республика Саха (Якутия)</li>
+                      <li class="region">Сахалинская область</li>
+                      <li class="region">Хабаровский край</li>
+                      <li class="region">Чукотский автономный округ</li>
+                    </ul>
+                  </details>
+                </li>
+                <li class="region">
+                  <details>
+                    <summary>
+                      Западно-Сибирский регион
+                    </summary>
+                    <ul class="regions">
+                      <li class="region">Алтайский край</li>
+                      <li class="region">Кемеровская область</li>
+                      <li class="region">Новосибирская область</li>
+                      <li class="region">Омская область</li>
+                      <li class="region">Республика Алтай</li>
+                      <li class="region">Томская область</li>
+                      <li class="region">Тюменская область</li>
+                      <li class="region">Ханты-Мансийский автономный</li>
+                      <li class="region">Ямало-Ненецкий автономный округ</li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </div>
           </section>
         </div>
       </div>
@@ -707,7 +755,8 @@
     </div>
   </div>
   <div class="footer-politics">
-    <img class="logo" src="assets/img/logoBelar.png" alt='OOO TM "Белар"' title='OOO TM "Белар" - производство гидроцилиндров'>
+    <img class="logo" src="assets/img/logoBelar.png" alt='OOO TM "Белар"'
+      title='OOO TM "Белар" - производство гидроцилиндров'>
     <div class="politics">
 
     </div>
