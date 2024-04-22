@@ -36,8 +36,6 @@ export class ProductsListFilterComponent {
       this.intersectPistonDiameters = this.intersection(this.query.pa_diamp, this.searchPistonDiameters)
       this.intersectStockDiameters = this.intersection(this.query.pa_diamsh, this.searchStockDiameters)
       this.intersectPistonStroke = this.intersection(this.query.pa_hod, this.searchPistonStroke)
-      console.log(this.query.pa_hod);
-
     }, 200);
   }
 

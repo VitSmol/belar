@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EmailService {
-  private mainUrl: string = `https://belar.pro/app:3000`
+  private mainUrl: string = `https://belar.pro/`
 
   constructor(
     private http: HttpClient
@@ -15,7 +15,11 @@ export class EmailService {
     return this.http.get(this.mainUrl)
   }
   sendEmail(req: any, file: any) {
-    this.mainUrl = `https://belar.pro/`
+    // this.mainUrl = `https://belar.pro/`
     return this.http.post(this.mainUrl + `send/mail.php`, req, file)
+  }
+  sendEmailFromCart(req: any) {
+    // this.mainUrl = `http://localhost/`
+    return this.http.post(this.mainUrl + `send/mailFromCart.php`, req)
   }
 }

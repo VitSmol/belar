@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { DataService } from 'src/app/services/data.service';
 import { filter } from 'rxjs';
+import { CartService } from 'src/app/services/cart.service';
 
 
 @Component({
@@ -14,7 +15,8 @@ import { filter } from 'rxjs';
 })
 export class OrgComponent implements OnInit {
   constructor(
-    private serv: DataService
+    private serv: DataService,
+    private cartServ: CartService
   ) { }
 
   public org!: Org
@@ -26,7 +28,7 @@ export class OrgComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-      this.width = event.target.innerWidth;
+    this.width = event.target.innerWidth;
   }
 
   ngOnInit(): void {
@@ -53,12 +55,21 @@ export class OrgComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  addToCart(item: any) {
+  // addToCart(item: any) {
 
-    console.log(item);
-    this.serv.getAll().subscribe(data => {
-      const result = data.filter(el => el.title === item.cylName)
-      console.log(result);
-    })
+  //   console.log(item);
+  //   this.serv.getAll().subscribe(data => {
+  //     const result = data.filter(el => el.title === item.cylName)
+  //     console.log(result);
+  //   })
+  // }
+  openDialog(item: Product) {
+    if (item.hasOwnProperty('cylName')) {
+      this.serv.getAll().subscribe(data => {
+        const result = data.filter(el => el.title === item.cylName)
+        let cyl = result[0]
+        this.cartServ.openCartDialog(cyl)
+      })
+    }
   }
 }

@@ -34,7 +34,7 @@
           <a href="#contacts" (click)="removeMenu('close')" class="caption-layer" [routerLink]="['/contacts']">Контакты</a>
           <!-- (click)="scrollTo($event) <a  [href]="currentRoute + '#contacts'" (click)="getRoute()"  class="caption-layer">Контакты</a> -->
         </li>
-        <li>
+        <li [matBadge]="bageCount" matBadgePosition="after" matBadgeColor="warn">
           <a (click)="getRoute()" (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/cart']" class="caption-layer">Корзина</a>
         </li>
       </ul>

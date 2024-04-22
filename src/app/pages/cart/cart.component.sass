@@ -1,0 +1,54 @@
+@import 'variables'
+.cart-wrapper
+  width: $contentWidth
+  margin: 0 auto
+  padding-top: 150px
+  display: flex
+  gap: 20px
+.table-wrapper
+  width: 100%
+  overflow-x: auto
+  padding-bottom: 20px
+
+#cart-table
+  height: fit-content
+th
+  font-size: 16px
+  font-weight: bold
+td
+  font-size: 15px
+.count-container
+  margin-bottom: 0
+  display: flex
+  align-items: center
+.count
+  width: 50px
+  border: none
+  text-align: center
+  font-size: 15px
+  outline: none
+.table-img
+  width: 50px
+.order
+  display: flex
+  flex-direction: column
+  width: 30%
+  gap: 10px
+::ng-deep .mdc-data-table__table
+  // min-width: 0 !important
+  // width: 70%
+#submit:disabled
+  color: white !important
+  background: gray !important
+  cursor: not-allowed !important
+@media screen and ( max-width: 970px )
+  .cart-wrapper
+    flex-direction: column
+    padding-top: 120px
+  ::ng-deep .mdc-data-table__table
+    width: 100%
+  .order
+    width: 80%
+    margin: 0 auto
+.mat-column-title
+  min-width: 300px !important

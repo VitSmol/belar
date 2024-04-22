@@ -47,6 +47,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ImgDialogComponent } from './shared/img-dialog/img-dialog.component';
 import { LightgalleryModule } from 'lightgallery/angular'
 import { CompanyComponent } from './pages/company/company.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MailSendComponent } from './shared/mail-send/mail-send.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -70,6 +73,7 @@ import { CompanyComponent } from './pages/company/company.component';
     CartComponent,
     CartDialogComponent,
     ImgDialogComponent,
+    MailSendComponent
     // CompanyComponent
 
   ],
@@ -107,6 +111,8 @@ import { CompanyComponent } from './pages/company/company.component';
     MatDialogModule,
     MatCheckboxModule,
     LightgalleryModule,
+    MatSnackBarModule,
+    MatBadgeModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

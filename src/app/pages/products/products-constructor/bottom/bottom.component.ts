@@ -7,6 +7,14 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { EmailService } from 'src/app/services/email.service';
+import {
+  MatSnackBar,
+  MatSnackBarAction,
+  MatSnackBarActions,
+  MatSnackBarLabel,
+  MatSnackBarRef,
+} from '@angular/material/snack-bar';
+import { MailSendComponent } from 'src/app/shared/mail-send/mail-send.component';
 
 
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
@@ -18,7 +26,8 @@ import { EmailService } from 'src/app/services/email.service';
 export class BottomComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
-    private serv: EmailService
+    private serv: EmailService,
+    private snackBar: MatSnackBar
   ) {
     this.orderForm = this.formBuilder.group({
       operPreassure: [this.selectedBar],
@@ -91,10 +100,6 @@ export class BottomComponent implements OnInit {
 
   }
   send() {
-    // this.serv.getFromServer().subscribe((response: any) => {
-    //   console.log(response);
-    // })
-
     let date = new Date();
     let currentDate = `${date.getDate().toString().padStart(2, '0')}.${date.getMonth().toString().padStart(2, '0')}.${date.getFullYear()} - ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`
     let title = document.querySelector('#title') as HTMLDivElement
@@ -175,14 +180,18 @@ export class BottomComponent implements OnInit {
           mail: this.orderForm.value.email,
           phone: this.orderForm.value.phone,
         }
-        console.log(message);
+        // console.log(message);
         let fileInput = (document.getElementById('file') as HTMLInputElement);
         this.serv.sendEmail(
           message, pdf
-        ).subscribe((response: any) => {
-          // console.log(response);
-        })
+        ).subscribe()
+      this.showSnackBar()
       })
+    })
+  }
+  showSnackBar() {
+    this.snackBar.openFromComponent(MailSendComponent, {
+      duration: 3000,
     })
   }
 }

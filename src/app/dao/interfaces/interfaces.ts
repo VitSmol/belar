@@ -1,10 +1,12 @@
 export interface Product {
+  cylName: string;
   title: string;
   id: string;
   pa_diamp: string;
   pa_diamsh: string;
   pa_hod: string;
   pa_mezhos: string;
+  count?: string;
 }
 
 export interface Org {

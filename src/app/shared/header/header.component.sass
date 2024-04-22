@@ -88,7 +88,7 @@ header
   .header__navigation ul
     gap: 10px
     a.caption-layer
-      font-size: 12px
+      font-size: 14px
 
 @media screen and (max-width: 1000px)
   .logo-header
@@ -124,4 +124,8 @@ header
       box-shadow: $mainShadow
       transform: scale(1)
       transition: 0.3s transform ease-in-out
-
+  ::ng-deep
+    .mat-badge-after .mat-badge-content
+      left: 120% !important
+    .mat-badge-above .mat-badge-content
+      bottom: 60% !important

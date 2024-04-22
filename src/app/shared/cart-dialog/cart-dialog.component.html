@@ -1,1 +1,9 @@
-<p>{{item}}</p>
+<div class="cart-dialog-container">
+
+  <h3>Гидроцилиндр {{item.title}}</h3>
+  <p>Добавлен в корзину</p>
+  <div class="btn-container">
+    <button mat-raised-button (click)="close()">Продолжить</button>
+    <button mat-raised-button (click)="toCart()">Перейти в корзину</button>
+  </div>
+</div>

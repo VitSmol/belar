@@ -1,17 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnChanges {
   constructor(
-    public route: Router
-    ) {
+    public route: Router,
+    private cartService: CartService
+  ) {
 
   }
+  public bageCount = '';
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+
+    // this.cartService.getCount().subscribe(data => {
+    //   setTimeout(() => {
+    //     this.bageCount = data + ''
+    //   }, 500);
+    // })
+  }
+
   currentRoute: string = ""
   menuBtn?: null | HTMLElement
   closeBtn?: null | HTMLElement
@@ -23,12 +37,19 @@ export class HeaderComponent implements OnInit {
     this.closeBtn = document.querySelector('.close')
     this.listMenu = document.querySelector('#listMenu')
     this.footer = document.getElementById('contacts')
+    setInterval(() => {
+    this.cartService.getCount().subscribe(data => {
+        console.log(data);
+
+        this.bageCount = data + ''
+      })
+    }, 1500);
 
   }
   getRoute() {
     setTimeout(() => {
       this.currentRoute = this.route.routerState.snapshot.url
-        }, 0);
+    }, 0);
   }
 
   public scrollTo(e: any): void {

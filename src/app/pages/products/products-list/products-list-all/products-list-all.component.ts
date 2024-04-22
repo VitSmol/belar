@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CartDialogComponent } from 'src/app/shared/cart-dialog/cart-dialog.component';
 import { DataService } from 'src/app/services/data.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-products-list-all',
@@ -12,6 +13,13 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./products-list-all.component.sass'],
 })
 export class ProductsListAllComponent implements OnInit, AfterViewInit{
+
+  constructor(
+    private dialog: MatDialog,
+    private serv: DataService,
+    private cartServ: CartService
+  ){}
+
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator
 
   @HostListener('window:resize', ['$event'])
@@ -28,12 +36,7 @@ export class ProductsListAllComponent implements OnInit, AfterViewInit{
   public productsSlice: Product[] = [];
   public view = `list`
 
-  constructor(
-    private dialog: MatDialog,
-    private serv: DataService
-  ){
 
-  }
   ngAfterViewInit(): void {
   }
   ngOnInit(): void {
@@ -70,19 +73,13 @@ export class ProductsListAllComponent implements OnInit, AfterViewInit{
     }
     this.productsSlice = this.productsArr.slice(startIndex, endIndex)
   }
-  openDialog(item: Product) {
-    const cartDialog = this.dialog.open(CartDialogComponent, {
-      data: item,
-      autoFocus: true,
-      width: `50vw`,
-      height: `50vh`
-    })
-    cartDialog.afterClosed().subscribe((result: {message: string, item: Item}) => {
-      console.log(result);
-    })
-  }
-  addToCart(item: any) {
 
+
+  openDialog(item: Product) {
+    this.cartServ.openCartDialog(item)
+  }
+
+  addToCart(item: any) {
     console.log(item);
     this.serv.getAll().subscribe(data => {
       const result = data.filter(el => el.title === item.cylName)
