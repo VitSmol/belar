@@ -15,7 +15,7 @@ export class EmailService {
     return this.http.get(this.mainUrl)
   }
   sendEmail(req: any, file: any) {
-    this.mainUrl = `http://belar.pro/`
+    this.mainUrl = `https://belar.pro/`
     return this.http.post(this.mainUrl + `send/mail.php`, req, file)
   }
 }
