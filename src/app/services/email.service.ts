@@ -22,4 +22,5 @@ export class EmailService {
     // this.mainUrl = `http://localhost/`
     return this.http.post(this.mainUrl + `send/mailFromCart.php`, req)
   }
+
 }

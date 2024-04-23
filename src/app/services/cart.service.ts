@@ -65,4 +65,10 @@ export class CartService implements OnInit {
     this.loadStorage()
     return of(this.cartArray.length)
   }
+
+  clear() {
+    this.cartArray.length = 0
+    localStorage['orderList'] = JSON.stringify(this.cartArray)
+    return of(this.cartArray)
+  }
 }

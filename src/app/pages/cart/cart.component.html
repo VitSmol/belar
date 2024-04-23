@@ -46,6 +46,7 @@
       <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
       <tr mat-row *matRowDef="let row; columns: columns;"></tr>
     </table>
+    <button mat-raised-button (click)="clearCart()" id="clear">Очистить корзину</button>
   } @else {
     <h3>В корзине нет товаров</h3>
   }

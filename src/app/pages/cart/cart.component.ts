@@ -122,6 +122,12 @@ export class CartComponent implements OnInit {
       duration: 3000,
     })
   }
+  clearCart() {
+    this.cartService.clear().subscribe(data => {
+      this.orderArr = data;
+      this.dataSource = new MatTableDataSource(this.orderArr);
+    })
+  }
 }
 
 

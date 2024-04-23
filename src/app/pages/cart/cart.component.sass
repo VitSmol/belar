@@ -9,6 +9,9 @@
   width: 100%
   overflow-x: auto
   padding-bottom: 20px
+  display: flex
+  flex-direction: column
+  gap: 20px
 
 #cart-table
   height: fit-content
@@ -41,6 +44,9 @@ td
   color: white !important
   background: gray !important
   cursor: not-allowed !important
+#clear
+  width: fit-content
+  align-self: flex-end
 @media screen and ( max-width: 970px )
   .cart-wrapper
     flex-direction: column
