@@ -7,6 +7,7 @@ export interface Product {
   pa_hod: string;
   pa_mezhos: string;
   count?: string;
+  color?: string;
 }
 
 export interface Org {

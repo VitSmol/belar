@@ -7,7 +7,7 @@
         <td mat-cell *matCellDef="let item; let ind = index">{{ind + 1}}</td>
       </ng-container>
       <ng-container matColumnDef="img" [style.display]="width < 710 ? 'none': 'block'">
-        <th mat-header-cell *matHeaderCellDef>№</th>
+        <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let item; let ind = index">
           <img src="assets/img/cy.png" alt="цилиндр" class="table-img">
         </td>
@@ -29,7 +29,23 @@
               <mat-icon aria-hidden="false" fontIcon="add"></mat-icon>
             </button>
           </p>
-          <!-- {{item.count}} -->
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="color">
+        <th mat-header-cell *matHeaderCellDef>Количество</th>
+        <td mat-cell *matCellDef="let item">
+          <mat-form-field>
+            <mat-label>Цвет:</mat-label>
+            <mat-select (valueChange)="setColor($event,item)" [value]="item.color">
+              <mat-option [value]="'Красный RAL 3020'"><img src="assets/img/icons/red.jpg" alt="cross"> Красный RAL 3020</mat-option>
+              <mat-option [value]="'Черный RAL 9005'"><img src="assets/img/icons/black.jpg" alt="cross"> Черный RAL 9005</mat-option>
+              <mat-option [value]="'Желтый RAL 1018'"><img src="assets/img/icons/yellow1018.jpg" alt="cross"> Желтый RAL 1018</mat-option>
+              <mat-option [value]="'Синий RAL 5005'"><img src="assets/img/icons/blue.jpg" alt="cross"> Синий RAL 5005</mat-option>
+              <mat-option [value]="'Желтый RAL 1033'"><img src="assets/img/icons/yellow1033.jpg"> Желтый RAL 1033</mat-option>
+              <mat-option [value]="'Красный RAL 3002'"> <img src="assets/img/icons/red3002.jpg" alt="cross"> Красный RAL 3002</mat-option>
+              <mat-option [value]="'Красный RAL 3002'">  Без покрытия</mat-option>
+            </mat-select>
+          </mat-form-field>
         </td>
       </ng-container>
       <ng-container matColumnDef="delete">
@@ -94,10 +110,10 @@
     <mat-form-field>
       <mat-label>Страна:</mat-label>
       <mat-select formControlName="country">
-        <mat-option value="by">Республика Беларусь</mat-option>
-        <mat-option value="ru">Российская Федераци</mat-option>
-        <mat-option value="kz">Республика Казахстан</mat-option>
-        <mat-option value="other">Другое</mat-option>
+        <mat-option value="Республика Беларусь">Республика Беларусь</mat-option>
+        <mat-option value="Российская Федерация">Российская Федерация</mat-option>
+        <mat-option value="Республика Казахстан">Республика Казахстан</mat-option>
+        <mat-option value="Другое">Другое</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>

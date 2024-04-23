@@ -26,4 +26,7 @@ export class ContactsComponent {
   toApplication(e: any) {
     e.preventDefault();
   }
+  nothing(e) {
+    e.preventDefault();
+  }
 }

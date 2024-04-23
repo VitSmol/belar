@@ -53,6 +53,12 @@ export class CartService implements OnInit {
     this.cartArray[index] = product;
     localStorage['orderList'] = JSON.stringify(this.cartArray)
   }
+  setNewColor(product: Product) {
+    this.loadStorage()
+    let index = this.cartArray.findIndex((el: Product) => el.title === product.title);
+    this.cartArray[index] = product;
+    localStorage['orderList'] = JSON.stringify(this.cartArray)
+  }
   deleteProduct(product: Product) {
     this.loadStorage()
     let index = this.cartArray.findIndex((el: Product) => el.title === product.title);

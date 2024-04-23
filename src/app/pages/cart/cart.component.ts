@@ -29,7 +29,7 @@ export class CartComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required]],
       country: [''],
-      comment: ['']
+      comment: [''],
     })
   }
   @HostListener('window:resize', ['$event'])
@@ -39,7 +39,7 @@ export class CartComponent implements OnInit {
   public width: number = 0
   public orderForm!: FormGroup;
   public orderArr: Product[] = []; //
-  public columns = ["position", "img", "title", "count", "delete"]; //
+  public columns = ["position", "img", "title", "count", "color","delete"]; //
 
   dataSource!: MatTableDataSource<any>
   matcher = new ErrorStateMatcher();
@@ -69,6 +69,14 @@ export class CartComponent implements OnInit {
     console.log(this.orderArr);
 
   }
+  setColor(e, item) {
+    // console.log(e);
+
+    item.color = e
+    this.cartService.setNewColor(item)
+    console.log(item);
+
+  }
   changeOnBlur(ev: any, item: Product) {
     item.count = ev.target.value;
     this.cartService.setNewCount(item)
@@ -86,17 +94,19 @@ export class CartComponent implements OnInit {
     let currentDate = `${date.getDate().toString().padStart(2, '0')}.${date.getMonth().toString().padStart(2, '0')}.${date.getFullYear()} - ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`
     // pdf.open()
     let tableStart = `<table>`
-    let th = `<th style="text-align: center; font-weight: bold">
-      <td>№п/п</td>
-      <td style="width: 500px">Наименование</td>
-      <td>Количество</td>
-    </th>`
+    let th = `<tr style="text-align: center; font-weight: bold">
+      <th>№п/п</th>
+      <th style="width: 500px">Наименование</th>
+      <th>Цвет:</th>
+      <th>Количество</th>
+    </tr>`
 
     for (let i = 0; i < this.orderArr.length; i++) {
       let row = `<tr>
-        <td>${i + 1}<td>
-        <td>${this.orderArr[i].title}<td>
-        <td>${this.orderArr[i].count}<td>
+        <td>${i + 1}</td>
+        <td style="text-align: center;">${this.orderArr[i].title}</td>
+        <td style="text-align: center;">${this.orderArr[i].color}</td>
+        <td style="text-align: center;">${this.orderArr[i].count}</td>
       <tr>`
       th += row
     }

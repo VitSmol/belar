@@ -64,7 +64,9 @@ a
       grid-area: constr
     & .sales
       grid-area: sales
-    grid-template-areas: "caption caption caption" "address address address" "priem constr sales"
+    & .ok
+      grid-area: ok
+    grid-template-areas: "caption caption caption" "address address address" "priem sales constr" "ok sales constr"
   .belar-employee
     font-weight: 600
     transition: 0.5s color
@@ -147,17 +149,20 @@ ul
       .company-department-item
         height: 150px
         // background: red
-@media screen and ( max-width: 830px )
+@media screen and ( max-width: 1770px )
   .rb .belar .company-card
-    grid-template-areas: "caption caption" "address address" "priem constr" "sales sales"
+    grid-template-areas: "caption caption" "address address" "priem ok" "sales constr"
+@media screen and ( max-width: 850px )
+  .rb .belar .company-card
+    grid-template-areas: "caption caption" "address address" "priem ok" "sales sales" "constr constr"
   .rf-companes
     grid-template-columns: 1fr
 @media screen and ( max-width: 720px )
    .rb .techno .company-card
-     grid-template-areas: "caption" "address" "depart" "region"
+    //  grid-template-areas: "caption " "address" "depart" "region"
 @media screen and ( max-width: 660px )
   .rb .belar .company-card
-    grid-template-areas: "caption"  "address" "priem" "constr" "sales"
+    grid-template-areas: "caption"  "address" "priem" "ok" "constr" "sales"
 
 //       .company-name, .company-department-name, summary
 //         color: $mainColor
