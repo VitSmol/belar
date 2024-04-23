@@ -50,6 +50,8 @@ import { CompanyComponent } from './pages/company/company.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MailSendComponent } from './shared/mail-send/mail-send.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import { WorkComponent } from './pages/work/work.component';
+import { NewsComponent } from './pages/news/news.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import {MatBadgeModule} from '@angular/material/badge';
     CartComponent,
     CartDialogComponent,
     ImgDialogComponent,
-    MailSendComponent
+    MailSendComponent,
+    WorkComponent,
+    NewsComponent
     // CompanyComponent
 
   ],
