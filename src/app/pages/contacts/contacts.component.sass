@@ -1,6 +1,6 @@
 @import 'variables'
 #contacts-overlay
-  padding-top: 80px
+  // padding-top: 80px
   height: fit-content
   background: url("^assets/img/footer-backg.jpg")
   background-repeat: no-repeat
@@ -22,11 +22,8 @@
   color: $background
   position: relative
   z-index: 4
-  padding-left: 30px
-  padding-right: 30px
-.contacts-wrapper
-  padding-top: 70px
-  padding-bottom: 70px
+  .contacts-wrapper
+    @extend .container-padding
   .countries
     display: flex
     flex-direction: column
@@ -163,7 +160,9 @@ ul
 @media screen and ( max-width: 660px )
   .rb .belar .company-card
     grid-template-areas: "caption"  "address" "priem" "ok" "constr" "sales"
-
+@media screen and ( max-width: 560px )
+  .rb .techno .company-card
+    grid-template-areas: "caption" "address" "depart" "region"
 //       .company-name, .company-department-name, summary
 //         color: $mainColor
 

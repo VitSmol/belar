@@ -3,7 +3,7 @@
 #expand
   width: 100%
 .products-wrapper
-  margin: 0 auto
+  @extend .container-padding
   padding-top: 120px
   display: flex
   position: relative
@@ -14,6 +14,7 @@
     padding: 10px
     height: fit-content
     border-radius: 2px
+    background: #ffffffbd
     @media screen and ( max-width: 1000px )
       position: absolute
       transform: translateY(-93%)

@@ -5,13 +5,13 @@
   height: 100%
   position: relative
 .caption
-  padding-top: 120px
   display: flex
   height: 100%
+
 .caption-wrapper
-  width: $contentWidth
+  @extend .container-padding
+  // width: $contentWidth
   height: 100%
-  margin: 0 auto
   display: grid
   gap: 30px
   grid-template-areas:"caption caption" "start gallery" "vid gallery"

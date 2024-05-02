@@ -18,11 +18,51 @@ body
   font-family: 'Hydro', sans-serif
   font-family: 'Noto Sans', sans-serif
   font-family: 'Exo 2', sans-serif
-  font-family: 'Montserrat', sans-serif
+  // font-family: 'Montserrat', sans-serif
   color: $bgColor
   background-color: $background
   overflow-x: hidden
 
+.background
+  position: absolute
+  height: 100vh
+  width: 100vw
+  z-index: -1
+  background: white
+  .bg
+    position: fixed
+    inset: 0
+    background: rgb(242 242 242 / 68%)
+  img
+    position: fixed
+    width: 600px
+    z-index: -2
+    filter: blur(1px)
+    transform: rotate3d(-404, -169, -119, 60deg)
+    &.img-1
+      left: -260px
+      bottom: 250px
+      // transform: rotate3d(-404, -169, -119, 55deg)
+    &.img-2
+      left: 26%
+      bottom: -257px
+      // transform: rotate3d(32, -4, 5, 302deg)
+    &.img-3
+      right: -130px
+      bottom: -190px
+      // transform: rotate3d(-191, 277, 229, 45deg)
+    &.img-4
+      right: -260px
+      bottom: 250px
+      // transform: rotate3d(-404, -169, -119, 55deg)
+    &.img-5
+      left: 29%
+      bottom: 173px
+      // transform: rotate3d(93, 78, -85, 335deg)
+    &.img-6
+      left: -400px
+      bottom: -240px
+      // transform: rotate3d(-191, 277, 229, 45deg)
 
 .logo
   // background-image: url(assets/img/logoBelar.png)
@@ -30,6 +70,8 @@ body
   height: inherit
   background-repeat: no-repeat
   background-size: contain
+p
+  text-shadow: 2px 2px 6px #00000036
 .simple-input, .simple-input input
   // width: 35px
   position: absolute
