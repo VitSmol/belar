@@ -12,18 +12,16 @@ export class HeaderComponent implements OnInit, OnChanges {
     public route: Router,
     private cartService: CartService
   ) {
+    this.cartService.getCount().subscribe(data => {
+      console.log(data);
 
+      this.bageCount = data + ''
+    })
   }
   public bageCount = '';
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
-
-    // this.cartService.getCount().subscribe(data => {
-    //   setTimeout(() => {
-    //     this.bageCount = data + ''
-    //   }, 500);
-    // })
   }
 
   currentRoute: string = ""
@@ -38,11 +36,11 @@ export class HeaderComponent implements OnInit, OnChanges {
     this.listMenu = document.querySelector('#listMenu')
     this.footer = document.getElementById('contacts')
     setInterval(() => {
-    this.cartService.getCount().subscribe(data => {
-        console.log(data);
+    // this.cartService.getCount().subscribe(data => {
+    //     console.log(data);
 
-        this.bageCount = data + ''
-      })
+    //     this.bageCount = data + ''
+    //   })
     }, 1500);
 
   }
