@@ -67,6 +67,7 @@ export class CartService implements OnInit {
     this.getCount()
     return of(this.cartArray)
   }
+
   getCount() {
     this.loadStorage()
     return of(this.cartArray.length)
