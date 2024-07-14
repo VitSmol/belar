@@ -8,6 +8,7 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit, OnChanges {
+  public bageCount = '';
   constructor(
     public route: Router,
     private cartService: CartService
@@ -18,7 +19,6 @@ export class HeaderComponent implements OnInit, OnChanges {
       this.bageCount = data + ''
     })
   }
-  public bageCount = '';
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
@@ -35,13 +35,10 @@ export class HeaderComponent implements OnInit, OnChanges {
     this.closeBtn = document.querySelector('.close')
     this.listMenu = document.querySelector('#listMenu')
     this.footer = document.getElementById('contacts')
-    setInterval(() => {
-    // this.cartService.getCount().subscribe(data => {
-    //     console.log(data);
+    this.cartService.getCount().subscribe(data => {
+        this.bageCount = data + ''
+      })
 
-    //     this.bageCount = data + ''
-    //   })
-    }, 1500);
 
   }
   getRoute() {

@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { Item, Product } from '../dao/interfaces/interfaces';
 import { CartDialogComponent } from '../shared/cart-dialog/cart-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-import { of } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,7 @@ import { of } from 'rxjs';
 export class CartService implements OnInit {
   public cartArray: Product[] = []
   public tempArr: string = ''
+  private cartItemCount = new BehaviorSubject(0)
 
   constructor(
     private dialog: MatDialog,
@@ -70,7 +71,8 @@ export class CartService implements OnInit {
 
   getCount() {
     this.loadStorage()
-    return of(this.cartArray.length)
+    this.cartItemCount.next(this.cartArray.length)
+    return this.cartItemCount
   }
 
   clear() {
