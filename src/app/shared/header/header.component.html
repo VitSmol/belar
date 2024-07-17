@@ -1,6 +1,19 @@
 <header>
   <div class="container">
     <div class="header-wrapper">
+      <div class="login">
+        <a href="#" class="login-link">
+          <span class="material-symbols-outlined">
+            partner_exchange
+          </span>
+          Партнерам</a>
+        <a href="#" class="login-link">
+          <span class="material-symbols-outlined">
+            groups
+            </span>
+          Сотрудникам
+        </a>
+      </div>
       <div class="logo-header">
         <img class="logo" src="assets/img/logo.png" alt='OOO TM "Белар"'
           title='OOO TM "Белар" - производство гидроцилиндров'>
@@ -42,10 +55,10 @@
             <a (click)="getRoute()" (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/cert']"
               class="caption-layer">Сертификаты</a>
           </li>
-          <li>
+          <!-- <li>
             <a (click)="getRoute()" (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/login']"
               class="caption-layer">Личный кабинет</a>
-          </li>
+          </li> -->
           <li>
             <a href="#contacts" (click)="removeMenu('close')" routerLinkActive="active" class="caption-layer"
               [routerLink]="['/contacts']">Контакты</a>
@@ -53,7 +66,11 @@
           </li>
           <li [matBadge]="bageCount" matBadgePosition="after" matBadgeColor="warn">
             <a (click)="getRoute()" (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/cart']"
-              class="caption-layer">Корзина</a>
+              class="caption-layer">
+              <span class="material-symbols-outlined">
+                shopping_cart
+                </span>
+            </a>
           </li>
         </ul>
       </nav>

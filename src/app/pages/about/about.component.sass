@@ -1,6 +1,8 @@
 @import 'variables'
 .main
   padding: 0
+  color: #40444E
+  font-weight: 300
 .start-content
   height: 100%
   position: relative
@@ -10,23 +12,16 @@
 
 .caption-wrapper
   @extend .container-padding
-  // width: $contentWidth
   height: 100%
   display: grid
   gap: 30px
-  grid-template-areas:"caption caption" "start gallery" "vid gallery"
-  grid-template-columns: 2fr 3fr
+  grid-template-areas:"caption caption ." ". gallery gallery" "vid vid vid"
 
 .main-caption-wrapper
-  grid-area: start
-.main-caption
-  font-size: 42px
-  font-weight: 500
-.sub-caption
-  margin-top: 13px
-  font-size: 23px
-  strong
-    font-weight: normal
+  grid-area: caption
+
+
+
 .next
   grid-area: cyl
   display: grid
@@ -55,6 +50,7 @@
   gap: 10px
   grid-area: gallery
   align-items: flex-start
+  filter: drop-shadow(0px 0px 0px $mainColor)
   .gallery-img
     max-width: 800px
     width: 100%
@@ -83,42 +79,24 @@
 
 
 @media screen and (max-width: 1460px)
-  h1.main-caption
-    font-size: 35px
-  .sub-caption
-    font-size: 20px
   .caption .gallery .card:hover
     flex-grow: 3
   .caption-wrapper
     column-gap: 0
-    grid-template-columns: 1fr 1.5fr
 
 @media screen and (max-width: 1360px)
-  h1.main-caption
-    font-size: 30px
-  .sub-caption
-    font-size: 18px
-    margin-top: 10px
   .caption .gallery .card:hover
     flex-grow: 6
   .caption-wrapper
     row-gap: 15px
 @media screen and (max-width: 1260px)
   .caption
-    // padding-top: 90px
   .caption .gallery .card:hover
     flex-grow: 1.5
   .caption-wrapper
     row-gap: 30px
-    grid-template-columns: 1.5fr 1fr
-    grid-template-areas: "caption caption" "start start" "gallery gallery" "cyl cyl" "vid vid"
 
 @media screen and (max-width: 1160px)
-  h1.main-caption
-    font-size: 20px
-  .sub-caption
-    font-size: 15px
-    // margin-top: 10px
   .caption .gallery .card:hover
     flex-grow: 1.6
   .vid
@@ -129,14 +107,14 @@
   .caption .gallery .card:hover
     flex-grow: 2.9
   .caption-wrapper
-      grid-template-columns: 1fr
-      grid-template-areas: "caption" "start" "gallery" "cyl" "vid"
+      // grid-template-columns: 1fr
+      grid-template-areas: "caption" "gallery" "vid"
 
 @media screen and (max-width: 768px)
   .caption .gallery .card:hover
     flex-grow: 2.9
   .caption .gallery .card img
-    width: 453px
+    width: 300px
 
 @media screen and (max-width: 680px)
   .next

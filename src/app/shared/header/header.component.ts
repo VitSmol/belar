@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit, OnChanges {
 
 
   }
+  //! метод нигде не используется
   getRoute() {
     setTimeout(() => {
       this.currentRoute = this.route.routerState.snapshot.url
@@ -54,7 +55,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   }
 
   removeMenu(str: string): void {
-    str == 'close' ? this.openClose('close') : null
+    str == 'close' ? this.openClose(str) : null
   }
 
   public openClose(addClose: string): void {

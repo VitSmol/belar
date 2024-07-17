@@ -3,6 +3,8 @@
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap'
 @import 'variables'
+
+
 @keyframes opacity-links
   0%
     opacity: 0
@@ -22,48 +24,72 @@ body
   // font-family: 'Montserrat', sans-serif
   color: $bgColor
   background-color: $background
+  background-color: white
   overflow-x: hidden
+  // position: relative
+.main-caption
+  font-size: 32px
+  font-weight: 500
+  color: #40444E
+  @media screen and (max-width: 1460px)
+    font-size: 35px
+  @media screen and (max-width: 1460px)
+    font-size: 30px
+  @media screen and (max-width: 1160px)
+    font-size: 20px
+  @media screen and ( max-width: 526px )
+      margin-bottom: 0
+      margin-top: 20px
 
+.sub-caption
+  margin-top: 13px
+  font-size: 24px
+  font-weight: 300
+  color: #40444E
+  @media screen and ( max-width: 1460px )
+    font-size: 20px
+  @media screen and (max-width: 1460px)
+    font-size: 18px
+    margin-top: 10px
+  @media screen and (max-width: 1160px)
+    font-size: 15px
+  strong
+    font-weight: 300
 .background
   position: absolute
-  height: 100vh
+  height: 120%
   width: 100vw
   z-index: -1
   background: white
+  overflow-x: hidden
   .bg
     position: fixed
     inset: 0
-    background: rgb(242 242 242 / 68%)
+    background: rgb(242 242 242 / 23%)
   img
-    position: fixed
-    width: 600px
+    position: absolute
+    width: 30vw
     z-index: -2
     filter: blur(1px)
     transform: rotate3d(-404, -169, -119, 60deg)
     &.img-1
-      left: -260px
-      bottom: 250px
-      // transform: rotate3d(-404, -169, -119, 55deg)
+      left: 30px
+      top: 55%
     &.img-2
-      left: 26%
-      bottom: -257px
-      // transform: rotate3d(32, -4, 5, 302deg)
+      right: 50px
+      top: 15%
     &.img-3
       right: -130px
       bottom: -190px
-      // transform: rotate3d(-191, 277, 229, 45deg)
     &.img-4
-      right: -260px
-      bottom: 250px
-      // transform: rotate3d(-404, -169, -119, 55deg)
+      right: 110px
+      bottom: 330px
     &.img-5
       left: 29%
       bottom: 173px
-      // transform: rotate3d(93, 78, -85, 335deg)
     &.img-6
       left: -400px
       bottom: -240px
-      // transform: rotate3d(-191, 277, 229, 45deg)
 
 
 p
@@ -103,12 +129,50 @@ p
     vertical-align: middle
 
     border: 1px solid #00000029
-.lg-outer .lg-img-rotate
-  // display: flex
-  // display: contents
-.lg-outer .lg-object
-  // top: 23%
 
 button:not([type="reset"])
   background: #ffba6b !important
   color: black !important
+
+@media screen and ( max-width: 1700px )
+  .background
+    img.img-1
+      // left: -200px
+      // bottom: -260px
+    img.img-2
+      // right: -50px
+      // bottom: 140px
+@media screen and ( max-width: 1460px )
+  .background
+    img.img-1
+      // left: -200px
+      // bottom: -90px
+    img.img-2
+      // right: -100px
+      // bottom: 300px
+@media screen and ( max-width: 1460px )
+  .background
+    // img.img-1
+    //   left: -240px
+    //   bottom: -90px
+    // img.img-2
+    //   right: -240px
+    //   bottom: 300px
+@media screen and ( max-width: 1200px )
+  .background
+    // img.img-1
+    //   left: -280px
+    //   bottom: -90px
+    // img.img-2
+    //   right: -280px
+    //   bottom: 300px
+@media screen and ( max-width: 1000px )
+  .background
+    img.img-1
+      // left: -400px
+      // bottom: -90px
+      display: none
+    img.img-2
+      // right: -400px
+      // bottom: 300px
+      display: none

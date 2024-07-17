@@ -1,5 +1,6 @@
 @import "variables"
 header
+  padding-top: 20px
   // width: 100%
   // height: fit-content
   // padding: 5px 0
@@ -8,27 +9,54 @@ header
   // z-index: 999
   // background: $gradientBg
 .header-wrapper
-  // font-size: 18px
-  // height: 100%
-  // display: flex
-  // justify-content: space-between
-  // padding: 5px 0
-  // width: $contentWidth
-  // margin: 0 auto
-  // align-items: center
-  // gap: 15px
+  font-size: 18px
+  position: relative
+  height: 100%
+  display: grid
+  grid-template-areas: ". . login login login" "logo nav nav nav nav"
+  justify-content: space-between
+  padding: 5px 0
+  width: 100%
+  align-items: center
+  gap: 30px
+  .login
+    grid-area: login
+    display: flex
+    gap: 20px
+    justify-content: flex-end
+    .login-link
+      display: flex
+      align-items: flex-end
+      gap: 5px
+      text-decoration: none
+      font-family: Roboto, serif
+      color: #40444E
+      font-size: 14px
+      font-weight: 700
+      transition: all 0.5s
+      &:hover
+        transition: all 0.5s
+        color: $mainColor
   .logo-header
     display: flex
+    flex-direction: column
+    grid-area: logo
+    position: relative
   .logo
     width: 200px
     height: inherit
     background-repeat: no-repeat
     background-size: contain
+    filter: drop-shadow(2px 4px 4px black)
   .orgname
     display: flex
     justify-content: end
     text-transform: uppercase
     margin-top: 5px
+    position: absolute
+    bottom: 0px
+    left: 200px
+    width: max-content
     .name
       font-size: 19px
       font-weight: 700
@@ -37,76 +65,73 @@ header
       margin-bottom: 0
       // text-shadow: 0px 0px 15px #f5c396
       @media screen and ( max-width: 1390px )
-        font-size: 12px
+        font-size: 1.3vw
 
   .menu, .close
     color: black
     position: absolute
-    right: 5vw
+    right: 0
     display: none
     font-size: 40px
-    top: calc(50% - 20px)
+    bottom: calc(20% - 20px)
     font-weight: 900
     &.show, &.hide
       display: none
     &:hover
       cursor: pointer
 .header__navigation
+  grid-area: nav
   display: flex
   align-items: center
+  align-self: baseline
+  border-bottom: 1px solid #d9d9d9
+  // position: relative
   ul
     list-style: none
     margin: 0
     padding: 0
     display: flex
-    gap: 15px
+    // gap: 15px
     width: 100%
     flex-wrap: wrap
-    justify-content: flex-end
+    justify-content: space-evenly
     li
       position: relative
     a.caption-layer
-      // color: white
-      font-size: 1vw
+      font-size: 18px
       position: relative
       color: black
       display: block
-      font-weight: 600
-      text-decoration: none
+      font-weight: 300
+      text-decoration: none solid rgb(64,68,78 )
       letter-spacing: 0.8px
       scale: 1
+      line-height: 21px
+      transition: .5s all
+      font-style: normal
+      font-weight: 300
       &:hover, &.active
         transition: .5s all
-        // color: $mainColor
-        color: white
-        scale: 1.1
+        color: $mainColor
+        // scale: 1.01
         @media screen and (max-width: 1000px)
           color: #dc9623
           scale: 1
 
-@media screen and (max-width: 1360px)
-  .logo
-    max-width: 350px
-  a.caption-layer
-    // font-size: 15px
-@media screen and (max-width: 1150px)
-  .logo-header
-    width: 300px
-
-  .logo
-    max-width: 300px
-  .header__navigation ul
-    gap: 10px
-    a.caption-layer
-      font-size: 14px
-
 @media screen and (max-width: 1000px)
+  .login
+    justify-content: center
+  .header__navigation
+    border-bottom: none
   .logo-header
     width: 300px
   .logo
     z-index: 300
     max-width: 300px
   .header-wrapper
+    .orgname
+      .name
+        font-size: 13px
     // justify-content: end
     .menu.show, .close.show
       display: inline-block
@@ -116,22 +141,22 @@ header
     position: absolute
     flex-direction: column
     left: 0
-    top: 0
+    top: 170px
+    // bottom: -130px
     background: white
     width: 100%
     overflow-y: hidden
     transform: scale(0)
     align-items: center
     transition: 0.3s transform ease-in-out
-    // transition: 0.5s transform ease-in-out
+    z-index: 301
+    height: min-content
+    padding: 0
+    padding-bottom: 20px
+    padding-top: 20px
+    box-shadow: $mainShadow
     &.active
-      height: min-content
-      padding: 0
-      padding-left: 5vw
-      padding-bottom: 20px
-      padding-top: 20px
-      top: 92px
-      box-shadow: $mainShadow
+
       transform: scale(1)
       transition: 0.3s transform ease-in-out
   ::ng-deep
@@ -139,3 +164,42 @@ header
       left: 120% !important
     .mat-badge-above .mat-badge-content
       bottom: 60% !important
+@media screen and (max-width: 1399px)
+  #listMenu
+    gap: 10px
+    .caption-layer
+      font-size: 14px
+@media screen and (max-width: 1199px)
+  .header-wrapper
+    grid-template-areas: ". . . . login login login" "logo nav nav nav nav nav nav"
+    .orgname
+      left: 150px
+    .logo
+      width: 150px
+  #listMenu
+    gap: 8px
+    .caption-layer
+      font-size: 14px
+@media screen and (max-width: 1000px)
+  .header__navigation ul.active
+    top: 160px
+@media screen and (max-width: 770px)
+  .header-wrapper
+    grid-template-areas: "login login login" "logo nav nav"
+    .login
+      justify-content: center
+    .orgname
+      left: 150px
+    .logo
+      width: 150px
+  #listMenu
+    gap: 8px
+    .caption-layer
+      font-size: 14px
+@media screen and (max-width: 530px)
+  .header-wrapper
+    .orgname
+      left: 0
+      bottom: -30px
+  .header__navigation ul.active
+    top: 170px

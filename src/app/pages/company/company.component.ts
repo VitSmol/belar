@@ -17,77 +17,78 @@ import lgZoom from 'lightgallery/plugins/zoom';
 })
 
 export class CompanyComponent implements OnInit {
-public width: number = 0
-public imgArray = [
-  {
-    pathMini: 'assets/img/1.jpg',
-    pathFull: 'assets/img/1sc.jpg',
-},
-  {
-    pathMini: 'assets/img/2.jpg',
-    pathFull: 'assets/img/2sc.jpg',
-},
-  {
-    pathMini: 'assets/img/3.jpg',
-    pathFull: 'assets/img/3sc.jpg',
-},
-  {
-    pathMini: 'assets/img/4.jpg',
-    pathFull: 'assets/img/4sc.jpg',
-},
-  {
-    pathMini: 'assets/img/5.jpg',
-    pathFull: 'assets/img/5sc.jpg',
-},
-  {
-    pathMini: 'assets/img/6.jpg',
-    pathFull: 'assets/img/6sc.jpg',
-},
-  {
-    pathMini: 'assets/img/7.jpg',
-    pathFull: 'assets/img/7sc.jpg',
-},
-  {
-    pathMini: 'assets/img/8.jpg',
-    pathFull: 'assets/img/8sc.jpg',
-},
-];
+  slideIndex = 1;
+  public width: number = 0
+  public imgArray = [
+    {
+      pathMini: 'assets/img/1.jpg',
+      pathFull: 'assets/img/1sc.jpg',
+    },
+    {
+      pathMini: 'assets/img/2.jpg',
+      pathFull: 'assets/img/2sc.jpg',
+    },
+    {
+      pathMini: 'assets/img/3.jpg',
+      pathFull: 'assets/img/3sc.jpg',
+    },
+    {
+      pathMini: 'assets/img/4.jpg',
+      pathFull: 'assets/img/4sc.jpg',
+    },
+    {
+      pathMini: 'assets/img/5.jpg',
+      pathFull: 'assets/img/5sc.jpg',
+    },
+    {
+      pathMini: 'assets/img/6.jpg',
+      pathFull: 'assets/img/6sc.jpg',
+    },
+    {
+      pathMini: 'assets/img/7.jpg',
+      pathFull: 'assets/img/7sc.jpg',
+    },
+    {
+      pathMini: 'assets/img/8.jpg',
+      pathFull: 'assets/img/8sc.jpg',
+    },
+  ];
 
-@HostListener('window:resize', ['$event'])
-onResize(event: any) {
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
     this.width = event.target.innerWidth;
-}
-ngOnInit(): void {
-  this.width = window.innerWidth;
-}
+  }
+  ngOnInit(): void {
+    this.width = window.innerWidth;
+  }
 
-constructor(
-  public dialog: MatDialog
-){}
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
-// showSwipe(img: {pathMini: string, pathFull: string}) {
-//   const dialog = this.dialog.open(ImgDialogComponent, {
-//     data: [img, this.imgArray],
-//     width: `60%`,
-//     height: `auto`
-//   })
+  // showSwipe(img: {pathMini: string, pathFull: string}) {
+  //   const dialog = this.dialog.open(ImgDialogComponent, {
+  //     data: [img, this.imgArray],
+  //     width: `60%`,
+  //     height: `auto`
+  //   })
 
-// }
+  // }
 
-settings = {
-  width: '300px',
-  counter: true,
-  closable: true,
-  plugins: [lgZoom],
-  zoomFromOrigin: true,
-  closeOnTap: true,
-  mobileSettings: {
-    controls: true, showCloseIcon: true, download: true,
-  },
-};
+  settings = {
+    width: '300px',
+    counter: true,
+    closable: true,
+    plugins: [lgZoom],
+    zoomFromOrigin: true,
+    closeOnTap: true,
+    mobileSettings: {
+      controls: true, showCloseIcon: true, download: true,
+    },
+  };
 
-onBeforeSlide = (detail: BeforeSlideDetail): void => {
-  const { index, prevIndex } = detail;
-  console.log(index, prevIndex);
-};
+  onBeforeSlide = (detail: BeforeSlideDetail): void => {
+    const { index, prevIndex } = detail;
+    console.log(index, prevIndex);
+  };
 }

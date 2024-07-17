@@ -5,9 +5,6 @@
 body
   margin: 0
 
-.gallery-item
-  margin: 5px
-
 .about
   display: flex
   align-items: center
@@ -15,143 +12,158 @@ body
 .about-wrapper
   @extend .container-padding
   height: 100%
-  display: flex
-  flex-direction: column
-  gap: 20px
-  .main-caption
-    text-align: center
-    font-size: 40px
-  .description
-    gap: 20px
-    .description-image
-      float: left
-      margin-right: 50px
-      width: 750px
-      position: relative
-      z-index: 300
-    strong
-      font-weight: 400
-    p
-      font-size: 23px
-
-.icons-wrapper
-  width: 100%
-  display: flex
-  flex-direction: row
-  height: fit-content
-  .icon-card
-    display: flex
-    font-weight: normal
-    justify-content: center
-    align-items: center
-    flex-direction: column
-    color: $bgColor
-    text-decoration: none
-    padding: 20px
-    border: 1px solid $mainColor
-    flex-grow: 1
-    text-align: center
-    .icon path
-      fill: $mainColor
-    &:not(:last-child)
-      border-right: none
-    &:hover
-      cursor: pointer
-.image-container
   display: grid
-  grid-template-rows: repeat(2, 1fr)
-  grid-template-columns: repeat(4, 1fr)
-  gap: 1vw
-  .img-item
+  grid-template-areas: "caption" "description" "vid" "gallery"
+  gap: 20px
+  // flex-direction: column
+  .main-caption
+    text-align: left
+    grid-area: caption
+  .description
+    gap: 20px
+    grid-area: description
+    grid-template-areas: "text text ." ". image image"
+    display: grid
+  .text-description
+    grid-area: text
+    max-width: 90%
+  .description-image
+    grid-area: image
+    width: 750px
     position: relative
-    // width: 19vw
-    box-shadow: $mainShadow
-    justify-self: center
-    transform: scale(1)
-    &:hover
-      // transform: scale(2)
-      cursor: -webkit-zoom-in
-.video-wrapper
-  width: 100%
-  display: flex
-  justify-content: space-between
-.video
-  max-width: 500px
-  height: 200px
-@media screen and (max-width: 1460px)
-  .about-wrapper .description .description-image
-    width: 40vw
-@media screen and (max-width: 1400px)
-  .image-container
-    grid-template-columns: repeat(3, 1fr)
-    grid-template-rows: repeat(3, 1fr)
-  .description p
-    // background: #ffffffbd
-@media screen and (max-width: 1260px)
-  .about-wrapper .description p
-    font-size: 20px
+    z-index: 300
+    justify-self: flex-end
   .video-wrapper
-    align-items: center
-    justify-content: center
-    gap: 20px
-    flex-wrap: wrap
-    video
-      max-width: 500px
-      max-height: 300px
-      &:last-child
-        margin: 0 auto
-@media screen and (max-width: 1160px)
-  .about-wrapper .description
-    .description-image
-      width: 44vw
-      height: fit-content
-    p
-      font-size: 16px
-@media screen and (max-width: 1000px)
-  .description
-    flex-direction: column
-    .description-image
-      align-self: center
-  .image-container
-    grid-template-columns: repeat(2, 1fr)
-    // grid-template-rows: repeat(3, 1fr)
-@media screen and (max-width: 813px)
-  .about-wrapper
-    padding-top: 120px
-    gap: 10px
-    h1.main-caption
-      font-size: 35px
-    .description
-      .description-image
-        // float: none
-        width: 50vw
-        margin-right: 20px
-      p
-        font-size: 15px
-        margin-bottom: 0
-  .icons-wrapper
-    flex-wrap: wrap
-    .icon-card
-      flex-basis: 50%
-      &:nth-child(2)
-        border-right: 1px solid $mainColor
-      &:nth-child(1), &:nth-child(2)
-        border-bottom: none
-  .image-container
-    grid-template-rows: repeat(4,1fr)
-    grid-template-columns: repeat(2,1fr)
-    // .img-item
-    //   width: 40vw
-@media screen and (max-width: 768px)
-  .video-wrapper
-    flex-direction: column
-    gap: 20px
-    align-items: center
-  .description
+    width: 100%
     display: flex
-    video
-      max-height: max-content
-      width: 100%
-      height: 300px
+    justify-content: space-between
+    grid-area: vid
+    flex-wrap: wrap
+    gap: 20px
+    .video
+      // max-width: 500px
+      max-width: 100%
+      height: 200px
+      @media screen and ( max-width: 1000px )
+        // max-width: 100%
+        height: auto
+
   .image-container
-    grid-template-columns: 1fr
+    display: grid
+    // grid-template-rows: repeat(2, 1fr)
+    grid-template-columns: repeat(4, 1fr)
+    gap: 1vw
+    grid-area: gallery
+    .img-item
+      position: relative
+      justify-self: center
+      transform: scale(1)
+      // width: 100%
+      &:hover
+        // transform: scale(2)
+        cursor: -webkit-zoom-in
+    @media screen and (max-width: 1400px)
+      grid-template-columns: repeat(3, 1fr)
+    @media screen and (max-width: 1200px)
+      grid-template-columns: repeat(2, 1fr)
+    @media screen and (max-width: 600px)
+      grid-template-columns: repeat(1, 1fr)
+      width: 100%
+      // grid-template-columns: repeat(1, 1fr)
+
+  // .image-container
+    // grid-template-rows: repeat(3, 1fr)
+//   .description p
+//     // background: #ffffffbd
+// @media screen and (max-width: 1260px)
+//   .about-wrapper .description p
+//     font-size: 20px
+//   .video-wrapper
+//     align-items: center
+//     justify-content: center
+//     gap: 20px
+//     flex-wrap: wrap
+//     video
+//       max-width: 500px
+//       max-height: 300px
+//       &:last-child
+//         margin: 0 auto
+// @media screen and (max-width: 1160px)
+//   .about-wrapper .description
+//     .description-image
+//       width: 44vw
+//       height: fit-content
+//     p
+//       font-size: 16px
+// @media screen and (max-width: 1000px)
+//   .description
+//     flex-direction: column
+//     .description-image
+//       align-self: center
+//   .image-container
+//     grid-template-columns: repeat(2, 1fr)
+//     // grid-template-rows: repeat(3, 1fr)
+// @media screen and (max-width: 813px)
+//   .about-wrapper
+//     padding-top: 120px
+//     gap: 10px
+//     h1.main-caption
+//       font-size: 35px
+//     .description
+//       .description-image
+//         // float: none
+//         width: 50vw
+//         margin-right: 20px
+//       p
+//         font-size: 15px
+//         margin-bottom: 0
+//   .icons-wrapper
+//     flex-wrap: wrap
+//     .icon-card
+//       flex-basis: 50%
+//       &:nth-child(2)
+//         border-right: 1px solid $mainColor
+//       &:nth-child(1), &:nth-child(2)
+//         border-bottom: none
+//   .image-container
+//     grid-template-rows: repeat(4,1fr)
+//     grid-template-columns: repeat(2,1fr)
+//     // .img-item
+//     //   width: 40vw
+// @media screen and (max-width: 768px)
+//   .video-wrapper
+//     flex-direction: column
+//     gap: 20px
+//     align-items: center
+//   .description
+//     display: flex
+//     video
+//       max-height: max-content
+//       width: 100%
+//       height: 300px
+//   .image-container
+//     grid-template-columns: 1fr
+
+@media screen and ( max-width: 1461px )
+  .about-wrapper
+    .description-image
+      width: 600px
+
+@media screen and ( max-width: 1170px )
+  .about-wrapper .description-image
+    width: 500px
+@media screen and ( max-width: 1000px )
+  .about-wrapper
+    .description
+      grid-template-areas: "text ""image"
+    .description-image
+      width: 50%
+      justify-self: center
+    .text-description
+      max-width: 100%
+@media screen and ( max-width: 526px )
+  .about-wrapper
+    gap: 10px
+    .description-image
+      width: 100%
+

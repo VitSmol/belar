@@ -1,30 +1,33 @@
-<section class="about" id="about">
-  <div class="about-wrapper">
-    <h1 class="main-caption">О компании</h1>
-    <div class="description">
-      <img class="description-image" src="assets/img/belar.jpg" alt="Производство гидроцилиндров"
-        title="Производство гидроцилиндров">
-      <!-- <h2 class="main-caption">ООО «ТМ Белар»</h2> -->
-      <!-- ! изначально -->
-      <p>
-        с 2015 года <strong>производит гидроцилиндры</strong> для различной мобильной техники — поршневые,
-        плунжерные, двухштоковые.
-        Первым <strong>гидроцилиндром</strong> был освоен <strong>гидроцилиндр</strong> с внутренним диаметром
-        гильзы 80мм.
-      </p>
-      <p>
-        В настоящее время <strong>компания производит гидроцилиндры с диаметром гильзы от </strong>25 до 140 мм.,
-        более 1000 различных конструкций и модификаций.
-      </p>
-      <p>
-        Станочный парк скомплектован <strong>токарными и фрезерными станками с ЧПУ</strong> таких производителей,
-        как <strong>EMAG</strong>, <strong>HAAS</strong>, <strong>DMG</strong> и др. Все
-        <strong>гидроцилиндры</strong> проходят 100% испытания на функционирование и герметичность. На предприятии
-        введена система менеджмента качества ISO 9001-2015.
-      </p>
-<!-- ! /изначально -->
-<!-- *GPT -->
-      <!-- <p>
+<div class="container">
+  <section class="about" id="about">
+    <div class="about-wrapper">
+      <h1 class="main-caption">ООО «ТМ Белар»</h1>
+      <!-- <h2 class="company"></h2> -->
+      <div class="description">
+        <img class="description-image" src="assets/img/belar.jpg" alt="Производство гидроцилиндров"
+          title="Производство гидроцилиндров">
+        <!-- ! изначально -->
+        <div class="text-description">
+          <h2 class="sub-caption">
+            с 2015 года <strong>производит гидроцилиндры</strong> для различной мобильной техники — поршневые,
+            плунжерные, двухштоковые.
+            Первым <strong>гидроцилиндром</strong> был освоен <strong>гидроцилиндр</strong> с внутренним диаметром
+            гильзы 80мм.
+          </h2>
+          <h2 class="sub-caption">
+            В настоящее время <strong>компания производит гидроцилиндры с диаметром гильзы от </strong>25 до 140 мм.,
+            более 1000 различных конструкций и модификаций.
+          </h2>
+          <h2 class="sub-caption">
+            Станочный парк скомплектован <strong>токарными и фрезерными станками с ЧПУ</strong> таких производителей,
+            как <strong>EMAG</strong>, <strong>HAAS</strong>, <strong>DMG</strong> и др. Все
+            <strong>гидроцилиндры</strong> проходят 100% испытания на функционирование и герметичность. На предприятии
+            введена система менеджмента качества ISO 9001-2015.
+          </h2>
+        </div>
+        <!-- ! /изначально -->
+        <!-- *GPT -->
+        <!-- <p>
         ООО "ТМ Белар" – ведущий производитель гидравлических цилиндров, обладающий богатым опытом и высоким качеством
         продукции.
       </p>
@@ -58,25 +61,25 @@
         <strong>гидроцилиндры</strong> проходят 100% испытания на функционирование и герметичность. На предприятии
         введена система менеджмента качества ISO 9001-2015.
       </p> -->
-    </div>
-    <div class="video-wrapper">
-      <video controls muted class="video">
-        <source src="assets/video/1.mp4" type="video/mp4">
-      </video>
-      <video controls muted class="video">
-        <source src="assets/video/2.mp4" type="video/mp4">
-      </video>
-      <video controls muted class="video">
-        <source src="assets/video/3.mp4" type="video/mp4">
-      </video>
-    </div>
+      </div>
+      <div class="video-wrapper">
+        <video controls muted class="video" poster="assets/img/poster.png">
+          <source src="assets/video/1.mp4" type="video/mp4">
+        </video>
+        <video controls muted class="video" poster="assets/img/poster3.png">
+          <source src="assets/video/2.mp4" type="video/mp4">
+        </video>
+        <video controls muted class="video" poster="assets/img/poster2.png">
+          <source src="assets/video/3.mp4" type="video/mp4">
+        </video>
+      </div>
       <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide" class="image-container">
         @for (img of imgArray; track img) {
-        <a class="gallery-item img-item" data-lg-size="300-200"
-          [href]="img.pathFull">
-          <img class="img-item img-responsive"
-            [src]="img.pathMini" /> </a>
-          }
+        <a class="gallery-item img-item" data-lg-size="300-200" [href]="img.pathFull">
+          <img class="img-item img-responsive" [src]="img.pathMini" />
+        </a>
+        }
       </lightgallery>
-  </div>
-</section>
+    </div>
+  </section>
+</div>
