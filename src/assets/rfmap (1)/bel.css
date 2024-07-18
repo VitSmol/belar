@@ -1,0 +1,39 @@
+#belarus {
+  max-width: 200px;
+  margin: 0 auto;
+  display: block;
+}
+/* [id*="raion"]{
+  fill: none;
+  stroke:#ffffff;
+  stroke-width:0.5;
+}
+[id*="voblasts"] {
+  fill:none;
+  stroke:#000;
+  stroke-width:2;
+}
+[id*="horad"] {
+  fill:#e66;
+}
+[id*="subregions"]:hover [id*="voblasts"] {
+  fill:#456;
+}
+[id*="voblasts"]:hover [id*="raion"] {
+  opacity: .4;
+}
+[id*="raion"]:hover {
+  fill:#678;
+} */
+#belarus:hover {
+  fill: #456
+}
+
+.bel {
+  position: absolute;
+  z-index: 1000;
+  width: 110px;
+  height: auto;
+  top: 370px;
+  left: 280px;
+}

@@ -66,15 +66,6 @@ export class CompanyComponent implements OnInit {
     public dialog: MatDialog
   ) { }
 
-  // showSwipe(img: {pathMini: string, pathFull: string}) {
-  //   const dialog = this.dialog.open(ImgDialogComponent, {
-  //     data: [img, this.imgArray],
-  //     width: `60%`,
-  //     height: `auto`
-  //   })
-
-  // }
-
   settings = {
     width: '300px',
     counter: true,
@@ -89,6 +80,5 @@ export class CompanyComponent implements OnInit {
 
   onBeforeSlide = (detail: BeforeSlideDetail): void => {
     const { index, prevIndex } = detail;
-    console.log(index, prevIndex);
   };
 }

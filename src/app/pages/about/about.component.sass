@@ -21,7 +21,6 @@
   grid-area: caption
 
 
-
 .next
   grid-area: cyl
   display: grid
@@ -50,10 +49,15 @@
   gap: 10px
   grid-area: gallery
   align-items: flex-start
+  flex-direction: column
   filter: drop-shadow(0px 0px 0px $mainColor)
   .gallery-img
     max-width: 800px
     width: 100%
+
+.map .main-sub-caption
+  text-align: center
+
 @media screen and (max-width: 1510px)
   #swipe-container, .gallery-img
     max-width: 700px
@@ -75,6 +79,7 @@
   width: 600px
   z-index: -1
 
+
   //! Секция "О компании"
 
 
@@ -90,7 +95,7 @@
   .caption-wrapper
     row-gap: 15px
 @media screen and (max-width: 1260px)
-  .caption
+  // .caption
   .caption .gallery .card:hover
     flex-grow: 1.5
   .caption-wrapper
@@ -137,3 +142,20 @@
     width: 320px
   .caption .gallery .card:hover
     flex-grow: 3.9
+
+
+iframe
+  width: 200%
+  height: 70vh
+  position: relative
+.container-map
+  display: flex
+  width: 100%
+  position: relative
+  height: 80vh
+  justify-content: flex-start
+  align-items: center
+  // overflow: auto
+// .map-container
+//   display: flex
+//   justify-content: center
