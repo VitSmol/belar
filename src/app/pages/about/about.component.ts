@@ -38,11 +38,11 @@ export class AboutComponent implements OnInit, AfterViewInit {
       //   <script type="text/javascript" defer src="assets/map/settings.js"></script>
       //   <script type="text/javascript" defer src="assets/map/map.js"></script>`;
 
-  //   const link = document.createElement('link');
-  //   link.rel = 'stylesheet';
-  //   link.type = 'css';
-  //   link.href = 'assets/map/map.css'
-  //   map?.append(link)
+    // const link = document.createElement('link');
+    // link.rel = 'stylesheet';
+    // link.type = 'css';
+    // link.href = 'assets/map/map.css'
+    // map?.append(link)
     // const script1 = document.createElement('script')
     // const script2 = document.createElement('script')
     // const script3 = document.createElement('script')
@@ -52,11 +52,14 @@ export class AboutComponent implements OnInit, AfterViewInit {
     // script1.setAttribute('defer', 'true')
     // script2.setAttribute('defer', 'true')
     // script3.setAttribute('defer', 'true')
+    // script1.setAttribute('async', 'true')
+    // script2.setAttribute('async', 'true')
+    // script3.setAttribute('async', 'true')
     // script1.src = 'assets/map/raphael-min.js'
     // script2.src = 'assets/map/settings.js'
     // script3.src = 'assets/map/map.js'
     // map?.append(script1, script2, script3)
-  //   console.log(map);
+    // console.log(map);
   // }, 2000);
   }
 }

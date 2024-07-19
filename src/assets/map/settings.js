@@ -1,4 +1,4 @@
-alert(`settings`)
+// alert(`settings`)
 var
 	mapWidth		= 2400;
 	mapHeight		= 560;
