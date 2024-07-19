@@ -156,7 +156,6 @@ header
     padding-top: 20px
     box-shadow: $mainShadow
     &.active
-
       transform: scale(1)
       transition: 0.3s transform ease-in-out
   ::ng-deep
@@ -173,7 +172,8 @@ header
   .header-wrapper
     grid-template-areas: ". . . . login login login" "logo nav nav nav nav nav nav"
     .orgname
-      left: 150px
+      left: 0px
+      bottom: -25px
     .logo
       width: 150px
   #listMenu
@@ -203,3 +203,30 @@ header
       bottom: -30px
   .header__navigation ul.active
     top: 170px
+
+#sub-menu
+  display: none
+  position: absolute
+  min-width: max-content
+  z-index: 300
+  // bottom: -30px
+  padding-top: 10px
+  padding-bottom: 20px
+  transform: translateX(-50%)
+.header__navigation
+  .dropdown
+    position: relative
+    display: inline-block
+    .down
+      transition: transform 0.3s
+    &:hover
+      #sub-menu
+        display: flex
+        // background: #fff
+        gap: 10px
+      .down
+        position: relative
+        transition: transform 0.3s
+        transform: rotate(180deg)
+    .caption-layer
+      display: flex

@@ -45,24 +45,30 @@
           <li>
             <a (click)="removeMenu('close')" class="caption-layer" routerLinkActive="active"
               [routerLink]="['/work']">Работа</a>
-            <!-- (click)="scrollTo($event) <a  [href]="currentRoute + '#contacts'" (click)="getRoute()"  class="caption-layer">Контакты</a> -->
           </li>
-          <li>
+          <li class="dropdown">
             <a (click)="getRoute()" (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/products']"
-              class="caption-layer">Продукция</a>
+              class="caption-layer">Продукция
+              <span class="material-symbols-outlined down">
+                keyboard_arrow_down
+                </span>
+            </a>
+              <ul id="sub-menu">
+                <li><a (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/products', 'list']" class="caption-layer" >Каталог</a></li>
+                <li><a (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/products', 'constructor']" class="caption-layer" >Конструктор</a></li>
+                <li><a (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/products', 'technick']" class="caption-layer" >По применяемости</a></li>
+                <li><a (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/products', 'oil']" class="caption-layer" >Вращающийся маслопровод</a></li>
+                <li><a (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/products', 'valve']" class="caption-layer" >Гидроблоки</a></li>
+                <li><a (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/products', 'spare']" class="caption-layer" >Запчасти</a></li>
+              </ul>
           </li>
           <li>
             <a (click)="getRoute()" (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/cert']"
               class="caption-layer">Сертификаты</a>
           </li>
-          <!-- <li>
-            <a (click)="getRoute()" (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/login']"
-              class="caption-layer">Личный кабинет</a>
-          </li> -->
           <li>
             <a href="#contacts" (click)="removeMenu('close')" routerLinkActive="active" class="caption-layer"
               [routerLink]="['/contacts']">Контакты</a>
-            <!-- (click)="scrollTo($event) <a  [href]="currentRoute + '#contacts'" (click)="getRoute()"  class="caption-layer">Контакты</a> -->
           </li>
           <li [matBadge]="bageCount" matBadgePosition="after" matBadgeColor="warn">
             <a (click)="getRoute()" (click)="removeMenu('close')" routerLinkActive="active" [routerLink]="['/cart']"

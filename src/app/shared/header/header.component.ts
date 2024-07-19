@@ -70,5 +70,4 @@ export class HeaderComponent implements OnInit, OnChanges {
     }
   }
 
-
 }
