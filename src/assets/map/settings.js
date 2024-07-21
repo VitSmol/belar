@@ -13,7 +13,7 @@ var
 
 	isNewWindow		= false,
 
-	borderColor		= "#aaaaaa",
+	borderColor		= "#40444E",
 	borderColorOver		= "#ffffff",
 
 	nameColor		= "#ffffff",
@@ -109,9 +109,16 @@ var
 		name: "Карачаево-Черкесия",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st10: {
@@ -139,9 +146,16 @@ var
 		name: "Марий Эл",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st13: {
@@ -149,9 +163,16 @@ var
 		name: "Мордовия",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st14: {
@@ -199,9 +220,16 @@ var
 		name: "Удмуртия",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st19: {
@@ -229,9 +257,16 @@ var
 		name: "Чувашия",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st22: {
@@ -359,9 +394,16 @@ var
 		name: "Белгородская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st35: {
@@ -369,9 +411,16 @@ var
 		name: "Брянская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st36: {
@@ -379,9 +428,16 @@ var
 		name: "Владимирская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment:`
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st37: {
@@ -419,9 +475,16 @@ var
 		name: "Ивановская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st41: {
@@ -449,9 +512,16 @@ var
 		name: "Калужская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st44: {
@@ -469,9 +539,16 @@ var
 		name: "Кировская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st46: {
@@ -489,9 +566,16 @@ var
 		name: "Курганская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st48: {
@@ -499,9 +583,16 @@ var
 		name: "Курская область",
 		shortname: "",
 		link: "",
-		comment: "<p><strong>Склады в Курской области:</strong></p><ul><li>Сельхозхимия Коренево,  +7 (47147) 21 987</li><li>Сельхозхимия Пристень, +7 (47134) 22 156    </li><li>Сельхозхимия Касторное, +7 (47157) 21 406    </li><li>Сельхозхимия Щиры, +7 (47145) 41 415 </li></ul>",
-		image: "/map/sklad-kursk.jpg",
-		color_map: "#7b8817",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
+		image: "",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st49: {
@@ -519,9 +610,16 @@ var
 		name: "Липецкая область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st51: {
@@ -559,9 +657,16 @@ var
 		name: "Нижегородская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st55: {
@@ -599,9 +704,16 @@ var
 		name: "Оренбургская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st59: {
@@ -609,9 +721,16 @@ var
 		name: "Орловская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st60: {
@@ -619,9 +738,16 @@ var
 		name: "Пензенская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment:`
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st61: {
@@ -649,9 +775,16 @@ var
 		name: "Рязанская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st64: {
@@ -659,9 +792,16 @@ var
 		name: "Самарская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st65: {
@@ -669,9 +809,16 @@ var
 		name: "Саратовская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st66: {
@@ -689,9 +836,16 @@ var
 		name: "Свердловская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st68: {
@@ -699,9 +853,16 @@ var
 		name: "Смоленская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st69: {
@@ -709,9 +870,16 @@ var
 		name: "Тамбовская область",
 		shortname: "",
 		link: "",
-		comment: "<p><strong>Склады в Тамбовской области:</strong></p><ul><li>Сельхозхимия  Токаревка,  +7 (47557) 24 377</li><li>Сельхозхимия  Кирсанов , +7 (47537) 34 483</li></ul>",
-		image: "/map/sklad-tambov.jpg",
-		color_map: "#7b8817",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
+		image: "",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st70: {
@@ -719,9 +887,16 @@ var
 		name: "Тверская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#9aad0d",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st71: {
@@ -739,9 +914,16 @@ var
 		name: "Тульская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st73: {
@@ -759,9 +941,16 @@ var
 		name: "Ульяновская область",
 		shortname: "",
 		link: "",
-		comment: "<p><strong>Склад в Ульяновской области:</strong></p><ul><li>Сельхозхимия Цильна, +7 921-029-90-75 </li></ul>",
-		image: "/map/sklad-ulyanovsk.jpg",
-		color_map: "#7b8817",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
+		image: "",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st75: {
@@ -769,9 +958,16 @@ var
 		name: "Челябинская область",
 		shortname: "",
 		link: "",
-		comment: "",
+		comment: `
+<p><strong>Регион ответственности ТД Союзгидравлика:</strong></p>
+		<ul>
+      <li>Белецкий Алексей Васильевич, <a href="tel:+74722211359">+7 (4722) 21-13-59</a>, <a href="tel:+79192255580">+7 (919)-225-55-80</a></li>
+		<li>Зарубин Александр Юрьевич <a href="tel:+74722568136">+7 (4722) 56-81-36</a>, <a href="tel:+79192805580"> +7 (919) 280-55-80</a></li>
+		<li><a href="mailto:unionhyd@mail.ru">unionhyd@mail.ru</a></li>
+		</ul>
+    `,
 		image: "",
-		color_map: "#383431",
+		color_map: "#b11f24",
 		color_map_over: "#366CA3"
 	},
     st76: {
