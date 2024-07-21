@@ -52,6 +52,7 @@ import { MailSendComponent } from './shared/mail-send/mail-send.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import { WorkComponent } from './pages/work/work.component';
 import { NewsComponent } from './pages/news/news.component';
+import { MapComponent } from './pages/about/map/map.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { NewsComponent } from './pages/news/news.component';
     MailSendComponent,
     WorkComponent,
     NewsComponent,
+    MapComponent
     // CompanyComponent
 
   ],
