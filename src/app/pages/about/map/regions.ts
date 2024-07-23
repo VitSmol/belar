@@ -1,3 +1,8 @@
+const defaultColor = "#fb9100";
+const sousColor = "#b11f24";
+const belinsk = "#00ffbb";
+const hydroTakt = "#ab0270"
+const filhydro = "#0b49de"
 export 	const map_data = {
   st1: {
       id: 1,
@@ -6,37 +11,37 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st2: {
       id: 2,
-  name: "Алтай",
+  name: "Республика Алтай",
   shortname: "",
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st3: {
       id: 3,
-  name: "Башкортостан",
+  name: "Республика Башкортостан",
   shortname: "",
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st4: {
       id: 4,
-  name: "Бурятия",
+  name: "Республика Бурятия",
   shortname: "",
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st5: {
@@ -46,7 +51,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st6: {
@@ -56,7 +61,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st7: {
@@ -66,7 +71,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st8: {
@@ -76,7 +81,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st9: {
@@ -93,27 +98,27 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st10: {
       id: 10,
-  name: "Карелия",
+  name: "Республика Карелия",
   shortname: "",
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st11: {
       id: 11,
-  name: "Коми",
+  name: "Республика Коми",
   shortname: "",
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st12: {
@@ -130,7 +135,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st13: {
@@ -147,7 +152,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st14: {
@@ -157,7 +162,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st15: {
@@ -167,7 +172,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st16: {
@@ -177,17 +182,17 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st17: {
       id: 17,
-  name: "Тыва",
+  name: "Республика Тыва",
   shortname: "",
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st18: {
@@ -204,17 +209,17 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st19: {
       id: 19,
-  name: "Хакасия",
+  name: "Республика Хакасия",
   shortname: "",
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st20: {
@@ -224,7 +229,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st21: {
@@ -241,7 +246,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st22: {
@@ -251,7 +256,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st23: {
@@ -261,7 +266,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st24: {
@@ -271,27 +276,27 @@ export 	const map_data = {
   link: "",
   comment: "City name city name<br>City name city name",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st25: {
       id: 25,
-  name: "Краснодарский край",
-  shortname: "",
-  link: "",
-  comment: "",
-  image: "",
-  color_map: "#383431",
-  color_map_over: "#366CA3"
-},
-  st26: {
-      id: 26,
   name: "Красноярский край",
   shortname: "",
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
+  color_map_over: "#366CA3"
+},
+  st26: {
+      id: 26,
+  name: "Краснодарский край",
+  shortname: "",
+  link: "",
+  comment: "",
+  image: "",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st27: {
@@ -301,7 +306,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st28: {
@@ -311,7 +316,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st29: {
@@ -321,7 +326,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st30: {
@@ -331,7 +336,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st31: {
@@ -341,7 +346,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st32: {
@@ -351,7 +356,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st33: {
@@ -361,7 +366,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st34: {
@@ -378,7 +383,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st35: {
@@ -395,7 +400,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st36: {
@@ -412,7 +417,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st37: {
@@ -422,7 +427,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st38: {
@@ -432,7 +437,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#9aad0d",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st39: {
@@ -442,7 +447,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st40: {
@@ -459,7 +464,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st41: {
@@ -469,7 +474,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st42: {
@@ -479,7 +484,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st43: {
@@ -496,7 +501,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st44: {
@@ -506,7 +511,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st45: {
@@ -523,7 +528,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st46: {
@@ -533,7 +538,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st47: {
@@ -550,7 +555,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st48: {
@@ -567,7 +572,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st49: {
@@ -577,7 +582,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#9aad0d",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st50: {
@@ -594,7 +599,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st51: {
@@ -604,7 +609,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st52: {
@@ -614,7 +619,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st53: {
@@ -624,7 +629,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st54: {
@@ -641,7 +646,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st55: {
@@ -650,8 +655,8 @@ export 	const map_data = {
   shortname: "",
   link: "",
   comment: "<strong>Центральный офис  ООО «Еврохимсервис»</strong><br>Великий Новгород, ул. Державина, 15<br>+7 (8162) 66 50 88, 66 50 99<br><br><strong> Центральный склад  в Великом Новгороде.</strong>",
-  image: "/map/sklad-office-novgorod.jpg",
-  color_map: "#db4d25",
+  image: "",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st56: {
@@ -661,7 +666,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st57: {
@@ -671,7 +676,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st58: {
@@ -688,7 +693,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st59: {
@@ -705,7 +710,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st60: {
@@ -722,7 +727,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st61: {
@@ -732,7 +737,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#9aad0d",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st62: {
@@ -742,7 +747,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: belinsk,
   color_map_over: "#366CA3"
 },
   st63: {
@@ -759,7 +764,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st64: {
@@ -776,7 +781,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st65: {
@@ -793,7 +798,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st66: {
@@ -803,7 +808,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st67: {
@@ -820,7 +825,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st68: {
@@ -837,7 +842,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st69: {
@@ -854,7 +859,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st70: {
@@ -871,7 +876,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st71: {
@@ -881,7 +886,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st72: {
@@ -898,7 +903,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st73: {
@@ -908,7 +913,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st74: {
@@ -925,7 +930,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st75: {
@@ -942,7 +947,7 @@ export 	const map_data = {
   </ul>
   `,
   image: "",
-  color_map: "#b11f24",
+  color_map: sousColor,
   color_map_over: "#366CA3"
 },
   st76: {
@@ -952,7 +957,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st77: {
@@ -962,7 +967,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st78: {
@@ -972,7 +977,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st79: {
@@ -982,7 +987,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st80: {
@@ -992,37 +997,37 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: hydroTakt,
   color_map_over: "#366CA3"
 },
   st81: {
       id: 81,
-  name: "Ханты-Мансийский",
+  name: "Ханты-Мансийский автономный округ",
   shortname: "",
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st82: {
       id: 82,
-  name: "Чукотский",
+  name: "Чукотский автономный округ",
   shortname: "",
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st83: {
       id: 83,
-  name: "Ямало-Ненецкий",
+  name: "Ямало-Ненецкий автономный округ",
   shortname: "",
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: filhydro,
   color_map_over: "#366CA3"
 },
   st84: {
@@ -1032,7 +1037,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: defaultColor,
   color_map_over: "#366CA3"
 },
   st85: {
@@ -1042,7 +1047,7 @@ export 	const map_data = {
   link: "",
   comment: "",
   image: "",
-  color_map: "#383431",
+  color_map: defaultColor,
   color_map_over: "#366CA3"
 }
 };
