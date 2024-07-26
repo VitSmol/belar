@@ -13,6 +13,7 @@ export class MapComponent implements OnInit {
   currentRegion: any
   checked = false
   region: any;
+  partners: any;
   ngOnInit(): void {
     const regions = Array.from(document.querySelectorAll('.region'));
     regions.forEach((region) => {
@@ -40,7 +41,31 @@ export class MapComponent implements OnInit {
   getRegionInfo(region: any) {
     const id = region.dataset[`region`];
     this.region = map_data[id]
-    console.log(this.region);
+    const companyGenerals: any[] = [];
+
+    const partners: any = {
+      companyName: map_data[id].company.name,
+      companyAddress: map_data[id].company.address,
+      companyMail: map_data[id].company.mail,
+
+    }
+    map_data[id].company.general.forEach(general => {
+      const phones: any[] = [];
+      let result: any = {
+        name: general.name,
+      }
+      general.phones.forEach(phone => {
+        phones.push({
+          phoneSimple: phone,
+          phoneToTag: phone.match(/\d/g).join("")
+        })
+      })
+      result.phones = phones
+      companyGenerals.push(result)
+    })
+    partners.companyGenerals = companyGenerals
+    this.partners = partners
+    console.log(this.partners);
 
   }
 }

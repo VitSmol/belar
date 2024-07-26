@@ -359,7 +359,33 @@
 <div class="description">
   @if (this.region) {
     <h4>{{this.region.name}}</h4>
-    
+    <div class="about-parner">
+      <h5>
+        {{this.region.company.name}}
+      </h5>
+      @for (general of this.partners.companyGenerals; track general) {
+        <div class="general">
+          <strong>{{general.name}}</strong>
+          <ul>
+            @for (phone of general.phones; track phone) {
+              <li>
+                <a [href]="'tel:+' + phone.phoneTag">
+                  <span class="material-symbols-outlined">
+                    call
+                  </span>
+                  {{phone.phoneSimple}}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+      <a [href]="'mailto:'+this.region.company.mail">
+        <span class="material-symbols-outlined">
+          mail
+          </span>
+        {{this.region.company.mail}}</a>
+    </div>
   }
 
 </div>
