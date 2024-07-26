@@ -6,7 +6,8 @@ import { map_data } from './regions';
   // standalone: true,
   // imports: [],
   templateUrl: './map.component.html',
-  styleUrl: './map.component.sass'
+  styleUrl: './map.component.sass',
+  // schemas: []
 })
 export class MapComponent implements OnInit {
   currentEvent: any = null
@@ -24,15 +25,19 @@ export class MapComponent implements OnInit {
 
   }
   onClickHover(e: any) {
+    // e.stopPropagation();
+
     if (e.type === 'click') {
+      // console.log(e.target);
+      // console.log(e.currentTarget);
       if (this.currentRegion) {
         this.currentRegion.classList.remove('active')
         this.currentRegion = null
-        this.currentRegion = e.target
+        this.currentRegion = e.currentTarget
         this.currentRegion.classList.add('active')
         this.getRegionInfo(this.currentRegion)
       } else {
-        this.currentRegion = e.target
+        this.currentRegion = e.currentTarget
         this.currentRegion.classList.add('active')
         this.getRegionInfo(this.currentRegion)
       }
@@ -42,14 +47,13 @@ export class MapComponent implements OnInit {
     const id = region.dataset[`region`];
     this.region = map_data[id]
     const companyGenerals: any[] = [];
-
     const partners: any = {
-      companyName: map_data[id].company.name,
-      companyAddress: map_data[id].company.address,
-      companyMail: map_data[id].company.mail,
+      companyName: map_data[id]?.company?.name ?? '',
+      companyAddress: map_data[id]?.company?.address ?? '',
+      companyMail: map_data[id]?.company?.mail ?? '',
 
     }
-    map_data[id].company.general.forEach(general => {
+    map_data[id].company?.general.forEach(general => {
       const phones: any[] = [];
       let result: any = {
         name: general.name,
@@ -66,6 +70,6 @@ export class MapComponent implements OnInit {
     partners.companyGenerals = companyGenerals
     this.partners = partners
     console.log(this.partners);
-
   }
 }
+

@@ -1,10 +1,21 @@
 const defaultColor = "#fb9100";
 const sousColor = "#b11f24";
-const belinsk = "#00ffbb";
-const hydroTakt = "#ab0270"
-const filhydro = "#0b49de"
+const belinsk = "#00ffbb";;
+const hydroTakt = "#ab0270";
+const filhydro = "#0b49de";
 
 export const partners = {
+  techno: {
+    name: "ООО «ТехнокомплектТрейд»",
+    general: [
+      {
+        name: "Артюшков Андрей Олегович",
+        phones: ["+375 (232) 33-36-66", "+375 (29) 655-03-84"],
+      }
+    ],
+    mail: "treyd_2016@mail.ru ",
+    address: "Республика Беларусь, 246008, г. Гомель, ул. Шилова, д.8. "
+  },
   sous: {
     name: "«ТД Союзгидравлика»",
     general: [
@@ -48,6 +59,17 @@ export const partners = {
 }
 
 export const map_data = {
+  st0: {
+    id: 0,
+    name: "Республика Беларусь",
+
+    link: "",
+    comment: "",
+    image: "",
+    color_map: belinsk,
+    company: partners.techno,
+    color_map_over: "#366CA3"
+  },
   st1: {
     id: 1,
     name: "Адыгея",
@@ -887,6 +909,7 @@ export const map_data = {
     comment: "",
     image: "",
     color_map: defaultColor,
+    company: null,
     color_map_over: "#366CA3"
   },
   st85: {
