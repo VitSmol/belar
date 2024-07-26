@@ -12,15 +12,12 @@ export class MapComponent implements OnInit {
   currentEvent: any = null
   currentRegion: any
   checked = false
+  region: any;
   ngOnInit(): void {
     const regions = Array.from(document.querySelectorAll('.region'));
-    // console.log(regions);
     regions.forEach((region) => {
       const id = (region as HTMLElement).dataset[`region`];
-      // console.log(id);
-
       (region as HTMLElement).style.fill = map_data[id as string].color_map;
-      // (region as HTMLElement).setAttribute('stroke', '#fff')
 
     })
 
@@ -32,10 +29,18 @@ export class MapComponent implements OnInit {
         this.currentRegion = null
         this.currentRegion = e.target
         this.currentRegion.classList.add('active')
+        this.getRegionInfo(this.currentRegion)
       } else {
         this.currentRegion = e.target
         this.currentRegion.classList.add('active')
+        this.getRegionInfo(this.currentRegion)
       }
     }
+  }
+  getRegionInfo(region: any) {
+    const id = region.dataset[`region`];
+    this.region = map_data[id]
+    console.log(this.region);
+
   }
 }
