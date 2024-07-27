@@ -1,14 +1,14 @@
 <div class="content">
-  <linearGradient id="linear-gradient">
-    <stop offset="0%" stop-color="gold"/>
-    <stop offset="100%" stop-color="teal"/>
-    </linearGradient>
+
   <div class="map">
-    <svg version="1.1" (mouseenter)="onClickHover($event)" fill="url(#linear-gradient)" (click)="onClickHover($event)"
+    <svg version="1.1" (mouseenter)="onClickHover($event)"  (click)="onClickHover($event)"
       (mouseleave)="onClickHover($event)" data-region="st0" id="belarus" class="region"  xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 550 490"
       style="enable-background:new 0 0 550 490;" xml:space="preserve">
-
+      <linearGradient id="grad">
+        <stop offset="0%" stop-color="red"/>
+        <stop offset="80%" stop-color="green"/>
+        </linearGradient>
       <g id="mahiliouskaia-voblasts-subregions">
         <!--oblast zone-->
         <polygon id="mahiliouskaia-voblasts" class="st1" points="540,270 530,260 530,250 525,245 520,245 515,240 500,240 495,240
@@ -126,7 +126,7 @@
 
 
       <g id="homelskaia-voblasts-subregions">
-        <polygon id="homelskaia-voblasts" class="st1" points="490,395 490,390 480,380 480,365 485,360 480,355 480,350 480,340 475,335
+        <polygon id="homelskaia-voblasts"  class="st1" points="490,395 490,390 480,380 480,365 485,360 480,355 480,350 480,340 475,335
 		475,330 465,320 465,315 470,310 470,305 455,305 450,300 450,290 430,290 425,285 420,285 410,295 400,295 400,290 395,290
 		390,285 380,285 375,290 380,295 380,300 375,305 370,305 370,315 375,320 365,320 360,325 355,325 345,325 340,330 330,330
 		330,335 325,340 325,345 305,345 305,350 300,355 300,365 295,370 285,370 280,365 275,365 275,370 260,370 255,365 255,360
@@ -816,9 +816,16 @@
   <div class="about-parner">
     @if (this.partners.companyName) {
     <h5>
+      <!-- @if (this.partners.img) {
+        <img  class="partner-img" [src]="this.partners.img" [alt]="this.partners.companyName"/>
+      } @else {
+        <span></span>
+      } -->
         {{this.partners.companyName}}
-
     </h5>
+    <h6>
+      {{this.partners.companyAddress}}
+    </h6>
     @for (general of this.partners.companyGenerals; track general) {
     <div class="general">
       <strong>{{general.name}}</strong>

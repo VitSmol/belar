@@ -51,8 +51,10 @@ export class MapComponent implements OnInit {
       companyName: map_data[id]?.company?.name ?? '',
       companyAddress: map_data[id]?.company?.address ?? '',
       companyMail: map_data[id]?.company?.mail ?? '',
-
     }
+    // if (map_data[id].company.img) {
+    //   partners.img = map_data[id].company.img
+    // }
     map_data[id].company?.general.forEach(general => {
       const phones: any[] = [];
       let result: any = {
@@ -61,7 +63,7 @@ export class MapComponent implements OnInit {
       general.phones.forEach(phone => {
         phones.push({
           phoneSimple: phone,
-          phoneToTag: phone.match(/\d/g).join("")
+          phoneTag: phone.match(/\d/g).join("")
         })
       })
       result.phones = phones

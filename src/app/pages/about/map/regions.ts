@@ -3,6 +3,7 @@ const sousColor = "#b11f24";
 const belinsk = "#00ffbb";;
 const hydroTakt = "#ab0270";
 const filhydro = "#0b49de";
+const techno = "#00ff00"
 
 export const partners = {
   techno: {
@@ -29,7 +30,8 @@ export const partners = {
       }
     ],
     mail: "unionhyd@mail.ru",
-    address: "Российская Федерация, 308013, Белгородская обл., г. Белгород, ул. Рабочая, 14, Литер Б8, каб. 17"
+    address: "Российская Федерация, 308013, Белгородская обл., г. Белгород, ул. Рабочая, 14, Литер Б8, каб. 17",
+    img: "assets/img/poster2.png"
   },
   belinsk: {
     name: "АО «Технический центр «Белинсксельмаш»",
@@ -37,7 +39,8 @@ export const partners = {
       name: "Чураков Константин Юрьевич",
       phones: ["7 (863) 308-98-71", "+7 (863) 308-98-72", "+7(863)308-98-73", "+7 (863) 308-98-74"],
     }],
-    mail: "6261918@gmail.ru"
+    mail: "6261918@gmail.ru",
+    address: "Российская Федерация, 346886,Ростовская область, г. Батайск, ул.Производственная, д. 4Б."
 
   },
   hydroTakt: {
@@ -46,7 +49,8 @@ export const partners = {
       name: "Кожемякин Павел Александрович",
       phones: ["+7 (495) 500-10-30", " +7 (495) 500-10-40"],
     }],
-    mail: "hydrotakt@mail.ru"
+    mail: "hydrotakt@mail.ru",
+    address: "Российская Федерация, 140053, Московская область, г.Котельники,мкр-н. Силикат, д. 43."
   },
   filhydro: {
     name: "Филиал АО «ГИДРОТАКТ»",
@@ -54,7 +58,8 @@ export const partners = {
       name: "Штерцер Евгений Вальдемирович",
       phones: ["+7 (3852) 33-59-76", "+7 (913) 211-80-80"]
     }],
-    mail: "cpk_b@mail.ru"
+    mail: "cpk_b@mail.ru",
+    address: "Российская Федерация, 656000, г.Барнаул, пр. Космонавтов д.14/19"
   }
 }
 
@@ -66,7 +71,7 @@ export const map_data = {
     link: "",
     comment: "",
     image: "",
-    color_map: belinsk,
+    color_map: techno,
     company: partners.techno,
     color_map_over: "#366CA3"
   },
