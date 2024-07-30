@@ -10,6 +10,7 @@
 .cert
   width: 200px
 .certification
+  margin-top: 40px
   background: url(^assets/img/certs/cert-bg.gif)
   background-repeat: no-repeat
   background-size: cover
@@ -17,7 +18,6 @@
   background-position: bottom
   display: flex
   justify-content: center
-  height: 100vh
   overflow-y: auto
 .cert-wrapper
   @extend .container-padding
@@ -25,10 +25,11 @@
   grid-template-columns: repeat(4, 1fr)
   background: inherit
   column-gap: 30px
+  row-gap: 30px
   grid-template-columns: repeat(2, 0.25fr)
   grid-template-rows: repeat(2, 0.5fr)
   @media screen and (max-width: 1000px)
-    padding-top: 150px
+    padding-top: 25px
     padding-bottom: 40px
     gap: 30px
   @media screen and (max-width: 760px)

@@ -6,87 +6,90 @@
   @extend .container-padding
   // padding-top: 120px
   display: flex
+  flex-direction: column
   position: relative
-
-
+  overflow: hidden
+  // .sticky
+  //   position: sticky
+  //   top: 0
+  //   z-index: 500
   .products-navigation
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15), 0 -1px 5px rgba(0, 0, 0, 0.15)
     padding: 10px
     height: fit-content
     border-radius: 2px
-    background: #ffffffbd
-    @media screen and ( max-width: 1000px )
-      position: absolute
-      transform: translateY(-93%)
-      z-index: 400
-      background: white
-      transition: transform .5s
-      &.expanded
-        transform: translateY(0%)
+    background: rgb(255 255 255 / 97%)
+    // position: sticky
+//     @media screen and ( max-width: 1000px )
+//       position: absolute
+//       transform: translateY(-93%)
+//       z-index: 400
+//       background: white
+//       transition: transform .5s
+//       &.expanded
+//         transform: translateY(0%)
+//         transition: transform .5s
+//     .menu-btn
+//       background:  $mainColor
+//       font-size: 16px
 
-        transition: transform .5s
-    .menu-btn
-      background:  $mainColor
-      font-size: 16px
+//   ul
+//     padding: 5px 0
+//     list-style-type: none
+//     display: flex
+//     flex-direction: column
+//     justify-content: center
+//     gap: 10px
+//     margin: 0
+//     position: relative
+//     @media screen and (max-width: 768px)
+//       gap: 15px
+//     @media screen and (max-width: 571px)
+//       flex-direction: column
+//       align-items: center
+//       padding: 6px
+//       gap: 6px
 
-  ul
-    padding: 5px 0
-    list-style-type: none
+//     li
+//       transform: translateX(0) translateY(0)
+//       transition: all 0.5s
+//       filter: drop-shadow(0px 0px 0px transparent)
+//       @media screen and (max-width: 571px)
+//         width: 100%
+//       &.choose
+//         display: flex
+//         flex-direction: column
+//         img
+//           width: 80px
 
-    display: flex
-    flex-direction: column
-    justify-content: center
-    gap: 10px
-    margin: 0
-    position: relative
-    @media screen and (max-width: 768px)
-      gap: 15px
-    @media screen and (max-width: 571px)
-      flex-direction: column
-      align-items: center
-      padding: 6px
-      gap: 6px
-
-    li
-      transform: translateX(0) translateY(0)
-      transition: all 0.5s
-      filter: drop-shadow(0px 0px 0px transparent)
-      @media screen and (max-width: 571px)
-        width: 100%
-      &.choose
-        display: flex
-        flex-direction: column
-        img
-          width: 80px
-
-    a
-      border-radius: 3px
-      text-decoration: none
-      font-size: 13px
-      padding: 10px
-      position: relative
-      width: 230px
-      padding: 15px
-      text-align: center
-      height: 50px
-      font-weight: bold
-      @media screen and (max-width: 768px)
-        font-size: 12px
-        padding: 5px
-      @media screen and (max-width: 571px)
-        min-width: 100%
-    li:hover:not(.choose), .active:not(.choose)
-      filter: drop-shadow(1px 1px 1px black)
-      transition: 0.5s transform, box-shadow
-      position: relative
-      transform: translateX(-0.5px) translateY(-1px)
-      a
-        box-shadow: 1px 1px 8px #00000054
-        transition: 0.5s position, transform, box-shadow
-        background-color: #c9c9bf
-      @media screen and (max-width: 571px)
-        position: static
-        transform: translateX(0) translateY(0)
+//     a
+//       border-radius: 3px
+//       text-decoration: none
+//       font-size: 13px
+//       padding: 10px
+//       position: relative
+//       width: 230px
+//       padding: 15px
+//       text-align: center
+//       height: 50px
+//       font-weight: bold
+//       @media screen and (max-width: 768px)
+//         font-size: 12px
+//         padding: 5px
+//       @media screen and (max-width: 571px)
+//         min-width: 100%
+//     li:hover:not(.choose), .active:not(.choose)
+//       filter: drop-shadow(1px 1px 1px black)
+//       transition: 0.5s transform, box-shadow
+//       position: relative
+//       transform: translateX(-0.5px) translateY(-1px)
+//       a
+//         box-shadow: 1px 1px 8px #00000054
+//         transition: 0.5s position, transform, box-shadow
+//         background-color: #c9c9bf
+//       @media screen and (max-width: 571px)
+//         position: static
+//         transform: translateX(0) translateY(0)
 ::ng-deep .products-navigation .choose .mdc-form-field .mdc-label
   border-left: none
   border-right: none
@@ -97,13 +100,73 @@
 ::ng-deep .products-navigation .choose .mat-mdc-checkbox
   height: 80px
   display: flex
-::ng-deep .products-navigation .choose .mat-internal-form-field
-  flex-direction: row-reverse
-  width: 100%
-::ng-deep .mdc-checkbox__background
-  background-color: $gradientBg !important
+// ::ng-deep .products-navigation .choose .mat-internal-form-field
+//   flex-direction: row-reverse
+//   width: 100%
+// ::ng-deep .mdc-checkbox__background
+//   background-color: $gradientBg !important
 
 
-@media print
-  .products-navigation
-    display: none
+// @media print
+//   .products-navigation
+//     display: none
+ul
+  display: grid
+  grid-template-areas: "choose catalog construct technik oil valve spare" "choose catalog construct technik oil valve spare"
+  list-style-type: none
+  align-items: center
+  margin: 0
+  padding: 0
+  justify-content: start
+  gap: 15px
+  @media screen and ( max-width: 1200px )
+    grid-template-areas: "choose choose choose choose choose choose" "catalog construct technik oil valve spare"
+    justify-content: center
+  @media screen and ( max-width: 995px )
+    gap: 10px
+  @media screen and ( max-width: 768px )
+    grid-template-areas: "choose choose choose" "catalog construct technik" "oil valve spare"
+    .menu-btn
+      text-align: center
+
+  .choose
+    grid-area: choose
+    display: flex
+    flex-direction: row
+    justify-content: center
+    gap: 10px
+  .from-catalog
+    grid-area: catalog
+  .construct
+    grid-area: construct
+  .by-technik
+    grid-area: technik
+  .oil
+    grid-area: oil
+  .valve
+    grid-area: valve
+  .spare
+    grid-area: spare
+  img
+    width: 80px
+    @media screen and ( max-width:  995px)
+      width: 50px
+  a
+    font-size: 18px
+    position: relative
+    color: $bgColor
+    display: block
+    font-weight: 300
+    text-decoration: none solid rgb(64,68,78 )
+    letter-spacing: 0.8px
+    scale: 1
+    line-height: 21px
+    transition: .5s all
+    font-style: normal
+    font-weight: 300
+    @media screen and ( max-width: 1400px )
+      font-size: 14px
+
+    &:hover, &.active
+      transition: .5s all
+      color: $mainColor

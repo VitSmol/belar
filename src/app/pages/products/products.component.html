@@ -1,44 +1,44 @@
 <div class="products-wrapper">
-  <nav class="products-navigation" [class.expanded]="expanded">
-
-    <ul>
-      <li [formGroup]="choose" class="choose">
-        <mat-checkbox formControlName="hydro">
-          <img src="assets/img/cy.png" alt="Гидроилиндры">
-          Гироцилиндры</mat-checkbox>
-          <mat-checkbox formControlName="other">
-          <img src="assets/img/other.png" alt="Гидроилиндры">
-          Другое</mat-checkbox>
-      </li>
-      @if (choose.value.hydro) {
-        <li routerLinkActive="active">
-          <a mat-raised-button class="menu-btn" [routerLink]="['/products', 'list']">Из каталога</a>
+  <div class="container sticky">
+    <nav class="products-navigation" [class.expanded]="expanded">
+      <ul>
+        <li [formGroup]="choose" class="choose">
+          <mat-checkbox formControlName="hydro">
+            <img src="assets/img/cy.png" alt="Гидроилиндры">
+            Гироцилиндры</mat-checkbox>
+            <mat-checkbox formControlName="other">
+            <img src="assets/img/other.png" alt="Гидроилиндры">
+            Другое</mat-checkbox>
         </li>
-        <li routerLinkActive="active">
-          <a mat-raised-button class="menu-btn" [routerLink]="['/products', 'constructor']">По индивидуальному заказу</a>
-        </li>
-        <li routerLinkActive="active">
-          <a mat-raised-button class="menu-btn" [routerLink]="['/products', 'technick']">По видам техники</a>
-        </li>
-      }
-      @if (choose.value.other) {
-        <li routerLinkActive="active">
-          <a mat-raised-button class="menu-btn" [routerLink]="['/products', 'oil']">Вращающийся маслопровод</a>
-        </li>
-        <li routerLinkActive="active">
-          <a mat-raised-button class="menu-btn" [routerLink]="['/products', 'valve']">Гидроблок</a>
-        </li>
-        <li routerLinkActive="active">
-          <a mat-raised-button class="menu-btn" [routerLink]="['/products', 'spare']">Запчасти</a>
-        </li>
-      }
-    </ul>
-    @if (width < 1001) {
-      <button mat-raised-button id="expand" (click)="expanded = !expanded">
-        <mat-icon>expand_less</mat-icon>
-      </button>
-      }
-
-  </nav>
+        @if (choose.value.hydro) {
+          <li   class="from-catalog">
+            <a routerLinkActive="active" class="menu-btn" [routerLink]="['/products', 'list']">Каталог</a>
+          </li>
+          <li   class="construct">
+            <a routerLinkActive="active" class="menu-btn" [routerLink]="['/products', 'constructor']">Конструктор</a>
+          </li>
+          <li   class="by-technik">
+            <a routerLinkActive="active" class="menu-btn" [routerLink]="['/products', 'technick']">По видам техники</a>
+          </li>
+        }
+        @if (choose.value.other) {
+          <li   class="oil">
+            <a routerLinkActive="active" class="menu-btn" [routerLink]="['/products', 'oil']">Вращающийся маслопровод</a>
+          </li>
+          <li   class="valve">
+            <a routerLinkActive="active" class="menu-btn" [routerLink]="['/products', 'valve']">Гидроблок</a>
+          </li>
+          <li   class="spare">
+            <a routerLinkActive="active" class="menu-btn" [routerLink]="['/products', 'spare']">Запчасти</a>
+          </li>
+        }
+      </ul>
+      <!-- @if (width < 1001) {
+        <button mat-raised-button id="expand" (click)="expanded = !expanded">
+          <mat-icon>expand_less</mat-icon>
+        </button>
+        } -->
+    </nav>
+  </div>
   <router-outlet></router-outlet>
 </div>

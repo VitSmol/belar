@@ -1,10 +1,72 @@
 <footer>
-  <div class="footer-politics">
-    <a href="" class="to-main">
-      <img class="logo" src="assets/img/logoBelar.png" alt='OOO TM "Белар"' title='OOO TM "Белар" - производство гидроцилиндров'>
+  <div class="footer-politics container">
+    <a  [routerLink]="['']" class="to-main">
+      <img class="logo" src="assets/img/logo.png" alt='OOO TM "Белар"'
+        title='OOO TM "Белар" - производство гидроцилиндров'>
+        <p>ООО «ТМ БЕЛАР»&copy;, 2024</p>
     </a>
-    <div class="politics">
+    <div class="nav">
+      <ul id="main-nav">
+        <li>
+          <a routerLinkActive="active" [routerLink]="['']" [routerLinkActiveOptions]="{exact:true}"
+            class="caption-layer">Главная</a>
+        </li>
+        <li>
+          <a routerLinkActive="active" [routerLink]="['/company']" class="caption-layer">О компании</a>
+        </li>
+        <li>
+          <a routerLinkActive="active" [routerLink]="['/news']" class="caption-layer">Новости</a>
+        </li>
+        <li>
+          <a class="caption-layer" routerLinkActive="active" [routerLink]="['/work']">Работа</a>
+        </li>
+        <li>
+          <a routerLinkActive="active" [routerLink]="['/cert']" class="caption-layer">Сертификаты</a>
+        </li>
+        <li>
+          <a href="#contacts" routerLinkActive="active" class="caption-layer" [routerLink]="['/contacts']">Контакты</a>
+        </li>
+      </ul>
+      <ul id="production">
+        <li><a routerLinkActive="active" [routerLink]="['/products', 'list']" class="caption-layer">Каталог</a></li>
+        <li><a routerLinkActive="active" [routerLink]="['/products', 'constructor']" class="caption-layer">Конструктор</a></li>
+        <li><a routerLinkActive="active" [routerLink]="['/products', 'technick']" class="caption-layer">По применяемости</a></li>
+        <li><a routerLinkActive="active" [routerLink]="['/products', 'oil']" class="caption-layer">Вращающийся маслопровод</a></li>
+        <li><a routerLinkActive="active" [routerLink]="['/products', 'valve']" class="caption-layer">Гидроблоки</a></li>
+        <li><a routerLinkActive="active" [routerLink]="['/products', 'spare']" class="caption-layer">Запчасти</a></li>
+      </ul>
+      <ul id="info">
+        <li><h3>ООО «ТМ БЕЛАР»</h3></li>
+        <li><h4>Республика Беларусь, 246008, г. Гомель, ул. Шилова, д.8.</h4></li>
+        <li><a href="tel:+375447763455">
+          <span class="material-symbols-outlined">
+            call
+          </span>
+          +375 (44) 776-34-55
+        </a></li>
+        <li><a class="caption-layer" href="tel:+375445800360">
+          <span class="material-symbols-outlined">
+            call
+          </span>
+          +375 (44) 580-03-60 - Отдел продаж
+        </a></li>
+        <li><a class="caption-layer" href="tel:+375232539811">
+          <span class="material-symbols-outlined">
+            call
+          </span>
+          +375 (232) 53-98-11 - Согласование конструкторской документации
+        </a></li>
+        <li class="mail">
+          <a class="caption-layer" href="mailto:info@belar.pro">
+            <span class="material-symbols-outlined">
+              mail
+            </span>
+            info&#64;belar.pro</a>
 
+        </li>
+        <li class="caption-layer" class="politics" >Пользовательское соглашение</li>
+        <li class="caption-layer" class="politics" >Политика конфиденциальности</li>
+      </ul>
     </div>
   </div>
 </footer>

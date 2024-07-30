@@ -48,6 +48,12 @@ header
     background-repeat: no-repeat
     background-size: contain
     filter: drop-shadow(2px 4px 4px black)
+    transition: filter 0.5s
+    &:hover
+      cursor: pointer
+      transition: filter 0.5s
+      filter: drop-shadow(2px 4px 8px black)
+
   .orgname
     display: flex
     justify-content: end
@@ -60,7 +66,7 @@ header
     .name
       font-size: 19px
       font-weight: 700
-      color: black
+      // color: black
       font-style: oblique
       margin-bottom: 0
       // text-shadow: 0px 0px 15px #f5c396
@@ -100,7 +106,7 @@ header
     a.caption-layer
       font-size: 18px
       position: relative
-      color: black
+      color: $bgColor
       display: block
       font-weight: 300
       text-decoration: none solid rgb(64,68,78 )
@@ -149,7 +155,7 @@ header
     transform: scale(0)
     align-items: center
     transition: 0.3s transform ease-in-out
-    z-index: 301
+    z-index: 501
     height: min-content
     padding: 0
     padding-bottom: 20px

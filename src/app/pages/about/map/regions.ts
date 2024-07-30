@@ -3,7 +3,7 @@ const sousColor = "#b11f24";
 const belinsk = "#00ffbb";;
 const hydroTakt = "#ab0270";
 const filhydro = "#0b49de";
-const techno = "#00ff00"
+const techno = "#368e1480"
 
 export const partners = {
   techno: {

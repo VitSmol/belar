@@ -65,12 +65,14 @@ $brd-bold: 3px solid black
     &.active
       transition: transform 0.5s
       transform: translateX(0px)
+      filter: drop-shadow(1px 1px 1px rgba(0, 0, 0))
   .right-inner
     transition: transform 0.5s
     transform: translateX(230px)
     &.active
       transition: transform 0.5s
       transform: translateX(0px)
+      filter: drop-shadow(1px 1px 7px rgba(0, 0, 0, 0.7))
 @media screen and (max-width:700px)
   .top
     z-index: 200
@@ -93,8 +95,9 @@ $brd-bold: 3px solid black
     background: white
     z-index: 101
   .left-inner, .right-inner
-    position: fixed
+    position: absolute
     z-index: 310
+    top: 0
 
   .left-inner
     left: 0

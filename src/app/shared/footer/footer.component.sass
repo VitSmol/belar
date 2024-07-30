@@ -1,23 +1,107 @@
 @import 'variables'
 footer
-  background: $gradientBg
-  .footer-politics
-    width: $contentWidth
-    margin: 0 auto
-    padding: 10px 0
+  background: #ff953747
+  font-size: 18px
+  font-weight: 300
+  text-shadow: 0px 0px px #40444eb0
+  letter-spacing: 0.2px
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    a
+      color: $bgColor
+      text-decoration: none
+      transition: .5s all
+      &:hover,&.active
+        transition: .5s all
+        color: $mainColor
+.footer-politics
+  display: flex
+  padding: 50px 0
+  gap: 20px
   .logo
     width: 100px
   .to-main
+    color: $bgColor
     display: flex
+    flex-direction: column
+    align-items: center
+    gap: 10px
     padding: 7px
-    background: #000
+    text-decoration: none
     width: fit-content
     border-radius: 6px
-    &:hover
-      background: #000000a8
-:host
-    position: fixed
-    left: 0
-    bottom: 0
-    right: 0
-    z-index: 9999
+    transition: color 0.5s
+    align-self: center
+    img
+      filter: drop-shadow(2px 4px 4px black)
+      transition: filter 0.5s
+      width: 200px
+      &:hover
+        filter: drop-shadow(2px 4px 8px black)
+        cursor: pointer
+        transition: filter 0.5s
+    p
+      font-size: 14px
+      font-weight: 600
+    &:hover > p
+      transition: color 0.5s
+      color: $mainColor
+  .nav
+    display: grid
+    grid-template-areas: "main prod info"
+    gap: 20px
+    #main-nav
+      grid-area: main
+    #production
+      grid-area: prod
+    #info
+      grid-area: info
+      li a
+        display: flex
+        align-items: center
+        gap: 5px
+      .mail
+        margin: 10px 0
+      .politics
+        transition: color 0.5s
+        &:hover
+          cursor: pointer
+          transition: color 0.5s
+          color: $mainColor
+@media screen and ( max-width: 1200px )
+  .footer-politics
+    .nav
+      grid-template-areas: "main info" "prod info"
+@media screen and ( max-width: 992px )
+  .footer-politics
+    .nav
+      grid-template-areas: "main prod" "info info"
+@media screen and ( max-width: 768px )
+  .footer-politics
+    flex-direction: column
+    // .nav
+    //   grid-template-areas: "main prod" "info info"
+@media screen and ( max-width: 575px )
+  .footer-politics
+    gap: 10px
+    padding: 30px 10px
+    .nav
+      // grid-template-areas: "prod info" "main info"
+      gap: 10px
+    .to-main
+      p
+        margin-bottom: 0
+      img
+        width: 100px
+    .caption-layer
+      font-size: 14px
+    #info
+      h3
+        font-size: 18px
+      h4
+        font-size: 16px
+
+    // .nav
+    //   grid-template-areas: "main prod" "info info"
