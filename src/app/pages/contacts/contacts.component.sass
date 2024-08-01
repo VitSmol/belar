@@ -1,6 +1,5 @@
 @import 'variables'
 #contacts-overlay
-  // padding-top: 80px
   height: fit-content
   background: url("^assets/img/footer-backg.jpg")
   background-repeat: no-repeat
@@ -25,6 +24,14 @@
   z-index: 4
   .contacts-wrapper
     @extend .container-padding
+    ul
+      margin: 0
+      padding: 0
+    h3, h5
+      text-align: left
+      margin-bottom: 0
+    address
+      margin-bottom: 0
   .countries
     display: flex
     flex-direction: column
@@ -38,36 +45,48 @@
 .company-department-name, .region-caption
   font-size: 18px
 .rf-caption
-  text-align: center
-  height: 50px
+  padding-bottom: 15px
 a
   color: $background
   text-decoration: none
+  display: flex
+  gap: 5px
+  transition: color 0.5s
+  &:hover
+    color: $mainColor
+    transition: color 0.5s
 .app-icons
   display: inline-flex
-  gap: 3px
+  gap: 5px
+  img
+    width: 25px
+    height: 25px
 .rb
   display: flex
-  gap: 10px
-  .belar, .company-card
-    flex-grow: 3
-    display: grid
-    & .company-caption
-      grid-area: caption
-    & .company-address
-      grid-area: address
-    & .priem
-      grid-area: priem
-    & .constr
-      grid-area: constr
-    & .sales
-      grid-area: sales
-    & .ok
-      grid-area: ok
-    grid-template-areas: "caption caption caption" "address address address" "priem sales constr" "ok sales constr"
+  gap: 50px
+  flex-direction: column
+  .belar
+    .company-card
+      flex-grow: 3
+      display: grid
+      grid-template-areas: "caption caption caption" "address address address" "priem sales constr" "ok sales constr"
+      & .company-caption
+        grid-area: caption
+        margin-bottom: 15px
+      & .company-address
+        grid-area: address
+      & .priem
+        grid-area: priem
+      & .constr
+        grid-area: constr
+      & .sales
+        grid-area: sales
+      & .ok
+        grid-area: ok
   .belar-employee
-    font-weight: 600
+    font-weight: 400
     transition: 0.5s color
+    margin-top: 10px
     &:hover a
       transition: 0.5s color
       color: $mainColor
@@ -75,6 +94,7 @@ a
     display: grid
     & .techno-caption
       grid-area: caption
+      margin-bottom: 15px
     & .techno-address
       grid-area: address
     & .department-techno
@@ -84,13 +104,19 @@ a
     grid-template-areas: "caption caption" "address address" "depart region"
 ul
   list-style-type: none
+  li:has(> .app-icons)
+    // background: red
+    display: flex
+    gap: 5px
 .company-caption
-  height: 72px
+  // height: 72px
 .company-name
   font-size: 20px
   text-align: center
 .company-department-name
   font-size: 18px
+li:has(> .company-department-name)
+  margin-bottom: 10px
 .company-department-item
   margin-top: 20px
 .rf
@@ -122,7 +148,7 @@ ul
     width: 100%
     height: 5px
     background: #ca7b0f78
-    top: -18px
+    top: -5px
   .rf-companes .company-department-item
     height: 270px
   .rf-regions li:first-child
@@ -130,9 +156,6 @@ ul
 @media screen and ( max-width: 1285px )
   .rb
     flex-direction: column
-    .company-address
-      address
-        text-align: center
   .rf-companes
     grid-template-columns: repeat(2, 1fr)
     .company-name
@@ -142,7 +165,7 @@ ul
     .rf-regions li:first-child
       // height: 50px
     .company-address
-      height: 50px
+      height: fit-content
     .company-card:nth-child(3), .company-card:nth-child(4)
       .company-department-item
         height: 150px
@@ -164,45 +187,10 @@ ul
 @media screen and ( max-width: 560px )
   .rb .techno .company-card
     grid-template-areas: "caption" "address" "depart" "region"
-//       .company-name, .company-department-name, summary
-//         color: $mainColor
 
-//     .company-card, .company-department, .regions
-//
-//       margin: 0
-//       padding: 0
-//       font-size: 15px
-//       .company-address
-//         font-style: italic
-
-//       .contact-icon
-//         padding-left: 10px
-//         padding-right: 2px
-//         height: max-content
-//         vertical-align: middle
-
-//     .region
-//       padding-left: 20px
-//   .company-department-employee a
-//     margin-top: 10px
-//     display: flex
-//     flex-direction: row
-//     align-items: center
-//     span
-//       display: block
-// .rf
-//   display: flex
-//   flex-direction: column
-//   .rf-companes
-//     display: flex
-//     gap: 10px
-//     flex-shrink: 1
-//     .company-card
-//       max-width: 300px
-//   & > .company-name
-//     text-align: center
 .map
   width: 100%
+  display: flex
   iframe
     width: 100%
 .footer-map
@@ -215,57 +203,3 @@ ul
   background-color: $bgColor
   padding: 10px 0
 
-// @media screen and (max-width: 1600px)
-//   .footer-contacts
-//     flex-direction: column
-
-//     grid-template-areas: "caption caption" "address address" "priem sales" "constr sales"
-//
-//     grid-template-areas: "caption caption caption" "address address address" "depart depart region"
-//   .rf .rf-companes
-//     justify-content: space-between
-// @media screen and (max-width: 1000px)
-
-//   .rf .rf-companes
-//     display: grid
-//     grid-template-columns: repeat(2, 1fr)
-//     justify-items: center
-//     column-gap: 30px
-//     .company-card
-//       max-width: 100%
-//   footer .footer-bg .footer-contacts .rb .company-card
-//     column-gap: 0px
-//     .region
-//       padding-left: 10px
-//   footer .footer-bg .footer-contacts .rb
-//     flex-direction: column
-//     gap: 30px
-//   .techno .company-card
-//     position: relative
-//     margin-top: 30px
-//     padding-top: 30px
-
-//   .rf
-//     margin-top: 30px
-//     .rf-companes .company-card
-//       margin-top: 20px
-//       position: relative
-//       &::before
-//         content: ""
-//         position: absolute
-//         width: 100%
-//         height: 5px
-//         background: #ca7b0f78
-//         top: -18px
-
-// @media screen and (max-width: 813px)
-//   footer .footer-bg .footer-contacts .rb
-//     flex-direction: column
-
-// @media screen and (max-width: 530px)
-//   .belar .company-card
-//     grid-template-areas: "caption" "address" "priem" "constr" "sales"
-//   footer .footer-bg .footer-contacts .rb .techno .company-card
-//     grid-template-areas: "caption" "address" "depart" "region"
-//   .rf .rf-companes
-//     grid-template-columns: repeat(1, 1fr)
