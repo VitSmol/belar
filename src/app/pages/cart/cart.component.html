@@ -1,132 +1,144 @@
-<div class="cart-wrapper">
-<div class="table-wrapper">
-  @if (this.orderArr.length > 0) {
-    <table mat-table [dataSource]="this.dataSource" id="cart-table">
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef>№</th>
-        <td mat-cell *matCellDef="let item; let ind = index">{{ind + 1}}</td>
-      </ng-container>
-      <ng-container matColumnDef="img" [style.display]="width < 710 ? 'none': 'block'">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let item; let ind = index">
-          <img src="assets/img/cy.png" alt="цилиндр" class="table-img">
-        </td>
-      </ng-container>
+<div class="container">
+  <div class="cart-wrapper">
+    <div class="totals">
+      <h5>Информация о заказе</h5>
+      <div class="totals-container">
+        <p>
+          <strong>Общее количество гидроцилиндров - </strong> <span>{{this.currentCount}}</span>
+        </p>
+        <p>
+          <strong>Видов гидроцилиндров - </strong> <span>{{this.numberOfGoods}}</span>
+        </p>
+        <a mat-raised-button href="#order" class="addOrder">Оформить заказ</a>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      @if (this.orderArr.length > 0) {
+      <table mat-table [dataSource]="this.dataSource" id="cart-table">
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef>№</th>
+          <td mat-cell *matCellDef="let item; let ind = index">{{ind + 1}}</td>
+        </ng-container>
+        <ng-container matColumnDef="img" [style.display]="width < 710 ? 'none': 'block'">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let item; let ind = index">
+            <img src="assets/img/cy.png" alt="цилиндр" class="table-img">
+          </td>
+        </ng-container>
 
-      <ng-container matColumnDef="title">
-        <th mat-header-cell *matHeaderCellDef>Наименование</th>
-        <td mat-cell *matCellDef="let item">{{item.title}}</td>
-      </ng-container>
-      <ng-container matColumnDef="count">
-        <th mat-header-cell *matHeaderCellDef>Количество</th>
-        <td mat-cell *matCellDef="let item">
-          <p class="count-container">
-            <button mat-mini-fab class="count-btn" (click)="changeCount('-', item)">
-              <mat-icon aria-hidden="false" fontIcon="remove"></mat-icon>
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef>Наименование</th>
+          <td mat-cell *matCellDef="let item">{{item.title}}</td>
+        </ng-container>
+        <ng-container matColumnDef="count">
+          <th mat-header-cell *matHeaderCellDef>Количество</th>
+          <td mat-cell *matCellDef="let item">
+            <p class="count-container">
+              <button mat-mini-fab class="count-btn" (click)="changeCount('-', item)">
+                <mat-icon aria-hidden="false" fontIcon="remove"></mat-icon>
+              </button>
+              <input matInput type="text" [value]="item.count" class="count" (keyup)="checkNums($event)"
+                (blur)="changeOnBlur($event, item)">
+              <button mat-mini-fab class="count-btn" (click)="changeCount('+', item)">
+                <mat-icon aria-hidden="false" fontIcon="add"></mat-icon>
+              </button>
+            </p>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="color">
+          <th mat-header-cell *matHeaderCellDef>Количество</th>
+          <td mat-cell *matCellDef="let item">
+            <mat-form-field>
+              <mat-label>Цвет:</mat-label>
+              <mat-select (valueChange)="setColor($event,item)" [value]="item.color">
+                <mat-option [value]="'Красный RAL 3020'"><img src="assets/img/icons/red.jpg" alt="cross"> Красный RAL
+                  3020</mat-option>
+                <mat-option [value]="'Черный RAL 9005'"><img src="assets/img/icons/black.jpg" alt="cross"> Черный RAL
+                  9005</mat-option>
+                <mat-option [value]="'Желтый RAL 1018'"><img src="assets/img/icons/yellow1018.jpg" alt="cross"> Желтый
+                  RAL
+                  1018</mat-option>
+                <mat-option [value]="'Синий RAL 5005'"><img src="assets/img/icons/blue.jpg" alt="cross"> Синий RAL
+                  5005</mat-option>
+                <mat-option [value]="'Желтый RAL 1033'"><img src="assets/img/icons/yellow1033.jpg"> Желтый RAL
+                  1033</mat-option>
+                <mat-option [value]="'Красный RAL 3002'"> <img src="assets/img/icons/red3002.jpg" alt="cross"> Красный
+                  RAL
+                  3002</mat-option>
+                <mat-option [value]="'Красный RAL 3002'"> Без покрытия</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef>Удалить</th>
+          <td mat-cell *matCellDef="let item">
+            <button mat-mini-fab class="delete-btn" (click)="delete(item)">
+              <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
             </button>
-            <input matInput type="text" [value]="item.count" class="count" (keyup)="checkNums($event)" (blur)="changeOnBlur($event, item)">
-            <button mat-mini-fab class="count-btn" (click)="changeCount('+', item)">
-              <mat-icon aria-hidden="false" fontIcon="add"></mat-icon>
-            </button>
-          </p>
-        </td>
-      </ng-container>
-      <ng-container matColumnDef="color">
-        <th mat-header-cell *matHeaderCellDef>Количество</th>
-        <td mat-cell *matCellDef="let item">
-          <mat-form-field>
-            <mat-label>Цвет:</mat-label>
-            <mat-select (valueChange)="setColor($event,item)" [value]="item.color">
-              <mat-option [value]="'Красный RAL 3020'"><img src="assets/img/icons/red.jpg" alt="cross"> Красный RAL 3020</mat-option>
-              <mat-option [value]="'Черный RAL 9005'"><img src="assets/img/icons/black.jpg" alt="cross"> Черный RAL 9005</mat-option>
-              <mat-option [value]="'Желтый RAL 1018'"><img src="assets/img/icons/yellow1018.jpg" alt="cross"> Желтый RAL 1018</mat-option>
-              <mat-option [value]="'Синий RAL 5005'"><img src="assets/img/icons/blue.jpg" alt="cross"> Синий RAL 5005</mat-option>
-              <mat-option [value]="'Желтый RAL 1033'"><img src="assets/img/icons/yellow1033.jpg"> Желтый RAL 1033</mat-option>
-              <mat-option [value]="'Красный RAL 3002'"> <img src="assets/img/icons/red3002.jpg" alt="cross"> Красный RAL 3002</mat-option>
-              <mat-option [value]="'Красный RAL 3002'">  Без покрытия</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </td>
-      </ng-container>
-      <ng-container matColumnDef="delete">
-        <th mat-header-cell *matHeaderCellDef>Удалить</th>
-        <td mat-cell *matCellDef="let item">
-          <button mat-mini-fab class="delete-btn" (click)="delete(item)">
-            <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
-          </button>
-        </td>
-      </ng-container>
+          </td>
+        </ng-container>
 
 
 
-      <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
-      <tr mat-row *matRowDef="let row; columns: columns;"></tr>
-    </table>
-    <button mat-raised-button (click)="clearCart()" id="clear">Очистить корзину</button>
-  } @else {
-    <h3>В корзине нет товаров</h3>
-  }
-</div>
-  <form class="order" [formGroup]="orderForm">
-    <mat-form-field>
-      <mat-label>Фамилия</mat-label>
-      <input matInput formControlName="lastname">
-      <mat-error>Введите фамилию</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Имя</mat-label>
-      <input matInput formControlName="firstname">
-      <mat-error>Введите имя</mat-error>
-    </mat-form-field>
-    <mat-form-field >
-      <mat-label>Отчество</mat-label>
-      <!-- <mat-error>Введите контактный адрес</mat-error> -->
-      <input matInput formControlName="fathername">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Адрес электронной почты:</mat-label>
-      <input matInput
-      type="email"
-      formControlName="email"
-      [errorStateMatcher]="matcher"
-      >
-      <mat-error>Введите контактный адрес</mat-error>
-      <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" -->
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Контактый номер телефона:</mat-label>
-      <input matInput
-      pattern="\+?[0-9\s\-\(\)]+"
-      required
-      type="phone"
-      id="phone"
-      value="+375 (__) ___-__-__"
-      formControlName="phone"
-      [errorStateMatcher]="matcher"
-      >
-      <mat-error>Введите контактный номер</mat-error>
-      <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" -->
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Страна:</mat-label>
-      <mat-select formControlName="country">
-        <mat-option value="Республика Беларусь">Республика Беларусь</mat-option>
-        <mat-option value="Российская Федерация">Российская Федерация</mat-option>
-        <mat-option value="Республика Казахстан">Республика Казахстан</mat-option>
-        <mat-option value="Другое">Другое</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Комментарий к заказу</mat-label>
-      <textarea matInput formControlName="comment"></textarea>
-    </mat-form-field>
-    <button
-    mat-raised-button
-    id="submit"
-    type="submit"
-    (click)="send()"
-    [disabled]="!this.orderForm.valid"
-    >Отправить заявку
-  </button>
-  </form>
+        <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+      </table>
+      <button mat-raised-button (click)="clearCart()" id="clear">Очистить корзину</button>
+      } @else {
+      <h3>В корзине нет товаров</h3>
+      }
+    </div>
+
+    <div class="order-container"  id="order">
+      <h5>Оформление заказа</h5>
+      <form class="order" [formGroup]="orderForm">
+        <mat-form-field>
+          <mat-label>Фамилия</mat-label>
+          <input matInput formControlName="lastname">
+          <mat-error>Введите фамилию</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Имя</mat-label>
+          <input matInput formControlName="firstname">
+          <mat-error>Введите имя</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Отчество</mat-label>
+          <!-- <mat-error>Введите контактный адрес</mat-error> -->
+          <input matInput formControlName="fathername">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Адрес электронной почты:</mat-label>
+          <input matInput type="email" formControlName="email" [errorStateMatcher]="matcher">
+          <mat-error>Введите контактный адрес</mat-error>
+          <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" -->
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Контактый номер телефона:</mat-label>
+          <input matInput pattern="\+?[0-9\s\-\(\)]+" required type="phone" id="phone" value="+375 (__) ___-__-__"
+            formControlName="phone" [errorStateMatcher]="matcher">
+          <mat-error>Введите контактный номер</mat-error>
+          <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" -->
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Страна:</mat-label>
+          <mat-select formControlName="country">
+            <mat-option value="Республика Беларусь">Республика Беларусь</mat-option>
+            <mat-option value="Российская Федерация">Российская Федерация</mat-option>
+            <mat-option value="Республика Казахстан">Республика Казахстан</mat-option>
+            <mat-option value="Другое">Другое</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Комментарий к заказу</mat-label>
+          <textarea matInput formControlName="comment"></textarea>
+        </mat-form-field>
+        <button mat-raised-button id="submit" type="submit" (click)="send()"
+          [disabled]="!this.orderForm.valid">Отправить
+          заявку
+        </button>
+      </form>
+    </div>
+  </div>
 </div>

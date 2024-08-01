@@ -40,46 +40,64 @@ export class CartComponent implements OnInit {
   public orderForm!: FormGroup;
   public orderArr: Product[] = []; //
   public columns = ["position", "img", "title", "count", "color","delete"]; //
-
+  public currentCount = 0;
+  public numberOfGoods: number = 0;
   dataSource!: MatTableDataSource<any>
   matcher = new ErrorStateMatcher();
   ngOnInit(): void {
     this.width = window.innerWidth;
     this.cartService.loadStorage().subscribe(data => {
       this.orderArr = data;
+      console.log(this.orderArr);
+      this.getCountToThePage(this.orderArr)
       this.dataSource = new MatTableDataSource(this.orderArr);
     })
   }
 
+  getCountToThePage(arr: Product[]) {
+    let commonCount = 0;
+    this.numberOfGoods = arr.length;
+    arr.forEach((product: Product) => {
+      let currentCount = product.count
+      if (!currentCount) {
+        return
+      } else {
+        commonCount += +currentCount
+      }
+    })
+    // console.log(commonCount);
+    this.currentCount = commonCount;
+    // return commonCount
+  }
   checkNums(e: any) {
     e.target.value = e.target.value.replace(/[^0-9]/g, '')
   }
   changeCount(symbol: string, item: Product) {
     let count = +item.count!
+
     if (symbol === '-') {
       count--
-      if (count < 0) {
-        count = 0
+      if (count === 0) {
+        this.delete(item)
       }
     } else {
       count++
     }
     item.count = count + ``
     this.cartService.setNewCount(item)
+    this.getCountToThePage(this.orderArr);
     console.log(this.orderArr);
 
   }
   setColor(e, item) {
-    // console.log(e);
-
-    item.color = e
+       item.color = e
     this.cartService.setNewColor(item)
     console.log(item);
-
   }
   changeOnBlur(ev: any, item: Product) {
     item.count = ev.target.value;
     this.cartService.setNewCount(item)
+    this.getCountToThePage(this.orderArr)
   }
   delete(item: Product) {
     this.cartService.deleteProduct(item).subscribe(data => {

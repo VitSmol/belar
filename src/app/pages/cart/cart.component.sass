@@ -4,6 +4,23 @@
   // margin: 0 auto
   display: flex
   gap: 20px
+  flex-direction: column
+  .totals-container
+    display: flex
+    justify-content: space-between
+    strong
+      font-weight: 400
+    @media screen and ( max-width: 768px )
+      flex-direction: column
+      p
+        margin-bottom: 5px
+  .addOrder
+    background: $mainColor
+    color: white
+    font-weight: 400
+    @media screen and ( max-width: 768px )
+      width: fit-content
+
 .table-wrapper
   width: 100%
   overflow-x: auto
@@ -23,6 +40,8 @@ td
   margin-bottom: 0
   display: flex
   align-items: center
+
+
 .count
   width: 50px
   border: none
@@ -31,10 +50,18 @@ td
   outline: none
 .table-img
   width: 50px
+.order-container
+  align-self: center
+  width: 50%
+  @media screen and ( max-width: 768px )
+    width: 100%
+  h5
+    margin: 15px 0
 .order
   display: flex
   flex-direction: column
-  width: 30%
+  align-self: center
+  width: 100%
   gap: 10px
 ::ng-deep .mdc-data-table__table
   // min-width: 0 !important
@@ -49,11 +76,11 @@ td
 @media screen and ( max-width: 970px )
   .cart-wrapper
     flex-direction: column
-    padding-top: 120px
+    // padding-top: 120px
   ::ng-deep .mdc-data-table__table
     width: 100%
   .order
-    width: 80%
+    // width: 80%
     margin: 0 auto
 .mat-column-title
   min-width: 300px !important
