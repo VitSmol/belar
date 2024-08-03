@@ -156,6 +156,11 @@ export class CartComponent implements OnInit {
       this.dataSource = new MatTableDataSource(this.orderArr);
     })
   }
+
+  toOrder() {
+    let order = (document as HTMLDocument).getElementById("order")
+    order?.scrollIntoView()
+  }
 }
 
 

@@ -84,7 +84,7 @@ import { MapComponent } from './pages/about/map/map.component';
 
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    // { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: MatPaginatorIntl, useValue: getRUPaginatorIntl() },
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { subscriptSizing: 'dynamic', appearance: 'fill' } },
     // { provide: MAT_RADIO_DEFAULT_OPTIONS, useValue: { color: 'primary' }, }
