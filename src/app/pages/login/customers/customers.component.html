@@ -1,1 +1,12 @@
-<p>customers works!</p>
+<h2>Вход для партнеров</h2>
+<form [formGroup]="customersLoginDetails">
+  <div class="container">
+    <label for="uname"><b>Логин</b></label>
+    <input type="text" name="uname" required formControlName="login">
+
+    <label for="psw"><b>Пароль</b></label>
+    <input type="password" name="psw" required formControlName="password">
+
+    <button type="submit">Войти</button>
+  </div>
+</form>

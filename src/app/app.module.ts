@@ -53,6 +53,8 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { WorkComponent } from './pages/work/work.component';
 import { NewsComponent } from './pages/news/news.component';
 import { MapComponent } from './pages/about/map/map.component';
+import { CustomersComponent } from './pages/login/customers/customers.component';
+import { EmployeeComponent } from './pages/login/employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -79,12 +81,15 @@ import { MapComponent } from './pages/about/map/map.component';
     MailSendComponent,
     WorkComponent,
     NewsComponent,
-    MapComponent
+    MapComponent,
+    CustomersComponent,
+    EmployeeComponent
     // CompanyComponent
 
   ],
   providers: [
     // { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
     { provide: MatPaginatorIntl, useValue: getRUPaginatorIntl() },
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { subscriptSizing: 'dynamic', appearance: 'fill' } },
     // { provide: MAT_RADIO_DEFAULT_OPTIONS, useValue: { color: 'primary' }, }

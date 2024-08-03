@@ -16,6 +16,8 @@ import { ValveBodyComponent } from './pages/products/valve-body/valve-body.compo
 import { SparePartsComponent } from './pages/products/spare-parts/spare-parts.component';
 import { WorkComponent } from './pages/work/work.component';
 import { NewsComponent } from './pages/news/news.component';
+import { CustomersComponent } from './pages/login/customers/customers.component';
+import { EmployeeComponent } from './pages/login/employee/employee.component';
 
 const routes: Routes = [
   {
@@ -24,7 +26,12 @@ const routes: Routes = [
       { path: '', component: AboutComponent },
       { path: 'company', component: CompanyComponent },
       { path: 'cert', component: CertsComponent },
-      { path: 'login', component: LoginComponent },
+      {
+        path: 'login', component: LoginComponent, children: [
+          { path: 'customers', component: CustomersComponent },
+          { path: 'employee', component: EmployeeComponent }
+        ]
+      },
       { path: 'news', component: NewsComponent },
       {
         path: 'products', component: ProductsComponent, children: [
@@ -51,8 +58,8 @@ const routes: Routes = [
           }
         ]
       },
-      {path: 'contacts', component: ContactsComponent},
-      {path: 'work', component: WorkComponent},
+      { path: 'contacts', component: ContactsComponent },
+      { path: 'work', component: WorkComponent },
       {
         path: 'cart', component: CartComponent
       }
