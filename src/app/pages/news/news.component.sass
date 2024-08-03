@@ -3,4 +3,31 @@
   @extend .container-padding
   // padding-top: 150px
   // padding-bottom: 2%
-  height: 80vh
+  // height: 80vh
+  display: flex
+  gap: 50px
+  flex-direction: column
+.new-media video
+  max-width: 100%
+.new
+  position: relative
+  &:after
+    position: absolute
+    content: ""
+    width: 100%
+    height: 5px
+    background: $mainColor
+    left: 0
+    bottom: -25px
+
+.images
+  display: grid
+  gap: 20px
+  justify-content: center
+  @media screen and ( max-width: 1000px )
+    grid-template-columns: 1fr !important
+
+  img
+    max-width: 100%
+    justify-self: center
+  // grid-template-columns: repeat(3, 1fr)

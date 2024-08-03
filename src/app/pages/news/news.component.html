@@ -1,5 +1,36 @@
 <div class="container">
   <div class="news-wrapper">
-    <p>news works!</p>
+    <!-- <p>news works!</p> -->
+    @for (new of news; track new) {
+      <div class="new">
+      @if (new.caption.length > 0) {
+        <h6>{{new.caption}}</h6>
+      }
+      <div class="new-content">
+        <p>{{new.content}}</p>
+      </div>
+      <div class="new-media">
+        @if (new.images?.length)  {
+          <div class="slideshow-container">
+            <div class="images" [ngStyle]="{'grid-template-columns':'repeat(' + new.images?.length + ', 1fr)'}">
+            @for (img of new.images; track img; let ind = $index) {
+                <img [src]="img" alt="Конферения ТМ Белар">
+              }
+            </div>
+          </div>
+        }
+        @if (new.video.length) {
+          @for (video of new.video; track video) {
+            <video [src]="video" controls></video>
+          }
+        }
+      </div>
+
+
+      @if (new.source.length > 0) {
+        <p><a [href]="new.source">Источник</a></p>
+      }
+    </div>
+    }
   </div>
 </div>
