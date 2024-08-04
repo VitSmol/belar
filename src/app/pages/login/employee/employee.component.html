@@ -1,13 +1,16 @@
 <h2>Вход для сотрудников</h2>
-<form action="action_page.php">
+<form [formGroup]="employeeLoginDetails">
   <div class="container">
     <label for="uname"><b>Логин</b></label>
-    <input type="text" name="uname" required>
+    <input type="text" name="uname" required formControlName="login">
 
     <label for="psw"><b>Пароль</b></label>
-    <input type="password" name="psw" required>
+    <input type="password" name="psw" required formControlName="password">
 
-    <button type="submit">Войти</button>
+    <button type="submit"
+      [disabled]="employeeLoginDetails.controls.login.invalid || employeeLoginDetails.controls.password.invalid"
+      (click)="checkLogin()"
+      >Войти</button>
   </div>
 </form>
 

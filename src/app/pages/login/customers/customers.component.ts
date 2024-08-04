@@ -16,4 +16,9 @@ export class CustomersComponent {
     login: ['', Validators.required],
     password: ['', Validators.required]
   })
+
+  checkLogin() {
+    console.log(this.customersLoginDetails.value);
+
+  }
 }

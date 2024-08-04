@@ -7,6 +7,9 @@
     <label for="psw"><b>Пароль</b></label>
     <input type="password" name="psw" required formControlName="password">
 
-    <button type="submit">Войти</button>
+    <button type="submit"
+      [disabled]="customersLoginDetails.controls.login.invalid || customersLoginDetails.controls.password.invalid"
+      (click)="checkLogin()"
+      >Войти</button>
   </div>
 </form>
