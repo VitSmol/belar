@@ -10,6 +10,14 @@ export interface Product {
   color?: string;
 }
 
+export interface Employee {
+  id?: string;
+  name: string;
+  password: string;
+  role: string;
+  login: string;
+}
+
 export interface Org {
   orgName: string;
   img: string;

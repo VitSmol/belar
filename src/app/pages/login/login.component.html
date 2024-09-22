@@ -1,5 +1,25 @@
 <div class="container">
   <div class="login-wrapper">
     <router-outlet></router-outlet>
+    <h2>Создать пользователя</h2>
+    <form [formGroup]="createUser">
+      <div class="container">
+        <label for="login"><b>Логин</b></label>
+        <input type="text" name="uname" required formControlName="login">
+
+        <label for="psw"><b>Пароль</b></label>
+        <input type="password" name="password" required formControlName="password">
+
+        <label for="name"><b>Имя</b></label>
+        <input type="text" name="name" required formControlName="name">
+
+        <label for="role"><b>Права</b></label>
+        <input type="text" name="role" value="admin" required formControlName="role">
+
+        <button type="submit"
+          [disabled]="createUser.controls.login.invalid || createUser.controls.password.invalid"
+          (click)="create()">Создать пользователя</button>
+      </div>
+    </form>
   </div>
 </div>
