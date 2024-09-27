@@ -16,7 +16,7 @@ export class ProductsListComponent implements OnInit {
     pa_diamp: [''],
     pa_diamsh: [''],
   }
-  public view = `list`
+  public view = `grid`
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.width = event.target.innerWidth;

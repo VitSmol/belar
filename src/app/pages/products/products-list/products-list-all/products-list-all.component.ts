@@ -34,7 +34,7 @@ export class ProductsListAllComponent implements OnInit, AfterViewInit{
   data!: MatTableDataSource<Product>
   public productsArr: Product[] = [];
   public productsSlice: Product[] = [];
-  public view = `list`
+  public view = `grid`
 
 
   ngAfterViewInit(): void {
